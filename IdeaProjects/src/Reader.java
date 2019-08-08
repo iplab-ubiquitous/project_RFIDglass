@@ -62,6 +62,8 @@ public class Reader implements TagOpCompleteListener {
         }
     }
 
+
+
     public int addReadOperation(short num) {
         try {
             TagOpSequence seq = new TagOpSequence();
@@ -69,11 +71,20 @@ public class Reader implements TagOpCompleteListener {
             seq.setExecutionCount((short) 0);
             seq.setState(SequenceState.Active);
 
-            TagReadOp readOp = new TagReadOp();
-            readOp.setMemoryBank(MemoryBank.User);
-            readOp.setWordCount((short) (2 + num));
-            readOp.setWordPointer((short) 0x100);
-            seq.getOps().add(readOp);
+            // タグのセンサ値を取得
+            TagReadOp readOpForSensorValue = new TagReadOp();
+            readOpForSensorValue.setMemoryBank(MemoryBank.User);
+            readOpForSensorValue.setWordCount((short) (2 + num));
+            readOpForSensorValue.setWordPointer((short) 0x100);
+            seq.getOps().add(readOpForSensorValue);
+
+            // タグのシリアルナンバーを取得
+            TagReadOp readOpForID = new TagReadOp();
+            readOpForID.setMemoryBank(MemoryBank.Tid);
+            readOpForID.setWordCount((short) 3);
+            readOpForID.setWordPointer((short) 0x03);
+            seq.getOps().add(readOpForID);
+
             seq.setTargetTag(null);
             _reader.addOpSequence(seq);
             return seq.getId();
@@ -138,28 +149,34 @@ public class Reader implements TagOpCompleteListener {
     }
 
     public void onTagOpComplete(ImpinjReader reader, TagOpReport results) {
+        String strData = "";
         for(TagOpResult t : results.getResults()) {
             if(t instanceof TagReadOpResult){
                 TagReadOpResult tr = (TagReadOpResult) t;
                 if(tr.getResult() == ReadResultStatus.Success) {
-                    String strData = tr.getData().toHexWordString().replace(" ","");
-                    byte[] data = hexStringToByteArray(strData);
-
-                    callReadHandler(data);
+                    strData += tr.getData().toHexWordString().replace(" ","");
                 }
             }
 
             if(t instanceof TagWriteOpResult) {
                 TagWriteOpResult tr = (TagWriteOpResult) t;
                 if(tr.getResult() == WriteResultStatus.Success) {
-                    callWriteHandler();
+//                    callWriteHandler();
                 }
             }
         }
+        byte[] data = hexStringToByteArray(strData);
+        callReadHandler(data);
     }
 
     private void callReadHandler(byte[] data) {
-        //System.out.println((int)(data[0]));
+//        for(int i = 0; i < data.length; i++){
+//            if(i == 2 && (int)data[i] == 17) {
+//                continue;
+//            }
+//            System.out.print((int)(data[i]) + ", ");
+//        }
+//        System.out.println();
         if(data[0] == 0x01) {
             callAccelTagReadHandler(data);
         } else if(data[0] == 0x02) {
@@ -182,14 +199,24 @@ public class Reader implements TagOpCompleteListener {
 
     private void callMagnetTagReadHandler(byte[] data) {
         try{
-            int n = (data.length-4)/2;
+            int n = (data.length-10)/2;
             short[] values = new short[n+1];
             for(int i = 0; i < n; i++)
-                values[i+1] = (short)((data[i*2 + 2 + 1] << 8) | (data[i*2 + 2]));
+                values[i] = (short)((data[i*2 + 2 + 1] << 8) | (data[i*2 + 2]));
+            values[n] = (short)(data[15]);
             target.getClass().getMethod("magnetTagReadHandler", new Class<?>[]{short[].class}).invoke(target, values);
         } catch(ReflectiveOperationException e) {
         }
     }
+
+//    private void callTidReadhandler(byte[] data){
+//        try{
+//            int n = (data.length-4)/2;
+//            short value = (short)((data[0] << 8*5) | (data[1] << 8*4) | (data[2] << 8*3) | (data[3] << 8*2)| (data[4] << 8*1) | (data[0]));
+//            target.getClass().getMethod("TidReadHandler", new Class<?>[]{short[].class}).invoke(target, value);
+//        } catch(ReflectiveOperationException e) {
+//        }
+//    }
 
     private void callAccelTagReadHandler(byte[] data) {
         try{

@@ -78,43 +78,17 @@ public class HttpPostClient {
 
 
     public void magnetTagReadHandler(short[] values) throws IOException {
-        String resultsJson = "{" + " \"x\":\"" + values[0] + "\" , \"y\": \"" + values[1] + "\" , \"z\":\"" + values[2] + "\" }";
-        postJson(resultsJson);
+        String resultsJson = "{" + " \"x\":\"" + values[0] + "\" , \"y\": \"" + values[1] + "\" , \"z\":\"" + values[2] + "\" , \"id\": \"" + values[3] + "\"}";
+//        postJson(resultsJson);
         System.out.println(resultsJson);
-
-
     }
+
+
     public void otherTagReadHandler(byte[] data){
 
         //System.out.println(data);
     }
 
-//    private static final String WEB_API_ENDPOINT = "http://localhost:8080";
-//    public String callWebAPI(short[] values)  throws IOException {
-//
-//        final Map<String, String> httpHeaders = new LinkedHashMap<String, String>();
-//        String postJson = "{" + " \"x\":\"" + values[0] + "\" , \"y\": \"" + values[1] + "\" , \"z\":\"" + values[2] + "\" }";
-//        final String resultStr = doPost(WEB_API_ENDPOINT, "UTF-8", httpHeaders, postJson);
-//
-//        return resultStr;
-//    }
-//    public String doPost(String url, String encoding, Map<String, String> headers, String jsonString) throws IOException {
-//        final okhttp3.MediaType mediaTypeJson = okhttp3.MediaType.parse("application/json; charset=" + encoding);
-//
-//        final RequestBody requestBody = RequestBody.create(mediaTypeJson, jsonString);
-//
-//        final Request request = new Request.Builder()
-//                .url(url)
-//                .headers(Headers.of(headers))
-//                .post(requestBody)
-//                .build();
-//
-//        final OkHttpClient client = new OkHttpClient.Builder()
-//                .build();
-//        final Response response = client.newCall(request).execute();
-//        final String resultStr = response.body().string();
-//        return resultStr;
-//    }
 
     public static void main(String[] args)  {
 
