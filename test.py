@@ -4,17 +4,24 @@ from http.server import BaseHTTPRequestHandler
 import sys
 import json
 import socketserver
+import numpy as np
+
+np.set_printoptions(suppress=True)
+training_data = np.empty([0, 7])
+data_count = 0
 
 
 PORT = 8080
 
 # for test
-# curl -X POST -H "Content-Type: application/json" -d { "x":"0" , "y": "53" , "z":"-6" } localhost:8080
+# curl -X POST -H "Content-Type: application/json" -d '{"45":{"x":-117,"y":-472,"z":-29},"47":{"x":-987,"y":-49,"z":-1524},"label":6}' localhost:8080
 
 
 class MagnetHTTPRequestHandler(BaseHTTPRequestHandler):
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        
     
     def do_POST(self):
         content_len = int(self.headers.get('content-length'))
@@ -30,15 +37,40 @@ class MagnetHTTPRequestHandler(BaseHTTPRequestHandler):
         self.wfile.write(responseBody.encode('utf-8'))
         # self.send_response(HTTPStatus.OK)
         print(request_body)
-        self.recognize_magnet(request_body)
+        is_exists_model = False
+        if is_exists_model:
+            self.recognize_finger_pos(request_body)
+        else:
+            self.collect_magnet_data(request_body)
         # self.wfile.write("OK.")
 
-    def recognize_magnet(self, jsons):
-        print(type(jsons['x']))
+    def collect_magnet_data(self, jsons):
+        
+        global training_data, data_count
+        parsed_json = [[
+            jsons['45']['x'], jsons['45']['y'], jsons['45']['z'],
+            jsons['47']['x'], jsons['47']['y'], jsons['47']['z'],
+            jsons['label']
+        ]]
+        print(parsed_json)
+        training_data = np.append(training_data, parsed_json, axis=0)
+        #print(training_data)
+        data_count += 1
+
+    def recognize_finger_pos(self, jsons):
+        return 
+
 
 
 
 Handler = MagnetHTTPRequestHandler
-with socketserver.TCPServer(("", PORT), Handler) as httpd:
-    print("serving at port", PORT)
-    httpd.serve_forever()
+try:
+    with socketserver.TCPServer(("", PORT), Handler) as httpd:
+        print("serving at port", PORT)
+        httpd.serve_forever()
+except KeyboardInterrupt:
+    np.savetxt("test.csv", training_data, delimiter=',', fmt='%.0f')
+    
+    
+
+    

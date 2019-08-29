@@ -1,5 +1,9 @@
 
 
+
+
+import org.json.JSONObject;
+
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URI;
@@ -8,15 +12,27 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Map;
-
+import java.util.Scanner;
 
 
 public class HttpPostClient {
+    JSONObject postData = new JSONObject();
+    JSONObject collectedData;
+    String prevJson;
+
+    static int currentFingerPos = 0;
+    static int numOfData = 0;
 
 
-    public void postJson(String json){
+    boolean hasReceived45 = false;
+    boolean hasReceived47 = false;
+    boolean hasReceived49 = false;
+
+
+    public void postJson(JSONObject json){
         HttpURLConnection con = null;
         StringBuffer result = new StringBuffer();
         try {
@@ -36,7 +52,7 @@ public class HttpPostClient {
             OutputStreamWriter out = new OutputStreamWriter(con.getOutputStream());
             //con.connect();
             //out.write("{\"result\":\"faiiure\"}");
-            out.write(json);
+            out.write(json.toString());
             out.close();
 
             // HTTPレスポンスコード
@@ -78,9 +94,43 @@ public class HttpPostClient {
 
 
     public void magnetTagReadHandler(short[] values) throws IOException {
-        String resultsJson = "{" + " \"x\":\"" + values[0] + "\" , \"y\": \"" + values[1] + "\" , \"z\":\"" + values[2] + "\" , \"id\": \"" + values[3] + "\"}";
-//        postJson(resultsJson);
-        System.out.println(resultsJson);
+        collectedData = new JSONObject();
+        collectedData.put("x", (int)(values[0]));
+        collectedData.put("y", (int)(values[1]));
+        collectedData.put("z", (int)(values[2]));
+//
+
+        switch (values[3]){
+            case -45:
+                postData.put("45", collectedData);
+                hasReceived45 = true;
+                break;
+            case -47:
+                postData.put("47", collectedData);
+                hasReceived47 = true;
+                break;
+//            case -49:
+//                postData.put("49", collectedData);
+//                hasReceived49 = true;
+//                break;
+
+        }
+
+        if(hasReceived45 && hasReceived47 && !(postData.toString().equals(prevJson))){
+            postData.put("label", currentFingerPos);
+            postJson(postData);
+            System.out.println(postData);
+            hasReceived45 = false;
+            hasReceived47 = false;
+            prevJson = postData.toString();
+            numOfData++;
+            if(numOfData > 20){
+                Reader.getInstance().stop();
+                numOfData = 0;
+                System.out.println("currentFingerPos: " + currentFingerPos + " is ended.");
+            }
+        }
+
     }
 
 
@@ -93,17 +143,22 @@ public class HttpPostClient {
     public static void main(String[] args)  {
 
 
-
+        Scanner sc = new Scanner(System.in);
         Reader reader;
         reader = Reader.getInstance();
         reader.init(new HttpPostClient());
-        reader.start();
-
-
         int id = reader.addReadMagnetOperation((short) 3);
+        System.out.println("準備できたらEnter");
+        sc.nextLine();
 
+        for(currentFingerPos = 0; currentFingerPos < 2; currentFingerPos++){
+            System.out.println("currentFingerPos: " + currentFingerPos);
+            reader.start();
+            System.out.println("開始.");
+            sc.nextLine();
+        }
+        System.out.println("終了.");
 
-        System.out.println("動いている");
 
 
     }
