@@ -124,7 +124,7 @@ public class HttpPostClient {
             hasReceived47 = false;
             prevJson = postData.toString();
             numOfData++;
-            if(numOfData > 20){
+            if(numOfData > 50){
                 Reader.getInstance().stop();
                 numOfData = 0;
                 System.out.println("currentFingerPos: " + currentFingerPos + " is ended.");
@@ -151,7 +151,7 @@ public class HttpPostClient {
         System.out.println("準備できたらEnter");
         sc.nextLine();
 
-        for(currentFingerPos = 0; currentFingerPos < 2; currentFingerPos++){
+        for(currentFingerPos = 0; currentFingerPos < 8; currentFingerPos++){
             System.out.println("currentFingerPos: " + currentFingerPos);
             reader.start();
             System.out.println("開始.");
