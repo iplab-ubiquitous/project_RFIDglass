@@ -128,6 +128,7 @@ public class HttpPostClient {
                 Reader.getInstance().stop();
                 numOfData = 0;
                 System.out.println("currentFingerPos: " + currentFingerPos + " is ended.");
+                System.out.println("終了.");
             }
         }
 
@@ -148,16 +149,19 @@ public class HttpPostClient {
         reader = Reader.getInstance();
         reader.init(new HttpPostClient());
         int id = reader.addReadMagnetOperation((short) 3);
-        System.out.println("準備できたらEnter");
+        System.out.println("FingerPosを入力");
+        currentFingerPos = sc.nextInt();
+        reader.start();
+        System.out.println("開始.");
         sc.nextLine();
 
-        for(currentFingerPos = 0; currentFingerPos < 8; currentFingerPos++){
-            System.out.println("currentFingerPos: " + currentFingerPos);
-            reader.start();
-            System.out.println("開始.");
-            sc.nextLine();
-        }
-        System.out.println("終了.");
+//        for(currentFingerPos = 0; currentFingerPos < 8; currentFingerPos++){
+//            System.out.println("currentFingerPos: " + currentFingerPos);
+//            reader.start();
+//            System.out.println("開始.");
+//            sc.nextLine();
+//        }
+//        System.out.println("終了.");
 
 
 
