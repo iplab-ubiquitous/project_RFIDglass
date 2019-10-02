@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6770211b-f6f1-4395-893b-bb4b3cbbd1d9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/MagnetTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/magnetdata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdeaProjects/HttpPostClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdeaProjects/HttpPostClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HttpPostClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HttpPostClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../classify_test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../classify_test2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/../classifier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../classifier_.py" beforeDir="false" afterPath="$PROJECT_DIR$/../classifier_.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test0930.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/../test0930.pkl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,14 +37,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HttpPostClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="132" column="9" lean-forward="true" selection-start-line="132" selection-start-column="9" selection-end-line="132" selection-end-column="9" />
+            <state relative-caret-position="487">
+              <caret line="126" column="30" selection-start-line="126" selection-start-column="30" selection-end-line="126" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/magnetdata">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="883">
+              <caret line="100" selection-start-line="100" selection-end-line="100" />
             </state>
           </provider>
         </entry>
@@ -90,7 +103,9 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/OkHttpPostClient.java" />
         <option value="$PROJECT_DIR$/src/Reader.java" />
+        <option value="$PROJECT_DIR$/src/MagnetTest.java" />
         <option value="$PROJECT_DIR$/src/HttpPostClient.java" />
+        <option value="$PROJECT_DIR$/src/magnetdata" />
       </list>
     </option>
   </component>
@@ -144,6 +159,9 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
     </key>
@@ -163,6 +181,13 @@
   <component name="RunManager" selected="Application.HttpPostClient">
     <configuration name="HttpPostClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HttpPostClient" />
+      <module name="IdeaProjects" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MagnetTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MagnetTest" />
       <module name="IdeaProjects" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -188,6 +213,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.HttpPostClient" />
+        <item itemvalue="Application.MagnetTest" />
         <item itemvalue="Application.OkHttpPostClient" />
         <item itemvalue="Application.Main" />
       </list>
@@ -214,15 +240,16 @@
       <workItem from="1565227288231" duration="11749000" />
       <workItem from="1566868226472" duration="10226000" />
       <workItem from="1567041494576" duration="10600000" />
-      <workItem from="1569465616357" duration="6529000" />
+      <workItem from="1569465616357" duration="7134000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68586000" />
+    <option name="totallyTimeSpent" value="69191000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="0" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -238,7 +265,7 @@
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.30792078" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.30792078" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.2841584" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
@@ -630,13 +657,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/MagnetTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="81" column="58" selection-start-line="81" selection-start-column="58" selection-end-line="81" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/HttpPostClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="132" column="9" lean-forward="true" selection-start-line="132" selection-start-column="9" selection-end-line="132" selection-end-column="9" />
+        <state relative-caret-position="487">
+          <caret line="126" column="30" selection-start-line="126" selection-start-column="30" selection-end-line="126" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/magnetdata">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="883">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
         </state>
       </provider>
     </entry>

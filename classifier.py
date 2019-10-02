@@ -1,19 +1,28 @@
 from sklearn import svm, neighbors, metrics, preprocessing
-from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV, cross_validate
-from sklearn.metrics import classification_report, accuracy_score
+from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV, cross_validate, StratifiedShuffleSplit
+from sklearn.metrics import classification_report, accuracy_score, confusion_matrix
 from sklearn.externals import joblib
 import pandas as pd
 import numpy as np
+import csv
 
 
 dataset = pd.read_csv("test0930_bonsai.csv", header=None)
-data_train, data_test = train_test_split(dataset, test_size=0.2)
+# data_train, data_test = train_test_split(dataset, test_size=0.2)
 
-train_label = data_train.iloc[:, 6]
-train_data = data_train.iloc[:, 0:6]
+# train_label = data_train.iloc[:, 6]
+# train_data = data_train.iloc[:, 0:6]
 
-test_label = data_test.iloc[:, 6]
-test_data = data_test.iloc[:, 0:6]
+# test_label = data_test.iloc[:, 6]
+# test_data = data_test.iloc[:, 0:6]
+
+sss = StratifiedShuffleSplit(test_size=0.2)
+data = dataset.iloc[:, 0:6]
+label = dataset.iloc[:, 6]
+for train_index, test_index in sss.split(data, label):
+    train_data,  test_data = data.loc[train_index], data.loc[test_index]
+    train_label, test_label = label.loc[train_index], label.loc[test_index]
+
 
 print(train_data[0])
 
@@ -48,18 +57,24 @@ print("# Tuning hyper-parameters for accuracy")
 
 
 # 学習フェーズ
-# clf_svc = svm.SVC(C=0.1, kernel='linear')
-# print(clf_svc)
-# scores = cross_validate(clf_svc, train_data, train_label, cv=5, n_jobs=-1, return_estimator=True)
-# clf_svc = scores['estimator'][0]
+clf_svc = svm.SVC(C=0.1, kernel='linear')
+print(clf_svc)
+scores = cross_validate(clf_svc, train_data, train_label, cv=5, n_jobs=-1, return_estimator=True)
+clf_svc = scores['estimator'][0]
 # joblib.dump(clf_svc, 'test0930.pkl')
 
 # result = clf_svc.fit(train_data, train_label)
 
 # 予測フェーズ
-clf_svc = joblib.load('test0930.pkl')
+# clf_svc = joblib.load('test0930.pkl')
 pred = clf_svc.predict(test_data)
+touch_true = test_label.tolist()
 print(pred)
-print(test_label.tolist())
-# print(classification_report(test_label, pred))
-# print("正答率 = ", metrics.accuracy_score(test_label, pred))
+print(touch_true)
+c_matrix = confusion_matrix(touch_true, pred)
+print(confusion_matrix(touch_true, pred))
+with open('confusion_matrix_0930.csv', 'w') as file:
+    writer = csv.writer(file, lineterminator='\n')
+    writer.writerows(c_matrix)
+print(classification_report(test_label, pred))
+print("正答率 = ", metrics.accuracy_score(test_label, pred))

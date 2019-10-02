@@ -124,7 +124,7 @@ public class HttpPostClient {
             hasReceived47 = false;
             prevJson = postData.toString();
             numOfData++;
-            if(numOfData > 50){
+            if(numOfData > 100){
                 Reader.getInstance().stop();
                 numOfData = 0;
                 System.out.println("currentFingerPos: " + currentFingerPos + " is ended.");
