@@ -170,21 +170,24 @@ public class Reader implements TagOpCompleteListener {
     }
 
     private void callReadHandler(byte[] data) {
-//        for(int i = 0; i < data.length; i++){
-//            if(i == 2 && (int)data[i] == 17) {
-//                continue;
-//            }
-//            System.out.print((int)(data[i]) + ", ");
-//        }
-//        System.out.println();
-        if(data[0] == 0x01) {
+        for(int i = 0; i < data.length; i++){
+            if(i == 2 && (int)data[i] == 17) {
+                continue;
+            }
+            System.out.print((int)(data[i]) + ", ");
+        }
+        System.out.println();
+        if(data[0] == -49) {
             callAccelTagReadHandler(data);
+            System.out.println("Accel: " + data);
         } else if(data[0] == 0x02) {
             callTempTagReadHandler(data);
         } else if(data[0] == -86){ //(0xAA)
+            System.out.println("Magnet: " + data);
             callMagnetTagReadHandler(data);
         } else {
             callOtherTagReadHander(data);
+            System.out.println("Other: " + data);
         }
     }
 

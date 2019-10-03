@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6770211b-f6f1-4395-893b-bb4b3cbbd1d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/MagnetTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/magnetdata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/OctaneSDKJava_3_0_0_0_jar_with_dependencies.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/json_20190722.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/OctaneSDKJava_1_32_1_jar_with_dependencies.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdeaProjects/HttpPostClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdeaProjects/HttpPostClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/IdeaProjects.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HttpPostClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HttpPostClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/../classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../classifier_.py" beforeDir="false" afterPath="$PROJECT_DIR$/../classifier_.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test0930.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/../test0930.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Reader.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,43 +26,40 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Reader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1411">
-              <caret line="87" column="35" selection-start-line="87" selection-start-column="35" selection-end-line="87" selection-end-column="35" />
+            <state relative-caret-position="2175">
+              <caret line="151" selection-start-line="151" selection-end-line="151" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3620#3621#0" expanded="true" />
+                <element signature="e#3668#3669#0" expanded="true" />
                 <element signature="e#3723#3724#0" expanded="true" />
                 <element signature="e#3771#3772#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/HttpPostClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="126" column="30" selection-start-line="126" selection-start-column="30" selection-end-line="126" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#3910#3911#0" expanded="true" />
+                <element signature="e#3960#3961#0" expanded="true" />
+                <element signature="e#4011#4012#0" expanded="true" />
+                <element signature="e#4057#4058#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/magnetdata">
+        <entry file="file://$PROJECT_DIR$/src/HttpPostClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="883">
-              <caret line="100" selection-start-line="100" selection-end-line="100" />
+            <state relative-caret-position="2325">
+              <caret line="155" selection-start-line="155" selection-end-line="155" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/Documents/json-20190722.jar!/org/json/JSONObject.class">
+        <entry file="file://$PROJECT_DIR$/src/magnetdata">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12954">
-              <caret line="823" selection-start-line="823" selection-end-line="823" />
+            <state relative-caret-position="775">
+              <caret line="100" selection-start-line="100" selection-end-line="100" />
             </state>
           </provider>
         </entry>
@@ -102,17 +99,18 @@
       <list>
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/OkHttpPostClient.java" />
-        <option value="$PROJECT_DIR$/src/Reader.java" />
         <option value="$PROJECT_DIR$/src/MagnetTest.java" />
-        <option value="$PROJECT_DIR$/src/HttpPostClient.java" />
         <option value="$PROJECT_DIR$/src/magnetdata" />
+        <option value="$PROJECT_DIR$/src/Reader.java" />
+        <option value="$PROJECT_DIR$/src/HttpPostClient.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="-1920" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="x" value="180" />
+    <option name="y" value="112" />
+    <option name="width" value="1080" />
+    <option name="height" value="676" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -120,8 +118,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -138,6 +134,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -154,9 +152,9 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.3816092" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -241,23 +239,26 @@
       <workItem from="1566868226472" duration="10226000" />
       <workItem from="1567041494576" duration="10600000" />
       <workItem from="1569465616357" duration="7134000" />
+      <workItem from="1570070143226" duration="1051000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69191000" />
+    <option name="totallyTimeSpent" value="70242000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1920" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Learn" />
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.29818955" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.3025751" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="OkHttp Profiler" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32970297" />
       <window_info anchor="bottom" id="Database Changes" order="2" />
@@ -341,33 +342,9 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Reader.java</url>
-          <line>179</line>
-          <properties />
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Reader.java</url>
-          <line>151</line>
-          <properties />
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Reader.java</url>
-          <line>201</line>
+          <line>204</line>
           <properties />
           <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/HttpPostClient.java</url>
-          <line>120</line>
-          <properties />
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/HttpPostClient.java</url>
-          <line>102</line>
-          <properties />
-          <option name="timeStamp" value="61" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -376,161 +353,26 @@
     <entry file="file://$PROJECT_DIR$/src/example.pde" />
     <entry file="jar://$PROJECT_DIR$/../Documents/okhttp-3.14.2.jar!/okhttp3/MediaType.class" />
     <entry file="jar://$PROJECT_DIR$/../Documents/okhttp-3.14.2.jar!/okhttp3/RequestBody.class" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="960" selection-start-line="960" selection-end-line="960" />
-          <folding>
-            <element signature="e#37101#37102#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/concurrent/LinkedBlockingQueue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="436" selection-start-line="436" selection-end-line="436" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/lang/Thread.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/concurrent/LinkedBlockingQueue.java" />
     <entry file="file://$PROJECT_DIR$/IdeaProjects.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/io/Writer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="248" selection-start-line="248" selection-end-line="248" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/net/HttpURLConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="526" selection-start-line="526" selection-end-line="526" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/sun/net/ProgressMonitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="97" selection-start-line="97" selection-end-line="97" />
-          <folding>
-            <element signature="e#572#573#0" expanded="true" />
-            <element signature="e#597#598#0" expanded="true" />
-            <element signature="e#2144#2145#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/net/URL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="920" selection-start-line="920" selection-end-line="920" />
-          <folding>
-            <element signature="e#35511#35512#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/AbstractStringBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="539" selection-start-line="539" selection-end-line="539" />
-          <folding>
-            <element signature="e#61688#61689#0" expanded="true" />
-            <element signature="e#61742#61743#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="1154" selection-start-line="1154" selection-end-line="1154" />
-          <folding>
-            <element signature="e#24839#24840#0" expanded="true" />
-            <element signature="e#24885#24886#0" expanded="true" />
-            <element signature="e#25136#25137#0" expanded="true" />
-            <element signature="e#25176#25177#0" expanded="true" />
-            <element signature="e#61262#61263#0" expanded="true" />
-            <element signature="e#61299#61300#0" expanded="true" />
-            <element signature="e#132657#132658#0" expanded="true" />
-            <element signature="e#132711#132712#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/io/PrintStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="475" selection-start-line="475" selection-end-line="475" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/StringBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="173" selection-start-line="173" selection-end-line="173" />
-          <folding>
-            <element signature="e#3454#3455#0" expanded="true" />
-            <element signature="e#3479#3480#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/io/BufferedInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="451" selection-start-line="451" selection-end-line="451" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/sun/net/www/MessageHeader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="407" selection-start-line="407" selection-end-line="407" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/sun/nio/cs/StreamEncoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="241" selection-start-line="241" selection-end-line="241" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/sun/net/www/protocol/http/HttpURLConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="1603" selection-start-line="1603" selection-end-line="1603" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/sun/net/www/http/HttpClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="688" selection-start-line="688" selection-end-line="688" />
-          <folding>
-            <element signature="e#36938#36939#0" expanded="true" />
-            <element signature="e#36973#36974#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/io/OutputStreamWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="160" column="26" selection-start-line="160" selection-start-column="26" selection-end-line="160" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/io/Writer.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/net/HttpURLConnection.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/sun/net/ProgressMonitor.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Object.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/net/URL.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/AbstractStringBuilder.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/String.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/io/PrintStream.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/StringBuilder.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/io/BufferedInputStream.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/sun/net/www/MessageHeader.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/sun/nio/cs/StreamEncoder.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/sun/net/www/protocol/http/HttpURLConnection.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/sun/net/www/http/HttpClient.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/io/OutputStreamWriter.java" />
     <entry file="jar://$PROJECT_DIR$/../Octane_SDK_Java_1_32_1/lib/OctaneSDKJava-1.32.1-jar-with-dependencies.jar!/com/impinj/octane/TagData.class" />
     <entry file="jar://$PROJECT_DIR$/../Octane_SDK_Java_1_32_1/lib/OctaneSDKJava-1.32.1-jar-with-dependencies.jar!/org/llrp/ltk/types/LLRPMessage.class" />
     <entry file="jar://$PROJECT_DIR$/../Octane_SDK_Java_1_32_1/lib/OctaneSDKJava-1.32.1-jar-with-dependencies.jar!/org/llrp/ltk/generated/messages/ADD_ACCESSSPEC.class" />
@@ -539,145 +381,50 @@
     <entry file="jar://$PROJECT_DIR$/../Octane_SDK_Java_1_32_1/lib/OctaneSDKJava-1.32.1-jar-with-dependencies.jar!/org/llrp/ltk/types/LLRPType.class" />
     <entry file="jar://$PROJECT_DIR$/../Octane_SDK_Java_1_32_1/lib/OctaneSDKJava-1.32.1-jar-with-dependencies.jar!/com/impinj/octane/TagReadOp.class" />
     <entry file="jar://$PROJECT_DIR$/../Octane_SDK_Java_1_32_1/lib/OctaneSDKJava-1.32.1-jar-with-dependencies.jar!/org/llrp/ltk/types/BitList.class" />
-    <entry file="jar://$PROJECT_DIR$/../Octane_SDK_Java_1_32_1/lib/OctaneSDKJava-1.32.1-jar-with-dependencies.jar!/com/impinj/octane/TagOpCompleteListener.class">
+    <entry file="jar://$PROJECT_DIR$/../Octane_SDK_Java_1_32_1/lib/OctaneSDKJava-1.32.1-jar-with-dependencies.jar!/com/impinj/octane/TagOpCompleteListener.class" />
+    <entry file="jar://$PROJECT_DIR$/../Octane_SDK_Java_1_32_1/lib/OctaneSDKJava-1.32.1-jar-with-dependencies.jar!/com/impinj/octane/TargetTag.class" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/System.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/ClassLoader.java" />
+    <entry file="jar://$PROJECT_DIR$/../Octane_SDK_Java_1_32_1/lib/OctaneSDKJava-1.32.1-jar-with-dependencies.jar!/com/impinj/octane/TagOp.class" />
+    <entry file="jar://$PROJECT_DIR$/../Octane_SDK_Java_1_32_1/lib/OctaneSDKJava-1.32.1-jar-with-dependencies.jar!/com/impinj/octane/TagOpReport.class" />
+    <entry file="jar://$PROJECT_DIR$/../Octane_SDK_Java_1_32_1/lib/OctaneSDKJava-1.32.1-jar-with-dependencies.jar!/com/impinj/octane/TagReadOpResult.class" />
+    <entry file="jar://$PROJECT_DIR$/../Octane_SDK_Java_1_32_1/lib/OctaneSDKJava-1.32.1-jar-with-dependencies.jar!/com/impinj/octane/TagOpSequence.class" />
+    <entry file="jar://$PROJECT_DIR$/../Octane_SDK_Java_1_32_1/lib/OctaneSDKJava-1.32.1-jar-with-dependencies.jar!/org/llrp/ltk/generated/messages/RO_ACCESS_REPORT.class" />
+    <entry file="jar://$PROJECT_DIR$/../Octane_SDK_Java_1_32_1/lib/OctaneSDKJava-1.32.1-jar-with-dependencies.jar!/com/impinj/octane/ImpinjReader.class" />
+    <entry file="jar://$USER_HOME$/Documents/json-20190722.jar!/org/json/JSONObject.class" />
+    <entry file="file://$PROJECT_DIR$/src/MagnetTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/magnetdata">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../Octane_SDK_Java_1_32_1/lib/OctaneSDKJava-1.32.1-jar-with-dependencies.jar!/com/impinj/octane/TargetTag.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/System.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="402" selection-start-line="402" selection-end-line="402" />
-          <folding>
-            <element signature="e#5629#5630#0" expanded="true" />
-            <element signature="e#5683#5684#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/ClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="695" selection-start-line="695" selection-end-line="695" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../Octane_SDK_Java_1_32_1/lib/OctaneSDKJava-1.32.1-jar-with-dependencies.jar!/com/impinj/octane/TagOp.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#233#234#0" expanded="true" />
-            <element signature="e#267#268#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../Octane_SDK_Java_1_32_1/lib/OctaneSDKJava-1.32.1-jar-with-dependencies.jar!/com/impinj/octane/TagOpReport.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#382#383#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../Octane_SDK_Java_1_32_1/lib/OctaneSDKJava-1.32.1-jar-with-dependencies.jar!/com/impinj/octane/TagReadOpResult.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#377#378#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../Octane_SDK_Java_1_32_1/lib/OctaneSDKJava-1.32.1-jar-with-dependencies.jar!/com/impinj/octane/TagOpSequence.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#671#672#0" expanded="true" />
-            <element signature="e#705#706#0" expanded="true" />
-            <element signature="e#1853#1854#0" expanded="true" />
-            <element signature="e#1887#1888#0" expanded="true" />
-            <element signature="e#2028#2029#0" expanded="true" />
-            <element signature="e#2080#2081#0" expanded="true" />
-            <element signature="e#2360#2361#0" expanded="true" />
-            <element signature="e#2390#2391#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../Octane_SDK_Java_1_32_1/lib/OctaneSDKJava-1.32.1-jar-with-dependencies.jar!/org/llrp/ltk/generated/messages/RO_ACCESS_REPORT.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="389" selection-start-line="389" selection-end-line="389" />
-          <folding>
-            <element signature="e#16401#16402#0" expanded="true" />
-            <element signature="e#17282#17283#0" expanded="true" />
-            <element signature="e#17312#17313#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../Octane_SDK_Java_1_32_1/lib/OctaneSDKJava-1.32.1-jar-with-dependencies.jar!/com/impinj/octane/ImpinjReader.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="2655" selection-start-line="2655" selection-end-line="2655" />
+        <state relative-caret-position="775">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Reader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1411">
-          <caret line="87" column="35" selection-start-line="87" selection-start-column="35" selection-end-line="87" selection-end-column="35" />
+        <state relative-caret-position="2175">
+          <caret line="151" selection-start-line="151" selection-end-line="151" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3620#3621#0" expanded="true" />
+            <element signature="e#3668#3669#0" expanded="true" />
             <element signature="e#3723#3724#0" expanded="true" />
             <element signature="e#3771#3772#0" expanded="true" />
+            <element signature="e#3910#3911#0" expanded="true" />
+            <element signature="e#3960#3961#0" expanded="true" />
+            <element signature="e#4011#4012#0" expanded="true" />
+            <element signature="e#4057#4058#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Documents/json-20190722.jar!/org/json/JSONObject.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12954">
-          <caret line="823" selection-start-line="823" selection-end-line="823" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MagnetTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="81" column="58" selection-start-line="81" selection-start-column="58" selection-end-line="81" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/HttpPostClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="126" column="30" selection-start-line="126" selection-start-column="30" selection-end-line="126" selection-end-column="30" />
+        <state relative-caret-position="2325">
+          <caret line="155" selection-start-line="155" selection-end-line="155" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/magnetdata">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="883">
-          <caret line="100" selection-start-line="100" selection-end-line="100" />
         </state>
       </provider>
     </entry>
@@ -690,7 +437,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.3816092" />
               </list>
             </option>
           </splitter-proportions>
@@ -702,7 +449,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.3816092" />
               </list>
             </option>
           </splitter-proportions>
@@ -710,10 +457,11 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
+          <last-edited>json-20190722</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.3816092" />
               </list>
             </option>
           </splitter-proportions>
@@ -721,11 +469,11 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8</last-edited>
+          <last-edited>11.0.2</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.3816092" />
               </list>
             </option>
           </splitter-proportions>
@@ -745,11 +493,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>OctaneSDKJava-1.32.1-jar-with-dependencies</last-edited>
+          <last-edited>json-20190722</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.3816092" />
               </list>
             </option>
           </splitter-proportions>

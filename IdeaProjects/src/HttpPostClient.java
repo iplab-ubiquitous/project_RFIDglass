@@ -1,20 +1,8 @@
-
-
-
-
 import org.json.JSONObject;
 
 import java.io.*;
 import java.net.HttpURLConnection;
-import java.net.URI;
 import java.net.URL;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
-import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 
@@ -119,16 +107,15 @@ public class HttpPostClient {
         if(hasReceived45 && hasReceived47 && !(postData.toString().equals(prevJson))){
             postData.put("label", currentFingerPos);
             postJson(postData);
-            System.out.println(postData);
+            System.out.println(numOfData + ":" + postData);
             hasReceived45 = false;
             hasReceived47 = false;
             prevJson = postData.toString();
             numOfData++;
-            if(numOfData > 100){
+            if(numOfData > 50){
                 Reader.getInstance().stop();
                 numOfData = 0;
                 System.out.println("currentFingerPos: " + currentFingerPos + " is ended.");
-                System.out.println("終了.");
             }
         }
 
@@ -148,20 +135,18 @@ public class HttpPostClient {
         Reader reader;
         reader = Reader.getInstance();
         reader.init(new HttpPostClient());
-        int id = reader.addReadMagnetOperation((short) 3);
-        System.out.println("FingerPosを入力");
-        currentFingerPos = sc.nextInt();
-        reader.start();
-        System.out.println("開始.");
+        //int id = reader.addReadMagnetOperation((short) 3);
+        int id = reader.addReadAccelOperation((short) 1);
+        System.out.println("準備できたらEnter");
         sc.nextLine();
 
-//        for(currentFingerPos = 0; currentFingerPos < 8; currentFingerPos++){
-//            System.out.println("currentFingerPos: " + currentFingerPos);
-//            reader.start();
-//            System.out.println("開始.");
-//            sc.nextLine();
-//        }
-//        System.out.println("終了.");
+        for(currentFingerPos = 0; currentFingerPos < 2; currentFingerPos++){
+            reader.start();
+            System.out.println("currentFingerPos: " + currentFingerPos);
+            System.out.println("開始.");
+            sc.nextLine();
+        }
+        System.out.println("終了.");
 
 
 
