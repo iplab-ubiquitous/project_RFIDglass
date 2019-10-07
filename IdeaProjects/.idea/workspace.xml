@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6770211b-f6f1-4395-893b-bb4b3cbbd1d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/OctaneSDKJava_3_0_0_0_jar_with_dependencies.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/json_20190722.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/OctaneSDKJava_1_32_1_jar_with_dependencies.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IdeaProjects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/IdeaProjects.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HttpPostClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HttpPostClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Reader.java" afterDir="false" />
-    </list>
+    <list default="true" id="6770211b-f6f1-4395-893b-bb4b3cbbd1d9" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -239,16 +230,15 @@
       <workItem from="1566868226472" duration="10226000" />
       <workItem from="1567041494576" duration="10600000" />
       <workItem from="1569465616357" duration="7134000" />
-      <workItem from="1570070143226" duration="1051000" />
+      <workItem from="1570070143226" duration="1230000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70242000" />
+    <option name="totallyTimeSpent" value="70421000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Learn" />
       <window_info id="Designer" order="0" />
