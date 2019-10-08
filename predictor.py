@@ -11,7 +11,7 @@ np.set_printoptions(suppress=True)
 training_data = np.empty([0, 7])
 data_count = 0
 correct_count = 0
-clf = joblib.load('test.pkl')
+clf = joblib.load('test1002.pkl')
 
 
 PORT = 8080

@@ -6,18 +6,10 @@ import org.json.JSONObject;
 
 import java.io.*;
 import java.net.HttpURLConnection;
-import java.net.URI;
 import java.net.URL;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
-import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.Scanner;
 
-public class HttpPostClient {
+public class HttpPostClient2 {
     final double alpha = 0.8;
     double[] cutoffValues45 = {616.26, -147.37, -447.10};
     double[] cutoffValues47 = {-103.76, -23.81, -67.96};
@@ -169,13 +161,15 @@ public class HttpPostClient {
         Scanner sc = new Scanner(System.in);
         Reader reader;
         reader = Reader.getInstance();
-        reader.init(new HttpPostClient());
-        int id = reader.addReadMagnetOperation((short) 3);
+        reader.init(new HttpPostClient2());
         System.out.println("FingerPosを入力");
-        currentFingerPos = sc.nextInt();
-        reader.start();
-        System.out.println("開始.");
-        sc.nextLine();
+        while (true) {
+            int id = reader.addReadMagnetOperation((short) 3);
+            currentFingerPos = sc.nextInt();
+            reader.start();
+            System.out.println("開始.");
+            sc.nextLine();
+        }
 
 //        for(currentFingerPos = 0; currentFingerPos < 8; currentFingerPos++){
 //            System.out.println("currentFingerPos: " + currentFingerPos);

@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6770211b-f6f1-4395-893b-bb4b3cbbd1d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/MagnetTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/magnetdata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HttpPostClient2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IdeaProjects/HttpPostClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdeaProjects/HttpPostClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdeaProjects/MagnetTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HttpPostClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HttpPostClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/../classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../classifier_.py" beforeDir="false" afterPath="$PROJECT_DIR$/../classifier_.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test0930.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/../test0930.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../predictor.py" beforeDir="false" afterPath="$PROJECT_DIR$/../predictor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../test.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Reader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1411">
-              <caret line="87" column="35" selection-start-line="87" selection-start-column="35" selection-end-line="87" selection-end-column="35" />
+            <state relative-caret-position="-248">
+              <caret line="204" column="60" lean-forward="true" selection-start-line="204" selection-start-column="60" selection-end-line="204" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3723#3724#0" expanded="true" />
@@ -40,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HttpPostClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="126" column="30" selection-start-line="126" selection-start-column="30" selection-end-line="126" selection-end-column="30" />
+            <state relative-caret-position="545">
+              <caret line="172" column="56" selection-start-line="172" selection-start-column="56" selection-end-line="172" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,10 +51,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/HttpPostClient2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="140" column="29" selection-start-line="140" selection-start-column="29" selection-end-line="140" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/magnetdata">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="883">
+            <state relative-caret-position="771">
               <caret line="100" selection-start-line="100" selection-end-line="100" />
             </state>
           </provider>
@@ -89,9 +100,9 @@
       <find>callReadHandler</find>
       <find>onTagOpComplete</find>
       <find>System.out.println</find>
-      <find>data</find>
       <find>0x01</find>
       <find>Write</find>
+      <find>data</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -102,17 +113,17 @@
       <list>
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/OkHttpPostClient.java" />
-        <option value="$PROJECT_DIR$/src/Reader.java" />
         <option value="$PROJECT_DIR$/src/MagnetTest.java" />
-        <option value="$PROJECT_DIR$/src/HttpPostClient.java" />
         <option value="$PROJECT_DIR$/src/magnetdata" />
+        <option value="$PROJECT_DIR$/src/HttpPostClient.java" />
+        <option value="$PROJECT_DIR$/src/HttpPostClient2.java" />
+        <option value="$PROJECT_DIR$/src/Reader.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="-1920" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="width" value="562" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -178,9 +189,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.HttpPostClient">
+  <component name="RunManager" selected="Application.HttpPostClient2">
     <configuration name="HttpPostClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HttpPostClient" />
+      <module name="IdeaProjects" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HttpPostClient2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HttpPostClient2" />
       <module name="IdeaProjects" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -212,6 +230,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HttpPostClient2" />
         <item itemvalue="Application.HttpPostClient" />
         <item itemvalue="Application.MagnetTest" />
         <item itemvalue="Application.OkHttpPostClient" />
@@ -241,22 +260,22 @@
       <workItem from="1566868226472" duration="10226000" />
       <workItem from="1567041494576" duration="10600000" />
       <workItem from="1569465616357" duration="7134000" />
+      <workItem from="1569992697857" duration="11146000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69191000" />
+    <option name="totallyTimeSpent" value="80337000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1920" y="0" width="1920" height="1080" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="772" height="900" extended-state="6" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.29818955" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.25753424" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32970297" />
@@ -265,12 +284,12 @@
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.30792078" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.30722892" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.2841584" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32970297" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32891566" />
       <window_info anchor="bottom" id="Dependency Viewer" order="13" weight="0.32970297" />
       <window_info anchor="right" id="Theme Preview" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -359,13 +378,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/HttpPostClient.java</url>
-          <line>120</line>
+          <line>142</line>
           <properties />
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/HttpPostClient.java</url>
-          <line>102</line>
+          <line>124</line>
           <properties />
           <option name="timeStamp" value="61" />
         </line-breakpoint>
@@ -638,15 +657,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reader.java">
+    <entry file="file://$PROJECT_DIR$/src/MagnetTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1411">
-          <caret line="87" column="35" selection-start-line="87" selection-start-column="35" selection-end-line="87" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3723#3724#0" expanded="true" />
-            <element signature="e#3771#3772#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1292">
+          <caret line="81" column="58" selection-start-line="81" selection-start-column="58" selection-end-line="81" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -657,27 +671,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MagnetTest.java">
+    <entry file="file://$PROJECT_DIR$/src/magnetdata">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="81" column="58" selection-start-line="81" selection-start-column="58" selection-end-line="81" selection-end-column="58" />
+        <state relative-caret-position="771">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HttpPostClient2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="140" column="29" selection-start-line="140" selection-start-column="29" selection-end-line="140" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/HttpPostClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="126" column="30" selection-start-line="126" selection-start-column="30" selection-end-line="126" selection-end-column="30" />
+        <state relative-caret-position="545">
+          <caret line="172" column="56" selection-start-line="172" selection-start-column="56" selection-end-line="172" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/magnetdata">
+    <entry file="file://$PROJECT_DIR$/src/Reader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="883">
-          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        <state relative-caret-position="-248">
+          <caret line="204" column="60" lean-forward="true" selection-start-line="204" selection-start-column="60" selection-end-line="204" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3723#3724#0" expanded="true" />
+            <element signature="e#3771#3772#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
