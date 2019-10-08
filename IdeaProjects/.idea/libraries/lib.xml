@@ -1,6 +1,7 @@
 <component name="libraryTable">
-  <library name="json-20190722">
+  <library name="lib">
     <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/OctaneSDKJava-3.0.0.0-jar-with-dependencies.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/json-20190722.jar!/" />
     </CLASSES>
     <JAVADOC />

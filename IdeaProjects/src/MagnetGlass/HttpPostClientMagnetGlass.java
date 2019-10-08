@@ -1,3 +1,5 @@
+package MagnetGlass;
+
 import org.json.JSONObject;
 
 import java.io.*;
@@ -6,7 +8,7 @@ import java.net.URL;
 import java.util.Scanner;
 
 
-public class HttpPostClient {
+public class HttpPostClientMagnetGlass {
     JSONObject postData = new JSONObject();
     JSONObject collectedData;
     String prevJson;
@@ -17,7 +19,7 @@ public class HttpPostClient {
 
     boolean hasReceived45 = false;
     boolean hasReceived47 = false;
-    boolean hasReceived49 = false;
+    //boolean hasReceived49 = false;
 
 
     public void postJson(JSONObject json){
@@ -134,13 +136,13 @@ public class HttpPostClient {
         Scanner sc = new Scanner(System.in);
         Reader reader;
         reader = Reader.getInstance();
-        reader.init(new HttpPostClient());
-        //int id = reader.addReadMagnetOperation((short) 3);
-        int id = reader.addReadAccelOperation((short) 1);
+        reader.init(new HttpPostClientMagnetGlass());
+        int id = reader.addReadMagnetOperation((short) 3);
+        //int id = reader.addReadAccelOperation((short) 1);
         System.out.println("準備できたらEnter");
         sc.nextLine();
 
-        for(currentFingerPos = 0; currentFingerPos < 2; currentFingerPos++){
+        for(currentFingerPos = 0; currentFingerPos < 1; currentFingerPos++){
             reader.start();
             System.out.println("currentFingerPos: " + currentFingerPos);
             System.out.println("開始.");
