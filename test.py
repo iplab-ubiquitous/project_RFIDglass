@@ -7,7 +7,7 @@ import socketserver
 import numpy as np
 
 np.set_printoptions(suppress=True)
-training_data = np.empty([0, 7])
+training_data = np.empty([0, 10])
 data_count = 0
 
 
@@ -50,6 +50,7 @@ class MagnetHTTPRequestHandler(BaseHTTPRequestHandler):
         parsed_json = [[
             jsons['45']['x'], jsons['45']['y'], jsons['45']['z'],
             jsons['47']['x'], jsons['47']['y'], jsons['47']['z'],
+            jsons['49']['x'], jsons['49']['y'], jsons['49']['z'],
             jsons['label']
         ]]
         print(parsed_json)
@@ -69,7 +70,7 @@ try:
         print("serving at port", PORT)
         httpd.serve_forever()
 except KeyboardInterrupt:
-    np.savetxt("test1002.csv", training_data, delimiter=',', fmt='%.0f')
+    np.savetxt("test1008.csv", training_data, delimiter=',', fmt='%.0f')
     
     
 
