@@ -70,7 +70,7 @@ try:
         print("serving at port", PORT)
         httpd.serve_forever()
 except KeyboardInterrupt:
-    np.savetxt("test1008.csv", training_data, delimiter=',', fmt='%.0f')
+    np.savetxt("test1021.csv", training_data, delimiter=',', fmt='%.0f')
     
     
 

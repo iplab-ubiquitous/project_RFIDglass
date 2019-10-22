@@ -153,7 +153,9 @@ public class HttpPostClientMagnetGlass {
                 if(numOfData > 50){
                     Reader.getInstance().stop();
                     numOfData = 0;
-                    System.out.println("currentFingerPos: " + currentFingerPos + "終了　次の指の位置を入力してください");
+//                    System.out.println("currentFingerPos: " + currentFingerPos + "終了　次の指の位置を入力してください");
+                    System.out.println("currentFingerPos: " + currentFingerPos + "終了");
+                    System.out.println("Enter で次のタッチ位置に移ってください");
                 }
             }
         }else{
@@ -205,13 +207,6 @@ public class HttpPostClientMagnetGlass {
 
         }
 
-
-
-
-
-
-
-
     }
 
 
@@ -239,22 +234,20 @@ public class HttpPostClientMagnetGlass {
         System.out.println("end");
         isDecidedHipassCutoffValue = true;
 
-        System.out.println("FingerPosを入力");
-        currentFingerPos = sc.nextInt();
-        reader.start();
+//        System.out.println("FingerPosを入力");
+//        currentFingerPos = sc.nextInt();
+//        reader.start();
         System.out.println("開始.");
-        sc.nextLine();
+//        sc.nextLine();
 
 
-//        for(currentFingerPos = 0; currentFingerPos < 1; currentFingerPos++){
-//            reader.start();
-//            System.out.println("currentFingerPos: " + currentFingerPos);
-//            System.out.println("開始.");
-//            sc.nextLine();
-//        }
+        for(currentFingerPos = 0; currentFingerPos < 8; currentFingerPos++){
+            reader.start();
+            System.out.println("currentFingerPos: " + currentFingerPos);
+            System.out.println("開始.");
+            sc.nextLine();
+        }
         System.out.println("終了.");
-
-
 
     }
 }
