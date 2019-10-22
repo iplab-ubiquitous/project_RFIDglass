@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96bb9cc3-2efa-4995-82b2-b79d0af8c819" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../dataclassify.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testdatapredict.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdeaProjects/MagnetGlass/HttpPostClientMagnetGlass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdeaProjects/MagnetGlass/HttpPostClientMagnetGlass.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MagnetGlass/HttpPostClientMagnetGlass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MagnetGlass/HttpPostClientMagnetGlass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/../classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../classifier_.py" beforeDir="false" afterPath="$PROJECT_DIR$/../classifier_.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../collectdata.py" beforeDir="false" afterPath="$PROJECT_DIR$/../collectdata.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../predictor.py" beforeDir="false" afterPath="$PROJECT_DIR$/../predictor.py" afterDir="false" />
     </list>
@@ -26,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MagnetGlass/HttpPostClientMagnetGlass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1453">
-              <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+            <state relative-caret-position="620">
+              <caret line="269" lean-forward="true" selection-start-line="269" selection-end-line="269" />
             </state>
           </provider>
         </entry>
@@ -202,7 +200,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15782000" />
+    <option name="totallyTimeSpent" value="28804000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-957" y="-77" width="957" height="1080" extended-state="0" />
@@ -229,7 +227,7 @@
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="13" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32970297" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -303,8 +301,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MagnetGlass/HttpPostClientMagnetGlass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1453">
-          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        <state relative-caret-position="620">
+          <caret line="269" lean-forward="true" selection-start-line="269" selection-end-line="269" />
         </state>
       </provider>
     </entry>

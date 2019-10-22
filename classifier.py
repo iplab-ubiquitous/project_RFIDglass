@@ -8,11 +8,10 @@ import csv
 
 
 dataset = pd.read_csv("traindata1022.csv", header=None)
-# data_train, data_test = train_test_split(dataset, test_size=0.2)
 
+# data_train, data_test = train_test_split(dataset, test_size=0.2)
 # train_label = data_train.iloc[:, 6]
 # train_data = data_train.iloc[:, 0:6]
-
 # test_label = data_test.iloc[:, 6]
 # test_data = data_test.iloc[:, 0:6]
 
@@ -23,8 +22,8 @@ for train_index, test_index in sss.split(data, label):
     train_data,  test_data = data.loc[train_index], data.loc[test_index]
     train_label, test_label = label.loc[train_index], label.loc[test_index]
 
-
-print(train_data)
+#  訓練データ確認
+# print(train_data)
 
 # クロスバリデーションで最適化したいパラメータをセット
 tuned_parameters = [{'kernel': ['rbf'], 'gamma': [1e-3, 1e-4],
@@ -53,7 +52,7 @@ for score in scores:
     clf.fit(train_data, train_label)
     print(clf.best_estimator_)
     print(classification_report(test_label, clf.predict(test_data)))
-    
+
 
 
 # 学習フェーズ
@@ -61,7 +60,7 @@ for score in scores:
 # print(clf_svc)
 # scores = cross_validate(clf_svc, train_data, train_label, cv=5, n_jobs=-1, return_estimator=True)
 # clf_svc = scores['estimator'][0]
-# joblib.dump(clf_svc, 'test1002.pkl')
+# joblib.dump(clf_svc, 'test1022.pkl')
 
 # result = clf_svc.fit(train_data, train_label)
 

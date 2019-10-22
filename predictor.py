@@ -39,7 +39,7 @@ class MagnetHTTPRequestHandler(BaseHTTPRequestHandler):
 
         self.wfile.write(responseBody.encode('utf-8'))
         # self.send_response(HTTPStatus.OK)
-        print(request_body)
+        # print(request_body)
         is_exists_model = False
         if is_exists_model:
             self.recognize_finger_pos(request_body)
@@ -78,9 +78,10 @@ class MagnetHTTPRequestHandler(BaseHTTPRequestHandler):
 Handler = MagnetHTTPRequestHandler
 try:
     with socketserver.TCPServer(("", PORT), Handler) as httpd:
-        print("serving at port", PORT)
+        # print("serving at port", PORT)
         httpd.serve_forever()
 except KeyboardInterrupt:
+    httpd.server_close()
     print("\n 正答率： {}".format(float(correct_count) / float(data_count)))
     
     

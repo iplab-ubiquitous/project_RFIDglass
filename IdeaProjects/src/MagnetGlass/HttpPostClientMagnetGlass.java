@@ -14,9 +14,9 @@ public class HttpPostClientMagnetGlass {
     String prevJson;
 
     static int currentFingerPos;
-    static int numOfPosition = 8;
+    static int numOfPosition = 6;
     static int dataCount = 0;
-    static int numOfData = 30;
+    static int numOfData = 1000;
     double[] cutoffValues45 = new double[3];
     double[] cutoffValues47 = new double[3];
     double[] cutoffValues49 = new double[3];
@@ -125,7 +125,12 @@ public class HttpPostClientMagnetGlass {
                 //dataCount = 0;
 //                    System.out.println("currentFingerPos: " + currentFingerPos + "終了　次の指の位置を入力してください");
                 System.out.println("currentFingerPos: " + currentFingerPos + "終了");
-                System.out.println("Enter で次のタッチ位置に移ってください");
+                if(currentFingerPos == numOfPosition - 1){
+                    System.out.println("Enter で測定を終了します");
+                }
+                else {
+                    System.out.println("Enter で次のタッチ位置[" + (currentFingerPos + 1) + "]に移ってください");
+                }
                 return;
             }
             //　ハイパスフィルタがある
@@ -198,15 +203,23 @@ public class HttpPostClientMagnetGlass {
                     break;
             }
             if(num45 == hipassDataCount && num47 == hipassDataCount && num49 == hipassDataCount){
+                num45++;
+                num47++;
+                num49++;
                 for (int i = 0; i < 3; i++){
                     cutoffValues45[i] = sum45[i]/(double)hipassDataCount;
                     cutoffValues47[i] = sum47[i]/(double)hipassDataCount;
                     cutoffValues49[i] = sum49[i]/(double)hipassDataCount;
+                    System.out.println(cutoffValues45[i]);
+                    System.out.println(cutoffValues47[i]);
+                    System.out.println(cutoffValues49[i]);
                 }
-                num45++;
-                num47++;
-                num49++;
+
                 Reader.getInstance().stop();
+
+                System.out.println("カットオフ値設定終了");
+                System.out.println("Enterキーで測定を開始します");
+
             }
 
         }
@@ -234,14 +247,11 @@ public class HttpPostClientMagnetGlass {
         reader.start();
         System.out.println("カットオフ値の設定：動かないでください");
         sc.nextLine();
-
-        System.out.println("cutoff value setting end");
         isDecidedHipassCutoffValue = true;
-
 //        System.out.println("FingerPosを入力");
 //        currentFingerPos = sc.nextInt();
 //        reader.start();
-        System.out.println("開始.");
+//        System.out.println("開始.");
 //        sc.nextLine();
 
 
