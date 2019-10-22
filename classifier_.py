@@ -16,8 +16,8 @@ dataset = pd.read_csv("test0930_bonsai.csv", header=None)
 
 #データ分割
 sss = StratifiedShuffleSplit(test_size=0.2)
-data = dataset.iloc[:, 0:6]
-label = dataset.iloc[:, 6]
+data = dataset.iloc[:, 0:9]
+label = dataset.iloc[:, 9]
 for train_index, test_index in sss.split(data, label):
     train_data,  test_data  = data.loc[train_index], data.loc[test_index]
     train_label, test_label = label.loc[train_index], label.loc[test_index]

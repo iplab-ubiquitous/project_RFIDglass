@@ -7,7 +7,7 @@ import numpy as np
 import csv
 
 
-dataset = pd.read_csv("test1002.csv", header=None)
+dataset = pd.read_csv("traindata1022.csv", header=None)
 # data_train, data_test = train_test_split(dataset, test_size=0.2)
 
 # train_label = data_train.iloc[:, 6]
@@ -17,14 +17,14 @@ dataset = pd.read_csv("test1002.csv", header=None)
 # test_data = data_test.iloc[:, 0:6]
 
 sss = StratifiedShuffleSplit(test_size=0.2)
-data = dataset.iloc[:, 0:6]
-label = dataset.iloc[:, 6]
+data = dataset.iloc[:, 0:9]
+label = dataset.iloc[:, 9]
 for train_index, test_index in sss.split(data, label):
     train_data,  test_data = data.loc[train_index], data.loc[test_index]
     train_label, test_label = label.loc[train_index], label.loc[test_index]
 
 
-print(train_data[0])
+print(train_data)
 
 # クロスバリデーションで最適化したいパラメータをセット
 tuned_parameters = [{'kernel': ['rbf'], 'gamma': [1e-3, 1e-4],
@@ -42,7 +42,7 @@ clf.fit(train_data, train_label)
 print(clf.best_estimator_)
 print(classification_report(test_label, clf.predict(test_data)))
 
-joblib.dump(clf, 'test1003.pkl')
+joblib.dump(clf, 'test1022.pkl')
 
 for score in scores:
     print("# Tuning hyper-parameters for {}".format(score))
@@ -73,7 +73,7 @@ print(pred)
 print(touch_true)
 c_matrix = confusion_matrix(touch_true, pred)
 print(confusion_matrix(touch_true, pred))
-with open('confusion_matrix_1002.csv', 'w') as file:
+with open('confusion_matrix_1022.csv', 'w') as file:
     writer = csv.writer(file, lineterminator='\n')
     writer.writerows(c_matrix)
 print(classification_report(test_label, pred))
