@@ -13,8 +13,10 @@ public class HttpPostClientMagnetGlass {
     JSONObject collectedData;
     String prevJson;
 
-    static int currentFingerPos = 0;
-    static int numOfData = 0;
+    static int currentFingerPos;
+    static int numOfPosition = 8;
+    static int dataCount = 0;
+    static int numOfData = 30;
     double[] cutoffValues45 = new double[3];
     double[] cutoffValues47 = new double[3];
     double[] cutoffValues49 = new double[3];
@@ -117,6 +119,15 @@ public class HttpPostClientMagnetGlass {
     public void magnetTagReadHandler(short[] values) throws IOException {
         collectedData = new JSONObject();
         if(isDecidedHipassCutoffValue){
+            if(dataCount == numOfData + 1) {
+                dataCount++;
+                Reader.getInstance().stop();
+                //dataCount = 0;
+//                    System.out.println("currentFingerPos: " + currentFingerPos + "終了　次の指の位置を入力してください");
+                System.out.println("currentFingerPos: " + currentFingerPos + "終了");
+                System.out.println("Enter で次のタッチ位置に移ってください");
+                return;
+            }
             //　ハイパスフィルタがある
             collectedData.put("x", hipassFilter((double)(values[0]), 0, (int)(values[3])));
             collectedData.put("y", hipassFilter((double)(values[1]), 1, (int)(values[3])));
@@ -142,21 +153,18 @@ public class HttpPostClientMagnetGlass {
             }
 
             if(hasReceived45 && hasReceived47 && hasReceived49){
-                postData.put("label", currentFingerPos);
-                postJson(postData);
-                System.out.println(numOfData + ":" + postData);
-                hasReceived45 = false;
-                hasReceived47 = false;
-                hasReceived49 = false;
-//            prevJson = postData.toString();
-                numOfData++;
-                if(numOfData > 50){
-                    Reader.getInstance().stop();
-                    numOfData = 0;
-//                    System.out.println("currentFingerPos: " + currentFingerPos + "終了　次の指の位置を入力してください");
-                    System.out.println("currentFingerPos: " + currentFingerPos + "終了");
-                    System.out.println("Enter で次のタッチ位置に移ってください");
+                dataCount++;
+                if(dataCount <= numOfData) {
+                    postData.put("label", currentFingerPos);
+                    postJson(postData);
+                    System.out.println((dataCount-1) + ":" + postData);
+                    hasReceived45 = false;
+                    hasReceived47 = false;
+                    hasReceived49 = false;
+//            prevJson = postData.toString();   //前の磁気データ保持
+                    return;
                 }
+
             }
         }else{
             // ハイパスフィルタがない
@@ -199,10 +207,6 @@ public class HttpPostClientMagnetGlass {
                 num47++;
                 num49++;
                 Reader.getInstance().stop();
-                return;
-
-
-
             }
 
         }
@@ -231,7 +235,7 @@ public class HttpPostClientMagnetGlass {
         System.out.println("カットオフ値の設定：動かないでください");
         sc.nextLine();
 
-        System.out.println("end");
+        System.out.println("cutoff value setting end");
         isDecidedHipassCutoffValue = true;
 
 //        System.out.println("FingerPosを入力");
@@ -241,14 +245,15 @@ public class HttpPostClientMagnetGlass {
 //        sc.nextLine();
 
 
-        for(currentFingerPos = 0; currentFingerPos < 8; currentFingerPos++){
+        for(currentFingerPos = 0; currentFingerPos < numOfPosition; currentFingerPos++){
             reader.start();
+            dataCount = 0;
             System.out.println("currentFingerPos: " + currentFingerPos);
             System.out.println("開始.");
             sc.nextLine();
         }
         System.out.println("終了.");
-
+        return;
     }
 }
 
