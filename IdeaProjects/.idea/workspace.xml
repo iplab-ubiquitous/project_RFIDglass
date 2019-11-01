@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="96bb9cc3-2efa-4995-82b2-b79d0af8c819" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdeaProjects/MagnetGlass/HttpPostClientMagnetGlass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdeaProjects/MagnetGlass/HttpPostClientMagnetGlass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdeaProjects/MagnetGlass/magnetdata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MagnetGlass/HttpPostClientMagnetGlass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MagnetGlass/HttpPostClientMagnetGlass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MagnetGlass/magnetdata" beforeDir="false" />
-    </list>
+    <list default="true" id="96bb9cc3-2efa-4995-82b2-b79d0af8c819" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MagnetGlass/HttpPostClientMagnetGlass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1885">
-              <caret line="288" lean-forward="true" selection-start-line="288" selection-end-line="288" />
+            <state relative-caret-position="175">
+              <caret line="271" column="39" lean-forward="true" selection-start-line="271" selection-start-column="39" selection-end-line="271" selection-end-column="39" />
               <folding>
                 <element signature="e#546#555#0" expanded="true" />
               </folding>
@@ -182,12 +176,12 @@
       <option name="presentableId" value="Default" />
       <updated>1570506862787</updated>
       <workItem from="1570506864044" duration="1492000" />
-      <workItem from="1572581733935" duration="12229000" />
+      <workItem from="1572581733935" duration="12507000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41588000" />
+    <option name="totallyTimeSpent" value="41866000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -301,8 +295,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MagnetGlass/HttpPostClientMagnetGlass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1885">
-          <caret line="288" lean-forward="true" selection-start-line="288" selection-end-line="288" />
+        <state relative-caret-position="175">
+          <caret line="271" column="39" lean-forward="true" selection-start-line="271" selection-start-column="39" selection-end-line="271" selection-end-column="39" />
           <folding>
             <element signature="e#546#555#0" expanded="true" />
           </folding>
