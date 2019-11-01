@@ -6,8 +6,8 @@ import pandas as pd
 import numpy as np
 import csv
 
-
-dataset = pd.read_csv("traindata1022.csv", header=None)
+version = "1101_02"
+dataset = pd.read_csv("./collectData/data_" + version + ".csv", header=None)
 
 # data_train, data_test = train_test_split(dataset, test_size=0.2)
 # train_label = data_train.iloc[:, 6]
@@ -41,7 +41,7 @@ clf.fit(train_data, train_label)
 print(clf.best_estimator_)
 print(classification_report(test_label, clf.predict(test_data)))
 
-joblib.dump(clf, 'test1022.pkl')
+joblib.dump(clf, './learningModel/test_'+ version + '.pkl')
 
 for score in scores:
     print("# Tuning hyper-parameters for {}".format(score))
@@ -72,7 +72,7 @@ print(pred)
 print(touch_true)
 c_matrix = confusion_matrix(touch_true, pred)
 print(confusion_matrix(touch_true, pred))
-with open('confusion_matrix_1022.csv', 'w') as file:
+with open('./confusionMatrix/confusion_matrix_cv_' + version + '.csv', 'w') as file:
     writer = csv.writer(file, lineterminator='\n')
     writer.writerows(c_matrix)
 print(classification_report(test_label, pred))

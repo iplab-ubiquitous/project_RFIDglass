@@ -9,7 +9,7 @@ import numpy as np
 np.set_printoptions(suppress=True)
 training_data = np.empty([0, 10])
 data_count = 0
-
+version = "1101_02" #収集データのバージョン
 
 PORT = 8080
 
@@ -71,4 +71,4 @@ try:
         httpd.serve_forever()
 except KeyboardInterrupt:
     httpd.server_close()
-    np.savetxt("hoge.csv", training_data, delimiter=',', fmt='%.0f')
+    np.savetxt("./collectData/data_" + version + ".csv", training_data, delimiter=',', fmt='%.0f')

@@ -1,3 +1,4 @@
+import csv
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler
 
@@ -6,12 +7,18 @@ import json
 import socketserver
 import numpy as np
 from sklearn.externals import joblib
+from sklearn.metrics import confusion_matrix, classification_report
+from sns import sns
+import matplotlib.pyplot as plt
 
 np.set_printoptions(suppress=True)
 training_data = np.empty([0, 7])
 data_count = 0
 correct_count = 0
-clf = joblib.load('test1022.pkl')
+version = "1101_02" # 学習モデルのバージョン
+clf = joblib.load('./learningModel/test_' + version + '.pkl')
+pred_list = []
+true_list = []
 
 
 PORT = 8080
@@ -59,7 +66,9 @@ class MagnetHTTPRequestHandler(BaseHTTPRequestHandler):
         data = np.array(parsed_json)
         data_count += 1
         # print(data[0:6])
+        true_list.append(data[9])
         predict = clf.predict(data[0:9].reshape(1, -1))
+        pred_list.append(predict[0])
         print(predict)
         if data[9] == predict[0]:
             correct_count+=1
@@ -78,12 +87,23 @@ class MagnetHTTPRequestHandler(BaseHTTPRequestHandler):
 Handler = MagnetHTTPRequestHandler
 try:
     with socketserver.TCPServer(("", PORT), Handler) as httpd:
-        # print("serving at port", PORT)
+        print("serving at port", PORT)
         httpd.serve_forever()
 except KeyboardInterrupt:
     httpd.server_close()
-    print("\n 正答率： {}".format(float(correct_count) / float(data_count)))
-    
-    
+    print(true_list)
+    print(pred_list)
+    c_matrix = confusion_matrix(true_list, pred_list)
+    print(c_matrix)
 
-    
+    with open('./confusionMatrix/confusion_matrix_' + version + '.csv', 'w') as file:
+        writer = csv.writer(file, lineterminator='\n')
+        writer.writerows(c_matrix)
+
+    #混同行列の画像表示
+    # sns.heatmap(c_matrix, annot=True, cmap="Reds")
+    # plt.savefig('/confusionMatrix/confusion_matrix_' + version + '.png')
+
+    print(classification_report(true_list, pred_list))
+    print("\n 正答率： {}".format(float(correct_count) / float(data_count)))
+
