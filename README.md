@@ -4,5 +4,5 @@
 
 # Directory structure
 * 3Dmodel:3Dプリンタで出力した指輪とメガネスタンドのSTLファイル
-* Ideaproject:RFIDリーダとの通信しhttp通信でPython側にデータを送信する．
-* RFID_Python:受け取った磁気データをcsvファイルに保存．学習モデルを作成し，タッチ位置識別を行う
+* Ideaproject:RFIDリーダとの通信しhttp通信でPython側にデータを送信するプログラム
+* RFID_Python:受け取った磁気データをcsvファイルに保存．学習モデルを作成し，タッチ位置識別を行うプログラム
