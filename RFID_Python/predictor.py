@@ -8,14 +8,14 @@ import socketserver
 import numpy as np
 from sklearn.externals import joblib
 from sklearn.metrics import confusion_matrix, classification_report
-from sns import sns
-import matplotlib.pyplot as plt
+# from sns import sns
+# import matplotlib.pyplot as plt
 
 np.set_printoptions(suppress=True)
 training_data = np.empty([0, 7])
 data_count = 0
 correct_count = 0
-version = "1101_02" # 学習モデルのバージョン
+version = "1108_p02" # 学習モデルのバージョン
 clf = joblib.load('./learningModel/test_' + version + '.pkl')
 pred_list = []
 true_list = []

@@ -9,7 +9,7 @@ import numpy as np
 np.set_printoptions(suppress=True)
 training_data = np.empty([0, 10])
 data_count = 0
-version = "1101_02" #収集データのバージョン
+version = "1108_p02" #収集データのバージョン
 
 PORT = 8080
 

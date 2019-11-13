@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 import csv
 
-version = "1101_02"
+version = "1108_p02"
 dataset = pd.read_csv("./collectData/data_" + version + ".csv", header=None)
 
 # data_train, data_test = train_test_split(dataset, test_size=0.2)
