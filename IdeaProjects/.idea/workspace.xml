@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96bb9cc3-2efa-4995-82b2-b79d0af8c819" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdeaProjects/MagnetGlass/HttpPostClientMagnetGlass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdeaProjects/MagnetGlass/HttpPostClientMagnetGlass.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MagnetGlass/HttpPostClientMagnetGlass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MagnetGlass/HttpPostClientMagnetGlass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MagnetGlass/HttpPostClientMagnetGlassTouchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MagnetGlass/HttpPostClientMagnetGlassTouchTest.java" afterDir="false" />
     </list>
@@ -14,6 +11,20 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
@@ -42,25 +53,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MagnetGlass/HttpPostClientMagnetGlass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-10">
-              <caret line="97" column="5" lean-forward="true" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+            <state relative-caret-position="-1096">
+              <caret line="19" column="70" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#499#508#0" expanded="true" />
-                <element signature="e#569#586#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MagnetGlass/HttpPostClientMagnetGlassTouchTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-79">
-              <caret line="116" column="28" lean-forward="true" selection-start-line="116" selection-start-column="28" selection-end-line="116" selection-end-column="28" />
+            <state relative-caret-position="476">
+              <caret line="176" column="5" lean-forward="true" selection-start-line="176" selection-start-column="5" selection-end-line="176" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -88,15 +98,15 @@
       <list>
         <option value="$PROJECT_DIR$/src/HttpPostClient.java" />
         <option value="$PROJECT_DIR$/src/MagnetGlass/HttpPostClient.java" />
-        <option value="$PROJECT_DIR$/src/MagnetGlass/HttpPostClientMagnetGlassTouchTest.java" />
         <option value="$PROJECT_DIR$/src/MagnetGlass/HttpPostClientMagnetGlass.java" />
+        <option value="$PROJECT_DIR$/src/MagnetGlass/HttpPostClientMagnetGlassTouchTest.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-1852" />
     <option name="y" value="-38" />
-    <option name="width" value="1362" />
+    <option name="width" value="1683" />
     <option name="height" value="999" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -256,18 +266,18 @@
       <workItem from="1572581733935" duration="12507000" />
       <workItem from="1573694926149" duration="3288000" />
       <workItem from="1573714935738" duration="11000" />
-      <workItem from="1573793925772" duration="2325000" />
+      <workItem from="1573793925772" duration="4623000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47706000" />
+    <option name="totallyTimeSpent" value="50004000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1852" y="-38" width="1362" height="999" extended-state="0" />
+    <frame x="-1852" y="-38" width="1683" height="999" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2530303" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20353442" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Learn" order="3" />
@@ -277,7 +287,7 @@
       <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3076075" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3076075" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -295,7 +305,7 @@
       <window_info anchor="right" id="Maven" order="3" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Database" order="6" weight="0.32967702" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
@@ -380,24 +390,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MagnetGlass/HttpPostClientMagnetGlassTouchTest.java">
+    <entry file="file://$PROJECT_DIR$/src/MagnetGlass/HttpPostClientMagnetGlass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-79">
-          <caret line="116" column="28" lean-forward="true" selection-start-line="116" selection-start-column="28" selection-end-line="116" selection-end-column="28" />
+        <state relative-caret-position="-1096">
+          <caret line="19" column="70" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#499#508#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MagnetGlass/HttpPostClientMagnetGlass.java">
+    <entry file="file://$PROJECT_DIR$/src/MagnetGlass/HttpPostClientMagnetGlassTouchTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="97" column="5" lean-forward="true" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+        <state relative-caret-position="476">
+          <caret line="176" column="5" lean-forward="true" selection-start-line="176" selection-start-column="5" selection-end-line="176" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#499#508#0" expanded="true" />
-            <element signature="e#569#586#0" expanded="true" />
           </folding>
         </state>
       </provider>

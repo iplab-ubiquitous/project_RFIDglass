@@ -8,8 +8,8 @@ import java.net.URL;
 import java.util.*;
 
 public class HttpPostClientMagnetGlass {
-    JSONObject postData = new JSONObject();
-    String prevJson;
+    static JSONObject postData = new JSONObject();
+    static String prevJson;
 
     final static int numOfPosition = 6; // NO TOUCHも含む
     final static int numOfData = 100;
@@ -18,7 +18,6 @@ public class HttpPostClientMagnetGlass {
     static int currentFingerPos;
     static int dataCount;
     static ArrayList<Integer> positionList = new ArrayList<Integer>();
-    static Map<String, Boolean> hasReceived = new HashMap<String, Boolean>();
     static Filter filter = new Filter(numOfTag);
 
 
@@ -116,16 +115,13 @@ public class HttpPostClientMagnetGlass {
             String st_tagId = String.valueOf(-values[3]);
             postData.put(st_tagId, collectedData);
             System.out.println(st_tagId);
-            hasReceived.put(st_tagId, true);
 
-            if(!hasReceived.containsValue(false) && !(postData.toString().equals(prevJson)) && hasReceived.size() == numOfTag){
+            if(postData.length() == numOfTag && !(postData.toString().equals(prevJson))){
                 dataCount++;
                 postData.put("label", currentFingerPos);
                 postJson(postData);
                 System.out.println((dataCount - 1) + ":" + postData);
-                for(String key : hasReceived.keySet()){
-                    hasReceived.put(key, false);
-                }
+                postData = new JSONObject();
                 prevJson = postData.toString();   //前の磁気データ保持
                 return;
             }
@@ -159,12 +155,10 @@ public class HttpPostClientMagnetGlass {
 
         Collections.shuffle(positionList);
 
-        for (int positon : positionList) {
-            currentFingerPos = positon;
+        for (int position : positionList) {
+            currentFingerPos = position;
             dataCount = 0;
-            for(String key : hasReceived.keySet()){
-                hasReceived.put(key, false);
-            }
+            postData = new JSONObject();
             System.out.println("タッチ位置[" + (currentFingerPos) + "]に触れてください.");
             System.out.println("準備できたらEnter.");
             sc.nextLine();

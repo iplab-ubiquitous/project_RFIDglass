@@ -8,7 +8,7 @@ import java.net.URL;
 import java.util.*;
 
 public class HttpPostClientMagnetGlassTouchTest {
-    JSONObject postData = new JSONObject();
+    static JSONObject postData = new JSONObject();
 
     final static int numOfPosition = 6; // NO TOUCHも含む
     final static int numOfData = 10;
@@ -17,7 +17,6 @@ public class HttpPostClientMagnetGlassTouchTest {
     static int currentFingerPos;
     static int dataCount;
     static ArrayList<Integer> positionList = new ArrayList<Integer>();
-    static Map<String, Boolean> hasReceived = new HashMap<String, Boolean>();
     static Filter filter = new Filter(numOfTag);
 
 
@@ -86,11 +85,12 @@ public class HttpPostClientMagnetGlassTouchTest {
 //        if(isDecidedHipassCutoffValue){
         if(filter.getIsCompleted()){
             // ハイパスフィルタがある
-            datapost(values);
+            if(dataCount <= numOfData) {
+                datapost(values);
+            }
         }else{
             // ハイパスフィルタがない
             filter.setFileter(values);
-//            settingHipassFilter(values);
 
         }
 
@@ -101,41 +101,33 @@ public class HttpPostClientMagnetGlassTouchTest {
     private void datapost(short[] values) {
         String st_tagId = String.valueOf(-values[3]);
         System.out.println(st_tagId);
-        hasReceived.put(st_tagId, true);
 
-        if(dataCount == numOfData) {     //最後のデータのみ送信
+        JSONObject collectedData = new JSONObject();
+        double[] tagdata = filter.passFilter(values);
+        collectedData.put("x", tagdata[0]);
+        collectedData.put("y", tagdata[1]);
+        collectedData.put("z", tagdata[2]);
+        postData.put(st_tagId, collectedData);
 
-            JSONObject collectedData = new JSONObject();
-            double[] tagdata = filter.passFilter(values);
-            collectedData.put("x", tagdata[0]);
-            collectedData.put("y", tagdata[1]);
-            collectedData.put("z", tagdata[2]);
-
-            postData.put(st_tagId, collectedData);
-
-            if (!hasReceived.containsValue(false) && hasReceived.size() == numOfTag) {
+        if(postData.length() == numOfTag) { //全てのタグデータが揃ったら処理実行
+            if (dataCount == numOfData) { //最後のデータのみ送信
                 dataCount++;
                 postData.put("label", currentFingerPos);
                 postJson(postData);
                 System.out.println((dataCount - 1) + ":" + postData);
-
-                for (String key : hasReceived.keySet()) {
-                    hasReceived.put(key, false);
-                }
+                postData = new JSONObject();
                 Reader.getInstance().stop();
                 System.out.println("currentFingerPos: " + currentFingerPos + " 終了");
                 System.out.println("Enterを押してください．");
                 return;
             }
-        }
 
-        if(dataCount < numOfData && !hasReceived.containsValue(false) && hasReceived.size() == numOfTag){
-            for(String key : hasReceived.keySet()) {
-                hasReceived.put(key, false);
+            if (dataCount < numOfData) {
+                postData = new JSONObject();
+                dataCount++;
+                System.out.println("Frames remain:" + (numOfData - dataCount));
+                return;
             }
-            dataCount++;
-            System.out.println("Frames remain:" + (numOfData - dataCount));
-            return;
         }
     }
 
@@ -171,9 +163,7 @@ public class HttpPostClientMagnetGlassTouchTest {
         for (int positon : positionList) {
             currentFingerPos = positon;
             dataCount = 0;
-            for(String key : hasReceived.keySet()){
-                hasReceived.put(key, false);
-            }
+            postData = new JSONObject();
             System.out.println("タッチ位置[" + (currentFingerPos) + "]に触れてください.");
             System.out.println("準備できたらEnter.");
             sc.nextLine();
