@@ -9,7 +9,6 @@ import java.util.*;
 
 public class HttpPostClientMagnetGlassTouchTest {
     JSONObject postData = new JSONObject();
-    String prevJson;
 
     final static int numOfPosition = 6; // NO TOUCHも含む
     final static int numOfData = 10;
@@ -100,46 +99,43 @@ public class HttpPostClientMagnetGlassTouchTest {
 
 
     private void datapost(short[] values) {
-        if(dataCount == numOfData && !hasReceived.containsValue(false)) {     //最後のデータのみ送信
-            dataCount++;
+        String st_tagId = String.valueOf(-values[3]);
+        System.out.println(st_tagId);
+        hasReceived.put(st_tagId, true);
+
+        if(dataCount == numOfData) {     //最後のデータのみ送信
 
             JSONObject collectedData = new JSONObject();
             double[] tagdata = filter.passFilter(values);
-            collectedData.put("x", tagdata);
-            collectedData.put("y", tagdata);
-            collectedData.put("z", tagdata);
+            collectedData.put("x", tagdata[0]);
+            collectedData.put("y", tagdata[1]);
+            collectedData.put("z", tagdata[2]);
 
-            String st_tagId = String.valueOf(-values[3]);
             postData.put(st_tagId, collectedData);
-            System.out.println(st_tagId);
-            hasReceived.put(st_tagId, true);
 
-            postData.put("label", currentFingerPos);
-            postJson(postData);
-            System.out.println((dataCount - 1) + ":" + postData);
-            for(String key : hasReceived.keySet()){
-                hasReceived.put(key, false);
-            }
+            if (!hasReceived.containsValue(false) && hasReceived.size() == numOfTag) {
+                dataCount++;
+                postData.put("label", currentFingerPos);
+                postJson(postData);
+                System.out.println((dataCount - 1) + ":" + postData);
 
-            Reader.getInstance().stop();
-            System.out.println("currentFingerPos: " + currentFingerPos + " 終了");
-            System.out.println("Enterを押してください．");
-            return;
-        }
-        else if(dataCount < numOfData) { // 最後以外のフレームは無視（現在何フレーム目かだけ出力）
-            String st_tagId = String.valueOf(-values[3]);
-            System.out.println(st_tagId);
-            hasReceived.put(st_tagId, true);
-
-            if(!hasReceived.containsValue(false)){
-                for(String key : hasReceived.keySet()) {
-                    dataCount++;
-                    System.out.println("Frames remain:" + (numOfData - dataCount));
+                for (String key : hasReceived.keySet()) {
                     hasReceived.put(key, false);
                 }
+                Reader.getInstance().stop();
+                System.out.println("currentFingerPos: " + currentFingerPos + " 終了");
+                System.out.println("Enterを押してください．");
                 return;
             }
+        }
 
+        if(dataCount < numOfData && !hasReceived.containsValue(false) && hasReceived.size() == numOfTag){
+            for(String key : hasReceived.keySet()) {
+                hasReceived.put(key, false);
+            }
+            dataCount++;
+            System.out.println("Frames remain:" + (numOfData - dataCount));
+            return;
         }
     }
 

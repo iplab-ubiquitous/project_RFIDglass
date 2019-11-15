@@ -109,17 +109,17 @@ public class HttpPostClientMagnetGlass {
         else if(dataCount < numOfData) {
             JSONObject collectedData = new JSONObject();
             double[] tagdata = filter.passFilter(values);
-            collectedData.put("x", tagdata);
-            collectedData.put("y", tagdata);
-            collectedData.put("z", tagdata);
+            collectedData.put("x", tagdata[0]);
+            collectedData.put("y", tagdata[1]);
+            collectedData.put("z", tagdata[2]);
 
             String st_tagId = String.valueOf(-values[3]);
             postData.put(st_tagId, collectedData);
             System.out.println(st_tagId);
             hasReceived.put(st_tagId, true);
-            if(!hasReceived.containsValue(false) && !(postData.toString().equals(prevJson))){
-                dataCount++;
 
+            if(!hasReceived.containsValue(false) && !(postData.toString().equals(prevJson)) && hasReceived.size() == numOfTag){
+                dataCount++;
                 postData.put("label", currentFingerPos);
                 postJson(postData);
                 System.out.println((dataCount - 1) + ":" + postData);
