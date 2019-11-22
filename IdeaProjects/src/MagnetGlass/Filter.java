@@ -3,51 +3,60 @@ package MagnetGlass;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class Filter {
-    private static final int numOfHipassData = 10;
-    private static final double alpha = 0;
+    private double alpha = 0;
+    private int numOfHipassData = 30;
     private boolean isCompleted;
     int numOfTag;
-    private static boolean isDecidedHipassCutoffValue = false;
-    Map<Integer, double[]> cutoffValues = new HashMap<Integer, double[]>();
-    Map<Integer, double[][]> sum = new HashMap<Integer, double[][]>();
-    Map<Integer, Integer> num = new HashMap<Integer, Integer>();
+    TreeMap<Integer, double[]> cutoffValues = new TreeMap<Integer, double[]>();
+    Map<Integer, double[][]> DataMap = new HashMap<Integer, double[][]>();
+    Map<Integer, Integer> numOfData = new HashMap<Integer, Integer>();
 
 
+    protected Filter(){
+        isCompleted = false;
+    }
     protected Filter(int numOfTag){
         this.numOfTag = numOfTag;
         isCompleted = false;
     }
 
+    protected Filter(int numOfTag, int numOfHipassData){
+        this.numOfTag = numOfTag;
+        this.numOfHipassData = numOfHipassData;
+        isCompleted = false;
+    }
+
     protected void setFileter(short[] values){
-        Integer taglabel = (int)values[3];
-        num.putIfAbsent(taglabel, 0);
-        sum.putIfAbsent(taglabel, new double[3][numOfHipassData]);
+        Integer taglabel = -(int)values[3];
+        numOfData.putIfAbsent(taglabel, 0);
+        DataMap.putIfAbsent(taglabel, new double[3][numOfHipassData]);
 
 //        各タグのデータ収集
-        if(num.get(taglabel) < numOfHipassData){
-            System.out.println("num"+ -taglabel + ": "+ num.get(taglabel));
-            double[][] tagdata = sum.get(taglabel);
+        if(numOfData.get(taglabel) < numOfHipassData){
+            System.out.println("Tag"+ taglabel + ": "+ numOfData.get(taglabel));
+            double[][] tagdata = DataMap.get(taglabel);
             for(int i = 0; i < 3; i++){
-                tagdata[i][num.get(taglabel)] = (double)values[i];
+                tagdata[i][numOfData.get(taglabel)] = (double)values[i];
             }
-            sum.put(taglabel, tagdata);
-            num.put(taglabel, num.get(taglabel)+1);
+            DataMap.put(taglabel, tagdata);
+            numOfData.put(taglabel, numOfData.get(taglabel)+1);
         }
 
 //        データ数の合計を計算
         int datanum = 0;
-        for(Integer v : num.values()){
+        for(Integer v : numOfData.values()){
             datanum += v;
         }
 
 //        データが揃った場合カットオフ値計算
         if(datanum == numOfHipassData * numOfTag){
-            for(Integer key : num.keySet()){
-                num.put(key, numOfHipassData + 1);
+            for(Integer key : numOfData.keySet()){
+                numOfData.put(key, numOfHipassData + 1);
             }
-            for(Map.Entry<Integer, double[][]> map : sum.entrySet()){
+            for(Map.Entry<Integer, double[][]> map : DataMap.entrySet()){
                 double[] magnetdata = new double[3];
                 for(int i = 0; i < 3; i++){
                     Arrays.sort(map.getValue()[i]);
@@ -57,6 +66,9 @@ public class Filter {
             }
             Reader.getInstance().stop();
             System.out.println("カットオフ値設定終了します");
+            for(int key : cutoffValues.keySet()){
+                System.out.println(key + ": " + Arrays.toString(cutoffValues.get(key)));
+            }
             System.out.println("Enterキーで測定を開始します");
 
         }
@@ -70,6 +82,13 @@ public class Filter {
         isCompleted = bool;
     }
 
+    protected TreeMap<Integer, double[]> getcutoffValues(){
+        return cutoffValues;
+    }
+
+    protected void setAlpha(double alpha){
+        this.alpha = alpha;
+    }
 
     protected double[] passFilter(short[] values){
         double[] tagdata = new double[3];
