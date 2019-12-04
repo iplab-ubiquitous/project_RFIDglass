@@ -89,7 +89,7 @@ public class HttpPostClientMagnetGlass {
             datapost(values);
         }else{
             // ハイパスフィルタがない
-            filter.setFileter(values);
+            filter.setFilter(values);
 //            settingHipassFilter(values);
 
         }

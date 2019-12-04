@@ -7,9 +7,9 @@ import java.util.TreeMap;
 
 public class Filter {
     private double alpha = 0;
-    private int numOfHipassData = 30;
+    private int numOfHipassData = 100;
+    private int numOfTag = 3;
     private boolean isCompleted;
-    int numOfTag;
     TreeMap<Integer, double[]> cutoffValues = new TreeMap<Integer, double[]>();
     Map<Integer, double[][]> DataMap = new HashMap<Integer, double[][]>();
     Map<Integer, Integer> numOfData = new HashMap<Integer, Integer>();
@@ -29,7 +29,7 @@ public class Filter {
         isCompleted = false;
     }
 
-    protected void setFileter(short[] values){
+    protected void setFilter(short[] values){
         Integer taglabel = -(int)values[3];
         numOfData.putIfAbsent(taglabel, 0);
         DataMap.putIfAbsent(taglabel, new double[3][numOfHipassData]);

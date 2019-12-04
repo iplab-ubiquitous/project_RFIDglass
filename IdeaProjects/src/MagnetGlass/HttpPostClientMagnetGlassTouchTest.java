@@ -90,7 +90,7 @@ public class HttpPostClientMagnetGlassTouchTest {
             }
         }else{
             // ハイパスフィルタがない
-            filter.setFileter(values);
+            filter.setFilter(values);
 
         }
 

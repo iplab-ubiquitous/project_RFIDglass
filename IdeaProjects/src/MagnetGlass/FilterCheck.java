@@ -10,14 +10,14 @@ import java.util.*;
 public class FilterCheck {
 
     final static int numOfTag = 3;
-    static int numOfData = 50;
+    static int numOfData = 100;
     static ArrayList<Integer> positionList = new ArrayList<Integer>();
     static Filter filter;
 
 
     public void magnetTagReadHandler(short[] values) throws IOException {
             // ハイパスフィルタがない
-            filter.setFileter(values);
+            filter.setFilter(values);
         }
 
 
@@ -30,6 +30,7 @@ public class FilterCheck {
         if (file.exists()){
             if (file.isFile() && file.canWrite()){
                 return true;
+                
             }
         }
 
