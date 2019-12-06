@@ -9,7 +9,7 @@ import java.util.*;
 
 public class FilterCheck {
 
-    final static int numOfTag = 3;
+    final static int numOfTag = 2;
     static int numOfData = 100;
     static ArrayList<Integer> positionList = new ArrayList<Integer>();
     static Filter filter;

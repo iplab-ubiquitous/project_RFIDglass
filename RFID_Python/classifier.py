@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 import csv
 
-version = "1108_p02"
+version = "1206_p00"
 dataset = pd.read_csv("./collectData/data_" + version + ".csv", header=None)
 
 # data_train, data_test = train_test_split(dataset, test_size=0.2)
@@ -16,8 +16,8 @@ dataset = pd.read_csv("./collectData/data_" + version + ".csv", header=None)
 # test_data = data_test.iloc[:, 0:6]
 
 sss = StratifiedShuffleSplit(test_size=0.2)
-data = dataset.iloc[:, 0:9]
-label = dataset.iloc[:, 9]
+data = dataset.iloc[:, 0:6]
+label = dataset.iloc[:, 6]
 for train_index, test_index in sss.split(data, label):
     train_data,  test_data = data.loc[train_index], data.loc[test_index]
     train_label, test_label = label.loc[train_index], label.loc[test_index]

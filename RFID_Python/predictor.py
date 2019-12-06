@@ -15,7 +15,7 @@ np.set_printoptions(suppress=True)
 training_data = np.empty([0, 7])
 data_count = 0
 correct_count = 0
-version = "1108_p02" # 学習モデルのバージョン
+version = "1206_p00" # 学習モデルのバージョン
 clf = joblib.load('./learningModel/test_' + version + '.pkl')
 pred_list = []
 true_list = []
@@ -58,7 +58,7 @@ class MagnetHTTPRequestHandler(BaseHTTPRequestHandler):
         
         global training_data, data_count, correct_count
         parsed_json = [
-            jsons['45']['x'], jsons['45']['y'], jsons['45']['z'],
+            # jsons['45']['x'], jsons['45']['y'], jsons['45']['z'],
             jsons['47']['x'], jsons['47']['y'], jsons['47']['z'],
             jsons['49']['x'], jsons['49']['y'], jsons['49']['z'],
             jsons['label']
@@ -66,11 +66,11 @@ class MagnetHTTPRequestHandler(BaseHTTPRequestHandler):
         data = np.array(parsed_json)
         data_count += 1
         # print(data[0:6])
-        true_list.append(data[9])
-        predict = clf.predict(data[0:9].reshape(1, -1))
+        true_list.append(data[6])
+        predict = clf.predict(data[0:6].reshape(1, -1))
         pred_list.append(predict[0])
         print(predict)
-        if data[9] == predict[0]:
+        if data[6] == predict[0]:
             correct_count+=1
 
 

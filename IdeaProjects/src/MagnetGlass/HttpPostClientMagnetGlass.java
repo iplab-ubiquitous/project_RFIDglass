@@ -13,7 +13,7 @@ public class HttpPostClientMagnetGlass {
 
     final static int numOfPosition = 6; // NO TOUCHも含む
     final static int numOfData = 100;
-    final static int numOfTag = 3;
+    final static int numOfTag = 2;
 
     static int currentFingerPos;
     static int dataCount;
@@ -121,11 +121,12 @@ public class HttpPostClientMagnetGlass {
 
             if(postData.length() == numOfTag && !(postData.toString().equals(prevJson))){
                 dataCount++;
+                prevJson = postData.toString();   //前の磁気データ保持
                 postData.put("label", currentFingerPos);
                 postJson(postData);
                 System.out.println((dataCount - 1) + ":" + postData);
                 postData = new JSONObject();
-                prevJson = postData.toString();   //前の磁気データ保持
+
                 return;
             }
         }

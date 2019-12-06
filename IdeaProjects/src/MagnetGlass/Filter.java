@@ -7,8 +7,8 @@ import java.util.TreeMap;
 
 public class Filter {
     private double alpha = 0;
-    private int numOfHipassData = 5;
-    private int numOfTag = 3;
+    private int numOfHipassData = 100;
+    private int numOfTag = 2;
     private boolean isCompleted;
     TreeMap<Integer, double[]> cutoffValues = new TreeMap<Integer, double[]>();
     Map<Integer, double[][]> DataMap = new HashMap<Integer, double[][]>();

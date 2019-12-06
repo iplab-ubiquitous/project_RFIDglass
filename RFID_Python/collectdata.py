@@ -7,9 +7,9 @@ import socketserver
 import numpy as np
 
 np.set_printoptions(suppress=True)
-training_data = np.empty([0, 10])
+training_data = np.empty([0, 7])
 data_count = 0
-version = "1108_p02" #収集データのバージョン
+version = "1206_p01" #収集データのバージョン
 
 PORT = 8080
 
@@ -48,7 +48,7 @@ class MagnetHTTPRequestHandler(BaseHTTPRequestHandler):
         
         global training_data, data_count
         parsed_json = [[
-            jsons['45']['x'], jsons['45']['y'], jsons['45']['z'],
+            # jsons['45']['x'], jsons['45']['y'], jsons['45']['z'],
             jsons['47']['x'], jsons['47']['y'], jsons['47']['z'],
             jsons['49']['x'], jsons['49']['y'], jsons['49']['z'],
             jsons['label']

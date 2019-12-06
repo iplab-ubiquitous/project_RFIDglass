@@ -12,7 +12,7 @@ public class HttpPostClientMagnetGlassTouchTest {
 
     final static int numOfPosition = 6; // NO TOUCHも含む
     final static int numOfData = 10;
-    final static int numOfTag = 3;
+    final static int numOfTag = 2;
 
     static int currentFingerPos;
     static int dataCount;
