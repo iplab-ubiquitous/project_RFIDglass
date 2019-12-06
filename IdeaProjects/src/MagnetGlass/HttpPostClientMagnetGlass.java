@@ -98,6 +98,7 @@ public class HttpPostClientMagnetGlass {
 
 
     private void datapost(short[] values) {
+
         if(dataCount == numOfData) {
             dataCount++;
             Reader.getInstance().stop();
@@ -106,8 +107,10 @@ public class HttpPostClientMagnetGlass {
             return;
         }
         else if(dataCount < numOfData) {
+ 
             JSONObject collectedData = new JSONObject();
             double[] tagdata = filter.passFilter(values);
+
             collectedData.put("x", tagdata[0]);
             collectedData.put("y", tagdata[1]);
             collectedData.put("z", tagdata[2]);

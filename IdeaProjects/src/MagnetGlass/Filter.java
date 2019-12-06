@@ -7,7 +7,7 @@ import java.util.TreeMap;
 
 public class Filter {
     private double alpha = 0;
-    private int numOfHipassData = 100;
+    private int numOfHipassData = 5;
     private int numOfTag = 3;
     private boolean isCompleted;
     TreeMap<Integer, double[]> cutoffValues = new TreeMap<Integer, double[]>();
@@ -93,7 +93,7 @@ public class Filter {
     protected double[] passFilter(short[] values){
         double[] tagdata = new double[3];
         for(int i = 0; i < 3; i++) {
-            tagdata[i] = (double)values[i] - (alpha * (double)values[i] + (1 - alpha) * cutoffValues.get((int)values[3])[i]);
+            tagdata[i] = (double)values[i] - (alpha * (double)values[i] + (1 - alpha) * cutoffValues.get(-(int)values[3])[i]);
         }
         return tagdata;
     }
