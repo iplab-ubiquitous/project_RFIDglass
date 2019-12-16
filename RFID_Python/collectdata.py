@@ -9,7 +9,7 @@ import numpy as np
 np.set_printoptions(suppress=True)
 training_data = np.empty([0, 7])
 data_count = 0
-version = "1206_p01" #収集データのバージョン
+version = "1213_p01" #収集データのバージョン
 
 PORT = 8080
 
@@ -36,7 +36,7 @@ class MagnetHTTPRequestHandler(BaseHTTPRequestHandler):
 
         self.wfile.write(responseBody.encode('utf-8'))
         # self.send_response(HTTPStatus.OK)
-        print(request_body)
+        # print(request_body)
         is_exists_model = False
         if is_exists_model:
             self.recognize_finger_pos(request_body)

@@ -15,7 +15,7 @@ np.set_printoptions(suppress=True)
 training_data = np.empty([0, 7])
 data_count = 0
 correct_count = 0
-version = "1206_p00" # 学習モデルのバージョン
+version = "1213_p01" # 学習モデルのバージョン
 clf = joblib.load('./learningModel/test_' + version + '.pkl')
 pred_list = []
 true_list = []
@@ -57,13 +57,14 @@ class MagnetHTTPRequestHandler(BaseHTTPRequestHandler):
     def collect_magnet_data(self, jsons):
         
         global training_data, data_count, correct_count
-        parsed_json = [
+        parsed_json = [[
             # jsons['45']['x'], jsons['45']['y'], jsons['45']['z'],
             jsons['47']['x'], jsons['47']['y'], jsons['47']['z'],
             jsons['49']['x'], jsons['49']['y'], jsons['49']['z'],
             jsons['label']
-        ]
-        data = np.array(parsed_json)
+        ]]
+        data = np.array(parsed_json[0])
+        training_data = np.append(training_data, parsed_json, axis=0)
         data_count += 1
         # print(data[0:6])
         true_list.append(data[6])
@@ -91,14 +92,15 @@ try:
         httpd.serve_forever()
 except KeyboardInterrupt:
     httpd.server_close()
-    print(true_list)
-    print(pred_list)
     c_matrix = confusion_matrix(true_list, pred_list)
     print(c_matrix)
+
+    np.savetxt("./testData/testData_" + version + ".csv", training_data, delimiter=',', fmt='%.0f')
 
     with open('./confusionMatrix/confusion_matrix_' + version + '.csv', 'w') as file:
         writer = csv.writer(file, lineterminator='\n')
         writer.writerows(c_matrix)
+
 
     #混同行列の画像表示
     # sns.heatmap(c_matrix, annot=True, cmap="Reds")
