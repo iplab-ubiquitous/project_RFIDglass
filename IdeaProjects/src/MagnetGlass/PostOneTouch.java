@@ -10,6 +10,7 @@ public class PostOneTouch extends HttpPostClientMagnetGlass{
     protected PostOneTouch(){
         this.numOfData = 10;
         this.currentFingerPos = 0;
+        this.filter = new Filter(2, numOfData);
     }
 
     public static void main(String[] args){
@@ -35,7 +36,6 @@ public class PostOneTouch extends HttpPostClientMagnetGlass{
         System.out.println("開始.");
         sc.nextLine();
         System.out.println("終了.");
-        return;
     }
 
 }
