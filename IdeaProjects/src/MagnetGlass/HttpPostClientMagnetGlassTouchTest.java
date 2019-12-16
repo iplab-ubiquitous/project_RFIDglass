@@ -93,7 +93,6 @@ public class HttpPostClientMagnetGlassTouchTest {
             filter.setFilter(values);
 
         }
-
     }
 
 
@@ -118,14 +117,14 @@ public class HttpPostClientMagnetGlassTouchTest {
                 postData = new JSONObject();
                 Reader.getInstance().stop();
                 System.out.println("currentFingerPos: " + currentFingerPos + " 終了");
-                System.out.println("Enterを押してください．");
+                System.out.println("Enterを押してで次のタッチ位置へ．");
                 return;
             }
 
             if (dataCount < numOfData) {
                 postData = new JSONObject();
                 dataCount++;
-                System.out.println("Frames remain:" + (numOfData - dataCount));
+                System.out.println("Remain Frames :" + (numOfData - dataCount));
                 return;
             }
         }

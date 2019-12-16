@@ -12,9 +12,9 @@ public class HttpPostClientMagnetGlass {
     static String prevJson;
 
     final static int numOfPosition = 6; // NO TOUCHも含む
-    final static int numOfData = 100;
     final static int numOfTag = 2;
 
+    static int numOfData = 100;
     static int currentFingerPos;
     static int dataCount;
     static ArrayList<Integer> positionList = new ArrayList<Integer>();
@@ -83,17 +83,13 @@ public class HttpPostClientMagnetGlass {
 
 
     public void magnetTagReadHandler(short[] values) throws IOException {
-//        if(isDecidedHipassCutoffValue){
         if(filter.getIsCompleted()){
             // ハイパスフィルタがある
             datapost(values);
         }else{
             // ハイパスフィルタがない
             filter.setFilter(values);
-//            settingHipassFilter(values);
-
         }
-
     }
 
 
@@ -126,7 +122,6 @@ public class HttpPostClientMagnetGlass {
                 postJson(postData);
                 System.out.println((dataCount - 1) + ":" + postData);
                 postData = new JSONObject();
-
                 return;
             }
         }
