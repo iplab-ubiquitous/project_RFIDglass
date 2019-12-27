@@ -6,21 +6,21 @@ import pandas as pd
 import numpy as np
 import csv
 
-version = "1213_p01"
-dataset = pd.read_csv("./collectData/data_" + version + ".csv", header=None)
-
-# data_train, data_test = train_test_split(dataset, test_size=0.2)
-# train_label = data_train.iloc[:, 6]
-# train_data = data_train.iloc[:, 0:6]
-# test_label = data_test.iloc[:, 6]
-# test_data = data_test.iloc[:, 0:6]
+version = "1216_p00"
+dataset = np.loadtxt("./collectData/data_" + version + ".csv", delimiter=',', dtype='int64')
 
 sss = StratifiedShuffleSplit(test_size=0.2)
-data = dataset.iloc[:, 0:6]
-label = dataset.iloc[:, 6]
-for train_index, test_index in sss.split(data, label):
-    train_data,  test_data = data.loc[train_index], data.loc[test_index]
-    train_label, test_label = label.loc[train_index], label.loc[test_index]
+data, label = np.hsplit(dataset, [6])
+
+# for train_index, test_index in sss.split(data, label):
+#     train_data, test_data = data[train_index], data[test_index]
+#     train_label, test_label = label[train_index], label[test_index]
+#     train_label = np.reshape(train_label, (-1))
+#     test_label = np.reshape(test_label, (-1))
+
+train_data, test_data, train_label, test_label = train_test_split(data, label, test_size=0.2, random_state=None, stratify=label)
+train_label = np.reshape(train_label, (-1))
+test_label = np.reshape(test_label, (-1))
 
 #  訓練データ確認
 # print(train_data)
