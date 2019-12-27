@@ -45,7 +45,6 @@ class MagnetHTTPRequestHandler(BaseHTTPRequestHandler):
         # self.wfile.write("OK.")
 
     def collect_magnet_data(self, jsons):
-        
         global training_data, data_count
         parsed_json = [[
             # jsons['45']['x'], jsons['45']['y'], jsons['45']['z'],

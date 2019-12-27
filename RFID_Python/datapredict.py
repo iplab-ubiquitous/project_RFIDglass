@@ -8,10 +8,10 @@ import numpy as np
 import csv
 import matplotlib.pyplot as plt
 
-data_version = "KNN_1227_p00"  #テストデータのバージョン
 
-# 学習モデルのバージョン svm: "SVC_mmdd_p(No.)", kNN: "KNN_mmdd_p(No.), RF: "RF_mmdd_p(No.)"
-model_version = "RF_1227_p00"
+data_version = "1227_p00"  # テストデータのバージョン
+model_version = "1227_p00"  # モデルのバージョン
+modelType = "SVC"   # モデルの種類　[ SVC, KNN, RF ]
 
 dataset = pd.read_csv("./testData/testdata_" + data_version + ".csv", header=None)
 
@@ -19,7 +19,7 @@ test_data = dataset.iloc[:, 0:6]
 test_label = dataset.iloc[:, 6]
 
 # 予測フェーズ
-clf = joblib.load(('./learningModel/test' + model_version + '.pkl'))
+clf = joblib.load(('./learningModel/test' + modelType + "_" + model_version + '.pkl'))
 pred = clf.predict(test_data)
 touch_true = test_label.tolist()
 print(pred)
@@ -27,8 +27,8 @@ print(touch_true)
 c_matrix = confusion_matrix(touch_true, pred)
 print(c_matrix)
 sns.heatmap(c_matrix, annot=True, cmap="Reds")
-plt.savefig('./confusionMatrix/confusion_matrix_data' + model_version + '.png')
-with open('./confusionMatrix/confusion_matrix_data' + model_version + '.csv', 'w') as file:
+plt.savefig('./confusionMatrix/confusion_matrix_data_' + modelType + "_" + model_version + '.png')
+with open('./confusionMatrix/confusion_matrix_data_' + modelType + "_" + model_version + '.csv', 'w') as file:
     writer = csv.writer(file, lineterminator='\n')
     writer.writerows(c_matrix)
 print(classification_report(test_label, pred))

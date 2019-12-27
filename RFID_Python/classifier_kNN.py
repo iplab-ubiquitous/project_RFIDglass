@@ -8,10 +8,9 @@ import csv
 
 from sklearn.neighbors import KNeighborsClassifier
 
-version = "1227_p00"
-dataset = np.loadtxt("./collectData/data_" + version + ".csv", delimiter=',', dtype='int64')
-
-
+dataVersion = "1227_p00"
+modelVersion = "1227_p00"
+dataset = np.loadtxt("./collectData/data_" + dataVersion + ".csv", delimiter=',', dtype='int64')
 
 sss = StratifiedShuffleSplit(test_size=0.2)
 
@@ -49,7 +48,7 @@ clf.fit(train_data, train_label)
 print(clf.best_estimator_)
 print(classification_report(test_label, clf.predict(test_data)))
 
-joblib.dump(clf, './learningModel/testKNN_'+ version + '.pkl')
+joblib.dump(clf, './learningModel/testKNN_'+ modelVersion + '.pkl')
 
 # スコア別
 for score in scores:

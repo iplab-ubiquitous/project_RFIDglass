@@ -16,9 +16,9 @@ training_data = np.empty([0, 7])
 data_count = 0
 correct_count = 0
 
-# 学習モデルのバージョン svm: "SVC_mmdd_p(No.)", kNN: "KNN_mmdd_p(No.), RF: "RF_mmdd_p(No.)"
-version = "KNN_1227_p00" # 学習モデルのバージョン
-clf = joblib.load('./learningModel/test' + version + '.pkl')
+version = "1227_p00" # 学習モデルのバージョン："mmdd_p(No.)"
+model = "KNN"  #モデルの種類　[ SVC, KNN, RF ]
+clf = joblib.load('./learningModel/test' + model + "_" + version + '.pkl')
 pred_list = []
 true_list = []
 

@@ -6,8 +6,9 @@ import pandas as pd
 import numpy as np
 import csv
 
-version = "1227_p00"
-dataset = np.loadtxt("./collectData/data_" + version + ".csv", delimiter=',', dtype='int64')
+dataVersion = "1227_p00"
+modelVersion = "1227_p00"
+dataset = np.loadtxt("./collectData/data_" + dataVersion + ".csv", delimiter=',', dtype='int64')
 
 sss = StratifiedShuffleSplit(test_size=0.2)
 data, label = np.hsplit(dataset, [6])
@@ -41,7 +42,7 @@ clf.fit(train_data, train_label)
 print(clf.best_estimator_)
 print(classification_report(test_label, clf.predict(test_data)))
 
-joblib.dump(clf, './learningModel/testSVC_'+ version + '.pkl')
+joblib.dump(clf, './learningModel/test'+ modelVersion +'_'+ dataVersion + '.pkl')
 
 for score in scores:
     print("# Tuning hyper-parameters for {}".format(score))
@@ -72,7 +73,7 @@ print(pred)
 print(touch_true)
 c_matrix = confusion_matrix(touch_true, pred)
 print(confusion_matrix(touch_true, pred))
-with open('./confusionMatrix/confusion_matrix_cv_SVC' + version + '.csv', 'w') as file:
+with open('./confusionMatrix/confusion_matrix_cv_SVC' + modelVersion + '.csv', 'w') as file:
     writer = csv.writer(file, lineterminator='\n')
     writer.writerows(c_matrix)
 print(classification_report(test_label, pred))

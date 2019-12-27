@@ -6,10 +6,9 @@ from sklearn.externals import joblib
 import numpy as np
 import csv
 
-version = "1227_p00"
-dataset = np.loadtxt("./collectData/data_" + version + ".csv", delimiter=',', dtype='int64')
-
-
+dataVersion = "1227_p00"
+modelVersion = "1227_p00"
+dataset = np.loadtxt("./collectData/data_" + dataVersion + ".csv", delimiter=',', dtype='int64')
 
 sss = StratifiedShuffleSplit(test_size=0.2)
 
@@ -32,11 +31,11 @@ test_label = np.reshape(test_label, (-1))
 
 
 # クロスバリデーションで最適化したいパラメータをセット
-rf_parameters = {'n_estimators': [i for i in range(10,100,10)],
-                  "criterion":["gini", "entropy"],
-                  "max_depth":[i for i in range(1,6,1)],
-                  "min_samples_split": [2,4,10,12,16],
-                  "random_state":[3]
+rf_parameters = {'n_estimators': [i for i in range(10, 100, 10)],
+                  "criterion": ["gini", "entropy"],
+                  "max_depth": [i for i in range(1, 6, 1)],
+                  "min_samples_split": [2, 4, 10, 12, 16],
+                  "random_state": [3]
                   }
 scores = ['recall']
 
@@ -49,7 +48,7 @@ clf.fit(train_data, train_label)
 print(clf.best_estimator_)
 print(classification_report(test_label, clf.predict(test_data)))
 
-joblib.dump(clf, './learningModel/testRF_'+ version + '.pkl')
+joblib.dump(clf, './learningModel/testRF_' + modelVersion + '.pkl')
 
 # スコア別
 for score in scores:
@@ -81,7 +80,7 @@ print(pred)
 print(touch_true)
 c_matrix = confusion_matrix(touch_true, pred)
 print(confusion_matrix(touch_true, pred))
-with open('./confusionMatrix/confusion_matrix_cv_RF_' + version + '.csv', 'w') as file:
+with open('./confusionMatrix/confusion_matrix_cv_RF_' + modelVersion + '.csv', 'w') as file:
     writer = csv.writer(file, lineterminator='\n')
     writer.writerows(c_matrix)
 print(classification_report(test_label, pred))
