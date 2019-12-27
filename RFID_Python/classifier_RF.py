@@ -1,12 +1,10 @@
 from sklearn import svm, neighbors, metrics, preprocessing
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV, cross_validate, StratifiedShuffleSplit
 from sklearn.metrics import classification_report, accuracy_score, confusion_matrix
 from sklearn.externals import joblib
-import pandas as pd
 import numpy as np
 import csv
-
-from sklearn.neighbors import KNeighborsClassifier
 
 version = "1220_p01"
 dataset = np.loadtxt("./collectData/data_" + version + ".csv", delimiter=',', dtype='int64')
@@ -34,29 +32,31 @@ test_label = np.reshape(test_label, (-1))
 
 
 # クロスバリデーションで最適化したいパラメータをセット
-knn_parameters = {'n_neighbors': [7, 11, 19],
-                    'weights': ['uniform', 'distance'],
-                    'metric': ['euclidean', 'manhattan']
+rf_parameters = {'n_estimators': [i for i in range(10,100,10)],
+                  "criterion":["gini", "entropy"],
+                  "max_depth":[i for i in range(1,6,1)],
+                  "min_samples_split": [2,4,10,12,16],
+                  "random_state":[3]
                   }
-scores = ['precision', 'recall', 'f1']
+scores = ['recall']
 
 print("# Tuning hyper-parameters for accuracy")
 
 #  グリッドサーチと交差検証法
-clf = GridSearchCV(KNeighborsClassifier(), knn_parameters, cv=5,
+clf = GridSearchCV(RandomForestClassifier(), rf_parameters, cv=5,
                    scoring='accuracy', n_jobs=-1)
 clf.fit(train_data, train_label)
 print(clf.best_estimator_)
 print(classification_report(test_label, clf.predict(test_data)))
 
-joblib.dump(clf, './learningModel/testKNN_'+ version + '.pkl')
+joblib.dump(clf, './learningModel/testRF_'+ version + '.pkl')
 
 # スコア別
 for score in scores:
     print("# Tuning hyper-parameters for {}".format(score))
 
     # グリッドサーチと交差検証法
-    clf_score = GridSearchCV(KNeighborsClassifier(), knn_parameters, cv=5,
+    clf_score = GridSearchCV(RandomForestClassifier(), rf_parameters, cv=5,
                              scoring='%s_weighted' % score, n_jobs=-1)
     clf_score.fit(train_data, train_label)
     print(clf_score.best_estimator_)
@@ -81,7 +81,7 @@ print(pred)
 print(touch_true)
 c_matrix = confusion_matrix(touch_true, pred)
 print(confusion_matrix(touch_true, pred))
-with open('./confusionMatrix/confusion_matrix_cv_KNN_' + version + '.csv', 'w') as file:
+with open('./confusionMatrix/confusion_matrix_cv_RF_' + version + '.csv', 'w') as file:
     writer = csv.writer(file, lineterminator='\n')
     writer.writerows(c_matrix)
 print(classification_report(test_label, pred))
