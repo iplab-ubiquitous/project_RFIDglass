@@ -6,23 +6,11 @@ import pandas as pd
 import numpy as np
 import csv
 
-from sklearn.neighbors import KNeighborsClassifier
-
 version = "1220_p01"
 dataset = np.loadtxt("./collectData/data_" + version + ".csv", delimiter=',', dtype='int64')
 
-
-
 sss = StratifiedShuffleSplit(test_size=0.2)
-
 data, label = np.hsplit(dataset, [6])
-
-
-# 交差検証なし
-train_data, test_data, train_label, test_label = train_test_split(data, label, test_size=0.2, random_state=None, stratify=label)
-train_label = np.reshape(train_label, (-1))
-test_label = np.reshape(test_label, (-1))
-
 
 # for train_index, test_index in sss.split(data, label):
 #     train_data, test_data = data[train_index], data[test_index]
@@ -30,37 +18,40 @@ test_label = np.reshape(test_label, (-1))
 #     train_label = np.reshape(train_label, (-1))
 #     test_label = np.reshape(test_label, (-1))
 
+train_data, test_data, train_label, test_label = train_test_split(data, label, test_size=0.2, random_state=None, stratify=label)
+train_label = np.reshape(train_label, (-1))
+test_label = np.reshape(test_label, (-1))
 
-
+#  訓練データ確認
+# print(train_data)
 
 # クロスバリデーションで最適化したいパラメータをセット
-knn_parameters = {'n_neighbors': [7, 11, 19],
-                    'weights': ['uniform', 'distance'],
-                    'metric': ['euclidean', 'manhattan']
-                  }
+tuned_parameters = [{'kernel': ['rbf'], 'gamma': [1e-3, 1e-4],
+                     'C': [0.1, 1, 10]},
+                    {'kernel': ['linear'], 'C': [0.1, 1, 10]}]
+
 scores = ['precision', 'recall', 'f1']
 
 print("# Tuning hyper-parameters for accuracy")
 
 #  グリッドサーチと交差検証法
-clf = GridSearchCV(KNeighborsClassifier(), knn_parameters, cv=5,
-                   scoring='accuracy', n_jobs=-1)
+clf = GridSearchCV(svm.SVC(), tuned_parameters, cv=5,
+                    scoring='accuracy', n_jobs=-1)
 clf.fit(train_data, train_label)
 print(clf.best_estimator_)
 print(classification_report(test_label, clf.predict(test_data)))
 
-joblib.dump(clf, './learningModel/testKNN_'+ version + '.pkl')
+joblib.dump(clf, './learningModel/testSVC_'+ version + '.pkl')
 
-# スコア別
 for score in scores:
     print("# Tuning hyper-parameters for {}".format(score))
 
     # グリッドサーチと交差検証法
-    clf_score = GridSearchCV(KNeighborsClassifier(), knn_parameters, cv=5,
-                             scoring='%s_weighted' % score, n_jobs=-1)
-    clf_score.fit(train_data, train_label)
-    print(clf_score.best_estimator_)
-    print(classification_report(test_label, clf_score.predict(test_data)))
+    clf = GridSearchCV(svm.SVC(), tuned_parameters, cv=5,
+                       scoring='%s_weighted' % score, n_jobs=-1)
+    clf.fit(train_data, train_label)
+    print(clf.best_estimator_)
+    print(classification_report(test_label, clf.predict(test_data)))
 
 
 
@@ -81,7 +72,7 @@ print(pred)
 print(touch_true)
 c_matrix = confusion_matrix(touch_true, pred)
 print(confusion_matrix(touch_true, pred))
-with open('./confusionMatrix/confusion_matrix_cv_KNN_' + version + '.csv', 'w') as file:
+with open('./confusionMatrix/confusion_matrix_cv_SVC' + version + '.csv', 'w') as file:
     writer = csv.writer(file, lineterminator='\n')
     writer.writerows(c_matrix)
 print(classification_report(test_label, pred))
