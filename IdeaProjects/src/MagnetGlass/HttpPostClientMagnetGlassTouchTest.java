@@ -11,8 +11,13 @@ public class HttpPostClientMagnetGlassTouchTest {
     static JSONObject postData = new JSONObject();
 
     final static int numOfPosition = 6; // NO TOUCHも含む
-    final static int numOfData = 10;
+    final static int numOfData = 20;
     final static int numOfTag = 2;
+
+    double[][] data47 = new double[3][numOfData];
+    boolean data47isCollected = false;
+    double[][] data49 = new double[3][numOfData];
+    boolean data49isCollected = false;
 
     static int currentFingerPos;
     static int dataCount;
@@ -101,28 +106,55 @@ public class HttpPostClientMagnetGlassTouchTest {
         String st_tagId = String.valueOf(-values[3]);
         System.out.println(st_tagId);
 
-        JSONObject collectedData = new JSONObject();
         double[] tagdata = filter.passFilter(values);
-        collectedData.put("x", tagdata[0]);
-        collectedData.put("y", tagdata[1]);
-        collectedData.put("z", tagdata[2]);
-        postData.put(st_tagId, collectedData);
 
-        if(postData.length() == numOfTag) { //全てのタグデータが揃ったら処理実行
-            if (dataCount == numOfData) { //最後のデータのみ送信
+        if(st_tagId.equals("47")){
+            data47[0][dataCount] = tagdata[0];
+            data47[1][dataCount] = tagdata[1];
+            data47[2][dataCount] = tagdata[2];
+            data47isCollected = true;
+        }else if(st_tagId.equals("49")){
+            data49[0][dataCount] = tagdata[0];
+            data49[1][dataCount] = tagdata[1];
+            data49[2][dataCount] = tagdata[2];
+            data49isCollected = true;
+        }
+
+        if(data47isCollected && data49isCollected) { //全てのタグデータが揃ったら処理実行
+            if (dataCount == numOfData-1) { //最後のデータのみ送信
+                for(int i = 0; i < 3; i++){
+                    Arrays.sort(data47[i]);
+                    Arrays.sort(data49[i]);
+                }
+
+                postData = new JSONObject();
+
+                JSONObject collectedData47 = new JSONObject();
+                collectedData47.put("x", (data47[0][dataCount/2] + data47[0][1+dataCount/2]) / 2);
+                collectedData47.put("y", (data47[1][dataCount/2] + data47[1][1+dataCount/2]) / 2);
+                collectedData47.put("z", (data47[2][dataCount/2] + data47[2][1+dataCount/2]) / 2);
+                postData.put("47", collectedData47);
+
+                JSONObject collectedData49 = new JSONObject();
+                collectedData49.put("x", (data49[0][dataCount/2] + data49[0][1+dataCount/2]) / 2);
+                collectedData49.put("y", (data49[1][dataCount/2] + data49[1][1+dataCount/2]) / 2);
+                collectedData49.put("z", (data49[2][dataCount/2] + data49[2][1+dataCount/2]) / 2);
+                postData.put("49", collectedData49);
+
                 dataCount++;
                 postData.put("label", currentFingerPos);
                 postJson(postData);
-                System.out.println((dataCount - 1) + ":" + postData);
-                postData = new JSONObject();
+                System.out.println(postData);
+
                 Reader.getInstance().stop();
                 System.out.println("currentFingerPos: " + currentFingerPos + " 終了");
                 System.out.println("Enterを押してで次のタッチ位置へ．");
                 return;
             }
 
-            if (dataCount < numOfData) {
-                postData = new JSONObject();
+            if (dataCount < numOfData-1) {
+                data47isCollected = false;
+                data49isCollected = false;
                 dataCount++;
                 System.out.println("Remain Frames :" + (numOfData - dataCount));
                 return;

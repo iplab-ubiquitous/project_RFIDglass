@@ -11,7 +11,7 @@ public class Filter {
     private int numOfTag = 2;
     private boolean isCompleted;
     TreeMap<Integer, double[]> cutoffValues = new TreeMap<Integer, double[]>();
-    Map<Integer, double[][]> DataMap = new HashMap<Integer, double[][]>();
+    Map<Integer, double[][]> DataMap = new HashMap<Integer, double[][]>(3);
     Map<Integer, Integer> numOfData = new HashMap<Integer, Integer>();
 
 

@@ -1,6 +1,6 @@
 package MagnetGlass;
 
-import javafx.geometry.Pos;
+//import javafx.geometry.Pos;
 import org.json.JSONObject;
 
 import java.util.Collections;
