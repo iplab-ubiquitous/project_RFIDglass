@@ -8,10 +8,10 @@ import numpy as np
 import csv
 import matplotlib.pyplot as plt
 
-data_version = "1216_p00"  #識別データのバージョン
+data_version = "KNN_1227_p00"  #テストデータのバージョン
 
-# 学習モデルのバージョン svm: "SVC_mmdd_p(No.)", kNN: "KNN_mmdd_p(No.)"
-model_version = "RF_1220_p01"
+# 学習モデルのバージョン svm: "SVC_mmdd_p(No.)", kNN: "KNN_mmdd_p(No.), RF: "RF_mmdd_p(No.)"
+model_version = "RF_1227_p00"
 
 dataset = pd.read_csv("./testData/testdata_" + data_version + ".csv", header=None)
 

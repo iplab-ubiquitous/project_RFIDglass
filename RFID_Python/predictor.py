@@ -15,8 +15,10 @@ np.set_printoptions(suppress=True)
 training_data = np.empty([0, 7])
 data_count = 0
 correct_count = 0
-version = "1213_p01" # 学習モデルのバージョン
-clf = joblib.load('./learningModel/test_' + version + '.pkl')
+
+# 学習モデルのバージョン svm: "SVC_mmdd_p(No.)", kNN: "KNN_mmdd_p(No.), RF: "RF_mmdd_p(No.)"
+version = "KNN_1227_p00" # 学習モデルのバージョン
+clf = joblib.load('./learningModel/test' + version + '.pkl')
 pred_list = []
 true_list = []
 

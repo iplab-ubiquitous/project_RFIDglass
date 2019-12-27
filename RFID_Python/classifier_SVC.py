@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 import csv
 
-version = "1220_p01"
+version = "1227_p00"
 dataset = np.loadtxt("./collectData/data_" + version + ".csv", delimiter=',', dtype='int64')
 
 sss = StratifiedShuffleSplit(test_size=0.2)

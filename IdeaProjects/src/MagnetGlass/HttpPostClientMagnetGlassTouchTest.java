@@ -184,7 +184,7 @@ public class HttpPostClientMagnetGlassTouchTest {
         filter.setIsCompleted(true);
 
         for(int i = 0; i < 10; i++){
-            for(int j = 0; j < numOfPosition; j++){
+            for(int j = 1; j < numOfPosition; j++){
                 positionList.add(j);
             }
         }

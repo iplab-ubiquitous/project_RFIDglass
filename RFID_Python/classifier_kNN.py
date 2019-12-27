@@ -8,7 +8,7 @@ import csv
 
 from sklearn.neighbors import KNeighborsClassifier
 
-version = "1220_p01"
+version = "1227_p00"
 dataset = np.loadtxt("./collectData/data_" + version + ".csv", delimiter=',', dtype='int64')
 
 

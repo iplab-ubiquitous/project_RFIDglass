@@ -148,7 +148,7 @@ public class HttpPostClientMagnetGlass {
         sc.nextLine();
         filter.setIsCompleted(true);
 
-        for(int i = 0; i < numOfPosition; i++){
+        for(int i = 1; i < numOfPosition; i++){
             positionList.add(i);
         }
 
