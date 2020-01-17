@@ -8,12 +8,13 @@ import numpy as np
 import csv
 import matplotlib.pyplot as plt
 
+from Logput import Logput
 
-data_version = "1227_p00"  # テストデータのバージョン
-model_version = "1227_p00"  # モデルのバージョン
-modelType = "SVC"   # モデルの種類　[ SVC, KNN, RF ]
+data_version = "0117_p00"  # テストデータのバージョン
+model_version = "0117_p01"  # モデルのバージョン
+modelType = "RF"   # モデルの種類　[ SVC, KNN, RF ]
 
-dataset = pd.read_csv("./testData/testdata_" + data_version + ".csv", header=None)
+dataset = pd.read_csv("./testData/testData_" + data_version + ".csv", header=None)
 
 test_data = dataset.iloc[:, 0:6]
 test_label = dataset.iloc[:, 6]
@@ -33,3 +34,12 @@ with open('./confusionMatrix/confusion_matrix_data_' + modelType + "_" + model_v
     writer.writerows(c_matrix)
 print(classification_report(test_label, pred))
 print("正答率 = ", metrics.accuracy_score(test_label, pred))
+
+modellog = Logput(modelType)
+modellog.logput("program: datapredict.py\n")
+modellog.logput("Use model: test" + modelType + "_" + model_version + ".pkl\n")
+modellog.logput("TestData: testData_" + data_version + ".csv\n")
+modellog.logput('Save: confusion_matrix_data_' + modelType + "_" + model_version + '.csv\n')
+modellog.logput('Save: confusion_matrix_data_' + modelType + "_" + model_version + '.png\n')
+modellog.logput("正答率： {}".format(metrics.accuracy_score(test_label, pred)))
+modellog.logput("\n")

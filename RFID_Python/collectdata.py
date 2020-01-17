@@ -6,11 +6,13 @@ import json
 import socketserver
 import numpy as np
 
+from Logput import Logput
+
 np.set_printoptions(suppress=True)
 training_data = np.empty([0, 7])
 data_count = 0
-version = "1227_p00" #収集データのバージョン
-
+version = "0117_p01" #収集データのバージョン
+true_list = []
 PORT = 8080
 
 # for test
@@ -53,7 +55,9 @@ class MagnetHTTPRequestHandler(BaseHTTPRequestHandler):
             jsons['label']
         ]]
         print(parsed_json)
+        data = np.array(parsed_json[0])
         training_data = np.append(training_data, parsed_json, axis=0)
+        true_list.append(data[6])
         #print(training_data)
         data_count += 1
 
@@ -71,3 +75,7 @@ try:
 except KeyboardInterrupt:
     httpd.server_close()
     np.savetxt("./collectData/data_" + version + ".csv", training_data, delimiter=',', fmt='%.0f')
+    datalog = Logput("data")
+    datalog.logput("Save trainData :data_" + version + ".csv\n")
+    numTag = int(max(true_list)) + 1
+    datalog.logput("Number of Each datas: {}".format(data_count / numTag) + ", Positions: {}".format(numTag) + "Total datas: {}".format(data_count) + "\n\n")

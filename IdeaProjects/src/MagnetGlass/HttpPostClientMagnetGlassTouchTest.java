@@ -10,8 +10,8 @@ import java.util.*;
 public class HttpPostClientMagnetGlassTouchTest {
     static JSONObject postData = new JSONObject();
 
-    final static int numOfPosition = 6; // NO TOUCHも含む
-    final static int numOfData = 20;
+    final static int numOfPosition = 5; // NO TOUCHは含まない
+    final static int numOfData = 5;
     final static int numOfTag = 2;
 
     double[][] data47 = new double[3][numOfData];
@@ -121,7 +121,7 @@ public class HttpPostClientMagnetGlassTouchTest {
         }
 
         if(data47isCollected && data49isCollected) { //全てのタグデータが揃ったら処理実行
-            if (dataCount == numOfData-1) { //最後のデータのみ送信
+            if (dataCount == numOfData-1) { //データの中央値を送信
                 for(int i = 0; i < 3; i++){
                     Arrays.sort(data47[i]);
                     Arrays.sort(data49[i]);
@@ -184,7 +184,7 @@ public class HttpPostClientMagnetGlassTouchTest {
         filter.setIsCompleted(true);
 
         for(int i = 0; i < 10; i++){
-            for(int j = 1; j < numOfPosition; j++){
+            for(int j = 0; j < numOfPosition; j++){
                 positionList.add(j);
             }
         }

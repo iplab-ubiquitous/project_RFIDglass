@@ -6,14 +6,16 @@ from sklearn.externals import joblib
 import numpy as np
 import csv
 
-dataVersion = "1227_p00"
-modelVersion = "1227_p00"
+from Logput import Logput
+
+dataVersion = "0117_p01"
 dataset = np.loadtxt("./collectData/data_" + dataVersion + ".csv", delimiter=',', dtype='int64')
 
 sss = StratifiedShuffleSplit(test_size=0.2)
-
 data, label = np.hsplit(dataset, [6])
-
+modellog = Logput("RF")
+modellog.logput("Made RF model\n")
+modellog.logput("Traindata: data_" + dataVersion + ".csv, number of data: {}".format(dataset.shape[0]) + "\n")
 
 # 交差検証なし
 train_data, test_data, train_label, test_label = train_test_split(data, label, test_size=0.2, random_state=None, stratify=label)
@@ -47,8 +49,9 @@ clf = GridSearchCV(RandomForestClassifier(), rf_parameters, cv=5,
 clf.fit(train_data, train_label)
 print(clf.best_estimator_)
 print(classification_report(test_label, clf.predict(test_data)))
+joblib.dump(clf, './learningModel/testRF_' + dataVersion + '.pkl')
+modellog.logput('Made model: testRF_' + dataVersion + '.pkl\n')
 
-joblib.dump(clf, './learningModel/testRF_' + modelVersion + '.pkl')
 
 # スコア別
 for score in scores:
@@ -80,8 +83,11 @@ print(pred)
 print(touch_true)
 c_matrix = confusion_matrix(touch_true, pred)
 print(confusion_matrix(touch_true, pred))
-with open('./confusionMatrix/confusion_matrix_cv_RF_' + modelVersion + '.csv', 'w') as file:
+with open('./confusionMatrix/confusion_matrix_cv_RF_' + dataVersion + '.csv', 'w') as file:
     writer = csv.writer(file, lineterminator='\n')
     writer.writerows(c_matrix)
+modellog.logput('Save :confusion_matrix_cv_RF_' + dataVersion + '.csv\n')
 print(classification_report(test_label, pred))
 print("正答率 = ", metrics.accuracy_score(test_label, pred))
+modellog.logput("正答率 = {}".format(metrics.accuracy_score(test_label, pred)))
+modellog.logput("\n\n")

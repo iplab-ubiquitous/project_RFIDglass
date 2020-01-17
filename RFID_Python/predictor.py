@@ -8,15 +8,17 @@ import socketserver
 import numpy as np
 from sklearn.externals import joblib
 from sklearn.metrics import confusion_matrix, classification_report
-# from sns import sns
-# import matplotlib.pyplot as plt
+from sns import sns
+import matplotlib.pyplot as plt
+
+from Logput import Logput
 
 np.set_printoptions(suppress=True)
 training_data = np.empty([0, 7])
 data_count = 0
 correct_count = 0
 
-version = "1227_p00" # 学習モデルのバージョン："mmdd_p(No.)"
+version = "0117_p00" # 学習モデルのバージョン："mmdd_p(No.)"
 model = "KNN"  #モデルの種類　[ SVC, KNN, RF ]
 clf = joblib.load('./learningModel/test' + model + "_" + version + '.pkl')
 pred_list = []
@@ -54,7 +56,6 @@ class MagnetHTTPRequestHandler(BaseHTTPRequestHandler):
             self.recognize_finger_pos(request_body)
         else:
             self.collect_magnet_data(request_body)
-        # self.wfile.write("OK.")
 
     def collect_magnet_data(self, jsons):
         
@@ -94,20 +95,30 @@ try:
         httpd.serve_forever()
 except KeyboardInterrupt:
     httpd.server_close()
+    datalog = Logput("data")
+    modellog = Logput(model)
+    modellog.logput("program: predictor.py")
+    modellog.logput('Use model: test' + model + "_" + version + '.pkl\n')
+    modellog.logput("Save testData: testData_" + version + ".csv\n")
     c_matrix = confusion_matrix(true_list, pred_list)
     print(c_matrix)
-
     np.savetxt("./testData/testData_" + version + ".csv", training_data, delimiter=',', fmt='%.0f')
-
+    datalog.logput("Save testData: testData_" + version + ".csv\n")
+    numTag = int(max(true_list)) + 1
+    datalog.logput("Number of Each data: {}".format(data_count / numTag) + ", Positions: {}".format(numTag) + "Total data: {}".format(data_count) + "\n")
     with open('./confusionMatrix/confusion_matrix_' + version + '.csv', 'w') as file:
         writer = csv.writer(file, lineterminator='\n')
         writer.writerows(c_matrix)
 
 
+    modellog.logput('Save: confusion_matrix_' + version + '.csv\n')
+
     #混同行列の画像表示
-    # sns.heatmap(c_matrix, annot=True, cmap="Reds")
-    # plt.savefig('/confusionMatrix/confusion_matrix_' + version + '.png')
+    sns.heatmap(c_matrix, annot=True, cmap="Reds")
+    plt.savefig('./confusionMatrix/confusion_matrix_' + version + '.png')
+    modellog.logput('Save: confusion_matrix_' + version + '.png\n')
 
     print(classification_report(true_list, pred_list))
     print("\n 正答率： {}".format(float(correct_count) / float(data_count)))
-
+    modellog.logput("正答率： {}".format(float(correct_count) / float(data_count)))
+    modellog.logput("\n")

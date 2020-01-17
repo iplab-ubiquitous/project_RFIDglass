@@ -1,0 +1,16 @@
+2020-01-17  21:12:54   
+Made RF model
+Traindata: data_0117_p01.csv, number of data: 500
+Made model: testRF_0117_p01.pkl
+Save :confusion_matrix_cv_RF_0117_p01.csv
+正答率 = 0.99
+
+2020-01-17  21:33:11   
+program: datapredict.py
+Use model: testRF_0117_p01.pkl
+TestData: testData_0117_p00.csv
+Save: confusion_matrix_data_RF_0117_p01.csv
+Save: confusion_matrix_data_RF_0117_p01.png
+正答率： 0.28
+
+

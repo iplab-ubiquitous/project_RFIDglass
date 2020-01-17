@@ -11,10 +11,10 @@ public class HttpPostClientMagnetGlass {
     static JSONObject postData = new JSONObject();
     static String prevJson;
 
-    final static int numOfPosition = 6; // NO TOUCHも含む
+    final static int numOfPosition = 5; // NO TOUCHも含まない
     final static int numOfTag = 2;
 
-    static int numOfData = 200;
+    static int numOfData = 100;
     static int currentFingerPos;
     static int dataCount;
     static ArrayList<Integer> positionList = new ArrayList<Integer>();
@@ -148,11 +148,11 @@ public class HttpPostClientMagnetGlass {
         sc.nextLine();
         filter.setIsCompleted(true);
 
-        for(int i = 1; i < numOfPosition; i++){
+        for(int i = 0; i < numOfPosition; i++){
             positionList.add(i);
         }
 
-        Collections.shuffle(positionList);
+//        Collections.shuffle(positionList);
 
         for (int position : positionList) {
             currentFingerPos = position;
