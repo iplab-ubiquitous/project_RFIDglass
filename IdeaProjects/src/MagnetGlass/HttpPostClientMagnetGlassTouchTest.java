@@ -11,7 +11,7 @@ public class HttpPostClientMagnetGlassTouchTest {
     static JSONObject postData = new JSONObject();
 
     final static int numOfPosition = 5; // NO TOUCHは含まない
-    final static int numOfData = 5;
+    final static int numOfData = 10;
     final static int numOfTag = 2;
 
     double[][] data47 = new double[3][numOfData];

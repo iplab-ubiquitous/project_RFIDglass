@@ -15,7 +15,7 @@ version = "0120_p03" #収集データのバージョン
 true_list = []
 PORT = 8080
 
-# for test
+# for result
 # curl -X POST -H "Content-Type: application/json" -d '{"45":{"x":-117,"y":-472,"z":-29},"47":{"x":-987,"y":-49,"z":-1524},"label":6}' localhost:8080
 
 

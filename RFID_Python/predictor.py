@@ -19,7 +19,7 @@ training_data = np.empty([0, 7])
 data_count = 0
 correct_count = 0
 
-testversion = "0120_p04"  # 保存テストデータのバージョン
+testversion = "0120_p05"  # 保存テストデータのバージョン
 version = "0120_p01"  # 学習モデルのバージョン："mmdd_p(No.)"
 model = "KNN"  #モデルの種類　[ SVC, KNN, RF ]
 clf = joblib.load('./learningModel/test' + model + "_" + version + '.pkl')
@@ -29,7 +29,7 @@ true_list = []
 
 PORT = 8080
 
-# for test
+# for result
 # curl -X POST -H "Content-Type: application/json" -d '{"45":{"x":-117,"y":-472,"z":-29},"47":{"x":-987,"y":-49,"z":-1524},"label":6}' localhost:8080
 
 
@@ -101,14 +101,13 @@ except KeyboardInterrupt:
     modellog = Logput(model)
     modellog.logput("program: predictor.py\n")
     modellog.logput('Use model: test' + model + "_" + version + '.pkl\n')
-    modellog.logput("Save testData: testData_" + version + ".csv\n")
     c_matrix = confusion_matrix(true_list, pred_list)
     print(c_matrix)
     np.savetxt("./testData/testData_" + testversion + ".csv", training_data, delimiter=',', fmt='%.0f')
     datalog.logput("Save testData: testData_" + testversion + ".csv\n")
     numTag = int(max(true_list)) + 1
     datalog.logput("Number of Each data: {}".format(data_count / numTag) + ", Positions: {}".format(numTag) + "Total data: {}".format(data_count) + "\n")
-    with open('./confusionMatrix/test/csv/confusion_matrix_data_' + model + "_" + version + '.csv', 'w') as file:
+    with open('./confusionMatrix/result/csv/confusion_matrix_data_' + model + "_" + version + '.csv', 'w') as file:
         writer = csv.writer(file, lineterminator='\n')
         writer.writerows(c_matrix)
 
@@ -117,7 +116,7 @@ except KeyboardInterrupt:
 
     #混同行列の画像表示
     sns.heatmap(c_matrix, annot=True, cmap="Reds")
-    plt.savefig('./confusionMatrix/test/png/confusion_matrix_data_' + model + "_" + version + '.png')
+    plt.savefig('./confusionMatrix/result/png/confusion_matrix_data_' + model + "_" + version + '.png')
     modellog.logput('Save: confusion_matrix_data_' + model + "_" + version + '.png\n')
 
     print(classification_report(true_list, pred_list))

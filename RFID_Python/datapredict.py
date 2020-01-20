@@ -28,8 +28,8 @@ print(touch_true)
 c_matrix = confusion_matrix(touch_true, pred)
 print(c_matrix)
 sns.heatmap(c_matrix, annot=True, cmap="Reds")
-plt.savefig('./confusionMatrix/test/png/confusion_matrix_data_' + modelType + "_" + model_version + '.png')
-with open('./confusionMatrix/test/csv/confusion_matrix_data_' + modelType + "_" + model_version + '.csv', 'w') as file:
+plt.savefig('./confusionMatrix/result/png/confusion_matrix_data_' + modelType + "_" + model_version + '.png')
+with open('./confusionMatrix/result/csv/confusion_matrix_data_' + modelType + "_" + model_version + '.csv', 'w') as file:
     writer = csv.writer(file, lineterminator='\n')
     writer.writerows(c_matrix)
 print(classification_report(test_label, pred))

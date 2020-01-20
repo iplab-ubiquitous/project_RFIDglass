@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 
 
-dataset = pd.read_csv("test.csv", header=None)
+dataset = pd.read_csv("result.csv", header=None)
 data_train, data_test = train_test_split(dataset, test_size=0.2)
 
 train_label = data_train.iloc[:, 6]
