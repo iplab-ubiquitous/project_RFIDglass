@@ -1,0 +1,40 @@
+2020-01-17  21:16:49   
+Made SVC model
+Traindata: data_0117_p01.csv, number of datas: 500
+
+2020-01-20  21:11:47   
+Made SVC model
+Traindata: data_0120_p00.csv, number of data: 500
+Made model: testSVC_0120_p00.pkl
+Save: confusion_matrix_cv_SVC0120_p00.csv正答率 = 0.96
+
+
+
+2020-01-20  21:12:43   
+program: datapredict.py
+Use model: testSVC_0120_p00.pkl
+TestData: testData_0117_p00.csv
+Save: confusion_matrix_data_SVC_0120_p00.csv
+Save: confusion_matrix_data_SVC_0120_p00.png
+正答率： 0.22
+
+
+2020-01-20  21:30:35   
+program: datapredict.py
+Use model: testSVC_0120_p00.pkl
+TestData: testData_0120_p00.csv
+Save: confusion_matrix_data_SVC_0120_p00.csv
+Save: confusion_matrix_data_SVC_0120_p00.png
+正答率： 0.28
+
+
+2020-01-20  21:58:33   
+Made SVC model
+Traindata: data_0120_p01.csv, number of data: 1000
+
+
+2020-01-20  22:24:44   
+Made SVC model
+Traindata: data_0120_p01.csv, number of data: 1000
+
+

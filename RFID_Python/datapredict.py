@@ -10,9 +10,9 @@ import matplotlib.pyplot as plt
 
 from Logput import Logput
 
-data_version = "0117_p00"  # テストデータのバージョン
-model_version = "0117_p01"  # モデルのバージョン
-modelType = "RF"   # モデルの種類　[ SVC, KNN, RF ]
+data_version = "0120_p03"  # テストデータのバージョン
+model_version = "0120"  # モデルのバージョン
+modelType = "KNN"   # モデルの種類　[ SVC, KNN, RF ]
 
 dataset = pd.read_csv("./testData/testData_" + data_version + ".csv", header=None)
 
@@ -28,8 +28,8 @@ print(touch_true)
 c_matrix = confusion_matrix(touch_true, pred)
 print(c_matrix)
 sns.heatmap(c_matrix, annot=True, cmap="Reds")
-plt.savefig('./confusionMatrix/confusion_matrix_data_' + modelType + "_" + model_version + '.png')
-with open('./confusionMatrix/confusion_matrix_data_' + modelType + "_" + model_version + '.csv', 'w') as file:
+plt.savefig('./confusionMatrix/test/png/confusion_matrix_data_' + modelType + "_" + model_version + '.png')
+with open('./confusionMatrix/test/csv/confusion_matrix_data_' + modelType + "_" + model_version + '.csv', 'w') as file:
     writer = csv.writer(file, lineterminator='\n')
     writer.writerows(c_matrix)
 print(classification_report(test_label, pred))

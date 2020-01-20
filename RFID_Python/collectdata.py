@@ -11,7 +11,7 @@ from Logput import Logput
 np.set_printoptions(suppress=True)
 training_data = np.empty([0, 7])
 data_count = 0
-version = "0117_p01" #収集データのバージョン
+version = "0120_p03" #収集データのバージョン
 true_list = []
 PORT = 8080
 
@@ -78,4 +78,4 @@ except KeyboardInterrupt:
     datalog = Logput("data")
     datalog.logput("Save trainData :data_" + version + ".csv\n")
     numTag = int(max(true_list)) + 1
-    datalog.logput("Number of Each datas: {}".format(data_count / numTag) + ", Positions: {}".format(numTag) + "Total datas: {}".format(data_count) + "\n\n")
+    datalog.logput("Number of Each data: {}".format(data_count / numTag) + ", Positions: {}".format(numTag) + "Total data: {}".format(data_count) + "\n\n")

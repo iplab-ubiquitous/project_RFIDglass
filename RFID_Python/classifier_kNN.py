@@ -10,7 +10,7 @@ from sklearn.neighbors import KNeighborsClassifier
 
 from Logput import Logput
 
-dataVersion = "0117_p01"
+dataVersion = "0120_p03"
 dataset = np.loadtxt("./collectData/data_" + dataVersion + ".csv", delimiter=',', dtype='int64')
 
 modellog = Logput("KNN")
@@ -54,6 +54,7 @@ print(classification_report(test_label, clf.predict(test_data)))
 
 joblib.dump(clf, './learningModel/testKNN_'+ dataVersion + '.pkl')
 modellog.logput('Made model: testKNN_'+ dataVersion + '.pkl\n')
+# modellog.logput(toString(clf.best_estimator_))
 
 # スコア別
 for score in scores:
@@ -85,11 +86,11 @@ print(pred)
 print(touch_true)
 c_matrix = confusion_matrix(touch_true, pred)
 print(confusion_matrix(touch_true, pred))
-with open('./confusionMatrix/confusion_matrix_cv_KNN_' + dataVersion + '.csv', 'w') as file:
+with open('./confusionMatrix/crossValidation/confusion_matrix_cv_KNN_' + dataVersion + '.csv', 'w') as file:
     writer = csv.writer(file, lineterminator='\n')
     writer.writerows(c_matrix)
 modellog.logput('Save: confusion_matrix_cv_KNN_' + dataVersion + '.csv\n')
 print(classification_report(test_label, pred))
 print("正答率 = ", metrics.accuracy_score(test_label, pred))
 modellog.logput("正答率 =  {}".format(metrics.accuracy_score(test_label, pred)))
-modellog.logput("\n")
+modellog.logput("\n\n")

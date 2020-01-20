@@ -8,7 +8,7 @@ import csv
 
 from Logput import Logput
 
-dataVersion = "0117_p01"
+dataVersion = "0120_p02"
 dataset = np.loadtxt("./collectData/data_" + dataVersion + ".csv", delimiter=',', dtype='int64')
 
 sss = StratifiedShuffleSplit(test_size=0.2)
@@ -46,8 +46,8 @@ clf.fit(train_data, train_label)
 print(clf.best_estimator_)
 print(classification_report(test_label, clf.predict(test_data)))
 
-joblib.dump(clf, './learningModel/test'+ dataVersion +'_'+ dataVersion + '.pkl')
-modellog.logput('Made model: testKNN_'+ dataVersion + '.pkl\n')
+joblib.dump(clf, './learningModel/testSVC' + '_' + dataVersion + '.pkl')
+modellog.logput('Made model: testSVC_'+ dataVersion + '.pkl\n')
 for score in scores:
     print("# Tuning hyper-parameters for {}".format(score))
 
@@ -77,10 +77,10 @@ print(pred)
 print(touch_true)
 c_matrix = confusion_matrix(touch_true, pred)
 print(confusion_matrix(touch_true, pred))
-with open('./confusionMatrix/confusion_matrix_cv_SVC' + dataVersion + '.csv', 'w') as file:
+with open('./confusionMatrix/crossValidation/confusion_matrix_cv_SVC' + dataVersion + '.csv', 'w') as file:
     writer = csv.writer(file, lineterminator='\n')
     writer.writerows(c_matrix)
-modellog.logput('Save: confusion_matrix_cv_SVC' + dataVersion + '.csv')
+modellog.logput('Save: confusion_matrix_cv_SVC_' + dataVersion + '.csv')
 print(classification_report(test_label, pred))
 print("正答率 = ", metrics.accuracy_score(test_label, pred))
 modellog.logput("正答率 = {}".format(metrics.accuracy_score(test_label, pred)))

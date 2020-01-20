@@ -8,8 +8,9 @@ import socketserver
 import numpy as np
 from sklearn.externals import joblib
 from sklearn.metrics import confusion_matrix, classification_report
-from sns import sns
+
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 from Logput import Logput
 
@@ -18,7 +19,8 @@ training_data = np.empty([0, 7])
 data_count = 0
 correct_count = 0
 
-version = "0117_p00" # 学習モデルのバージョン："mmdd_p(No.)"
+testversion = "0120_p04"  # 保存テストデータのバージョン
+version = "0120_p01"  # 学習モデルのバージョン："mmdd_p(No.)"
 model = "KNN"  #モデルの種類　[ SVC, KNN, RF ]
 clf = joblib.load('./learningModel/test' + model + "_" + version + '.pkl')
 pred_list = []
@@ -97,26 +99,26 @@ except KeyboardInterrupt:
     httpd.server_close()
     datalog = Logput("data")
     modellog = Logput(model)
-    modellog.logput("program: predictor.py")
+    modellog.logput("program: predictor.py\n")
     modellog.logput('Use model: test' + model + "_" + version + '.pkl\n')
     modellog.logput("Save testData: testData_" + version + ".csv\n")
     c_matrix = confusion_matrix(true_list, pred_list)
     print(c_matrix)
-    np.savetxt("./testData/testData_" + version + ".csv", training_data, delimiter=',', fmt='%.0f')
-    datalog.logput("Save testData: testData_" + version + ".csv\n")
+    np.savetxt("./testData/testData_" + testversion + ".csv", training_data, delimiter=',', fmt='%.0f')
+    datalog.logput("Save testData: testData_" + testversion + ".csv\n")
     numTag = int(max(true_list)) + 1
     datalog.logput("Number of Each data: {}".format(data_count / numTag) + ", Positions: {}".format(numTag) + "Total data: {}".format(data_count) + "\n")
-    with open('./confusionMatrix/confusion_matrix_' + version + '.csv', 'w') as file:
+    with open('./confusionMatrix/test/csv/confusion_matrix_data_' + model + "_" + version + '.csv', 'w') as file:
         writer = csv.writer(file, lineterminator='\n')
         writer.writerows(c_matrix)
 
 
-    modellog.logput('Save: confusion_matrix_' + version + '.csv\n')
+    modellog.logput('Save: confusion_matrix_data_' + model + "_" + version + '.csv\n')
 
     #混同行列の画像表示
     sns.heatmap(c_matrix, annot=True, cmap="Reds")
-    plt.savefig('./confusionMatrix/confusion_matrix_' + version + '.png')
-    modellog.logput('Save: confusion_matrix_' + version + '.png\n')
+    plt.savefig('./confusionMatrix/test/png/confusion_matrix_data_' + model + "_" + version + '.png')
+    modellog.logput('Save: confusion_matrix_data_' + model + "_" + version + '.png\n')
 
     print(classification_report(true_list, pred_list))
     print("\n 正答率： {}".format(float(correct_count) / float(data_count)))

@@ -8,7 +8,7 @@ import csv
 
 from Logput import Logput
 
-dataVersion = "0117_p01"
+dataVersion = "0120_p02"
 dataset = np.loadtxt("./collectData/data_" + dataVersion + ".csv", delimiter=',', dtype='int64')
 
 sss = StratifiedShuffleSplit(test_size=0.2)
@@ -83,7 +83,7 @@ print(pred)
 print(touch_true)
 c_matrix = confusion_matrix(touch_true, pred)
 print(confusion_matrix(touch_true, pred))
-with open('./confusionMatrix/confusion_matrix_cv_RF_' + dataVersion + '.csv', 'w') as file:
+with open('./confusionMatrix/crossValidation/confusion_matrix_cv_RF_' + dataVersion + '.csv', 'w') as file:
     writer = csv.writer(file, lineterminator='\n')
     writer.writerows(c_matrix)
 modellog.logput('Save :confusion_matrix_cv_RF_' + dataVersion + '.csv\n')
