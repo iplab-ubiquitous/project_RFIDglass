@@ -796,3 +796,138 @@ Save: confusion_matrix_data_KNN_0120.png
 正答率： 0.6
 
 
+2020-01-21  09:14:30   
+program: datapredict.py
+Use model: testKNN_0120.pkl
+TestData: testData_0120_p04.csv
+Save: confusion_matrix_data_KNN_0120.csv
+Save: confusion_matrix_data_KNN_0120.png
+正答率： 0.74
+
+
+2020-01-21  09:15:19   
+program: datapredict.py
+Use model: testKNN_0120.pkl
+TestData: testData_0120_p03.csv
+Save: confusion_matrix_data_KNN_0120.csv
+Save: confusion_matrix_data_KNN_0120.png
+正答率： 0.5
+
+
+2020-01-21  09:15:58   
+program: datapredict.py
+Use model: testKNN_0120.pkl
+TestData: testData_0120_p02.csv
+Save: confusion_matrix_data_KNN_0120.csv
+Save: confusion_matrix_data_KNN_0120.png
+正答率： 0.54
+
+
+2020-01-21  09:16:08   
+program: datapredict.py
+Use model: testKNN_0120.pkl
+TestData: testData_0120_p02.csv
+Save: confusion_matrix_data_KNN_0120.csv
+Save: confusion_matrix_data_KNN_0120.png
+正答率： 0.5
+
+
+2020-01-21  09:16:37   
+program: datapredict.py
+Use model: testKNN_0120.pkl
+TestData: testData_0120_p02.csv
+Save: confusion_matrix_data_KNN_0120.csv
+Save: confusion_matrix_data_KNN_0120.png
+正答率： 0.52
+
+
+2020-01-21  09:17:01   
+program: datapredict.py
+Use model: testKNN_0120.pkl
+TestData: testData_0120_p01.csv
+Save: confusion_matrix_data_KNN_0120.csv
+Save: confusion_matrix_data_KNN_0120.png
+正答率： 0.58
+
+
+2020-01-21  09:17:44   
+program: datapredict.py
+Use model: testKNN_0120.pkl
+TestData: testData_0120_p00.csv
+Save: confusion_matrix_data_KNN_0120.csv
+Save: confusion_matrix_data_KNN_0120.png
+正答率： 0.64
+
+
+2020-01-21  09:18:17   
+program: datapredict.py
+Use model: testKNN_0120.pkl
+TestData: testData_0120_p04.csv
+Save: confusion_matrix_data_KNN_0120.csv
+Save: confusion_matrix_data_KNN_0120.png
+正答率： 0.78
+
+
+2020-01-21  09:19:57   
+program: datapredict.py
+Use model: testKNN_0120.pkl
+TestData: testData_0120_p04.csv
+Save: confusion_matrix_data_KNN_0120.csv
+Save: confusion_matrix_data_KNN_0120.png
+正答率： 0.64
+
+
+2020-01-21  09:20:15   
+program: datapredict.py
+Use model: testKNN_0120.pkl
+TestData: testData_0120_p04.csv
+Save: confusion_matrix_data_KNN_0120.csv
+Save: confusion_matrix_data_KNN_0120.png
+正答率： 0.66
+
+
+2020-01-21  09:21:48   
+program: datapredict.py
+Use model: testKNN_0120.pkl
+TestData: testData_0120_p04.csv
+Save: confusion_matrix_data_KNN_0120.csv
+Save: confusion_matrix_data_KNN_0120.png
+正答率： 0.76
+
+
+2020-01-21  09:22:01   
+program: datapredict.py
+Use model: testKNN_0120.pkl
+TestData: testData_0120_p04.csv
+Save: confusion_matrix_data_KNN_0120.csv
+Save: confusion_matrix_data_KNN_0120.png
+正答率： 0.74
+
+
+2020-01-21  09:22:12   
+program: datapredict.py
+Use model: testKNN_0120.pkl
+TestData: testData_0120_p04.csv
+Save: confusion_matrix_data_KNN_0120.csv
+Save: confusion_matrix_data_KNN_0120.png
+正答率： 0.74
+
+
+2020-01-21  09:22:30   
+program: datapredict.py
+Use model: testKNN_0120.pkl
+TestData: testData_0120_p04.csv
+Save: confusion_matrix_data_KNN_0120.csv
+Save: confusion_matrix_data_KNN_0120.png
+正答率： 0.76
+
+
+2020-01-21  09:23:06   
+program: datapredict.py
+Use model: testKNN_0120.pkl
+TestData: testData_0120_p04.csv
+Save: confusion_matrix_data_KNN_0120.csv
+Save: confusion_matrix_data_KNN_0120.png
+正答率： 0.76
+
+

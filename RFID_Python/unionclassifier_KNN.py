@@ -11,15 +11,21 @@ from sklearn.neighbors import KNeighborsClassifier
 from Logput import Logput
 
 Version = "0120"
-dataset = np.loadtxt("./collectData/data_" + Version + "_p00.csv", delimiter=',', dtype='int64')
-dataset = np.append(dataset, np.loadtxt("./collectData/data_" + Version + "_p01.csv", delimiter=',', dtype='int64'), axis=0)
-dataset = np.append(dataset, np.loadtxt("./collectData/data_" + Version + "_p02.csv", delimiter=',', dtype='int64'), axis=0)
-dataset = np.append(dataset, np.loadtxt("./collectData/data_" + Version + "_p03.csv", delimiter=',', dtype='int64'), axis=0)
+# dataset = np.loadtxt("./collectData/data_" + Version + "_p00.csv", delimiter=',', dtype='int64')
+# dataset = np.append(dataset, np.loadtxt("./collectData/data_" + Version + "_p01.csv", delimiter=',', dtype='int64'), axis=0)
+# dataset = np.append(dataset, np.loadtxt("./collectData/data_" + Version + "_p02.csv", delimiter=',', dtype='int64'), axis=0)
+# dataset = np.append(dataset, np.loadtxt("./collectData/data_" + Version + "_p03.csv", delimiter=',', dtype='int64'), axis=0)
+
+dataset = np.loadtxt("./testData/testData_" + Version + "_p00.csv", delimiter=',', dtype='int64')
+# dataset = np.append(dataset, np.loadtxt("./testData/testData_" + Version + "_p00.csv", delimiter=',', dtype='int64'), axis=0)
+dataset = np.append(dataset, np.loadtxt("./testData/testData_" + Version + "_p01.csv", delimiter=',', dtype='int64'), axis=0)
+dataset = np.append(dataset, np.loadtxt("./testData/testData_" + Version + "_p02.csv", delimiter=',', dtype='int64'), axis=0)
+dataset = np.append(dataset, np.loadtxt("./testData/testData_" + Version + "_p03.csv", delimiter=',', dtype='int64'), axis=0)
 
 # modellog = Logput("KNN")
 # modellog.logput("Made KNN model\n")
 # modellog.logput("Traindata: data_" + Version + ".csv, number of data:  {}".format(dataset.shape[0]) + "\n")
-sss = StratifiedShuffleSplit(test_size=0.4)
+sss = StratifiedShuffleSplit(test_size=0.2)
 
 data, label = np.hsplit(dataset, [6])
 

@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 from Logput import Logput
 
-data_version = "0120_p03"  # テストデータのバージョン
+data_version = "0120_p04"  # テストデータのバージョン
 model_version = "0120"  # モデルのバージョン
 modelType = "KNN"   # モデルの種類　[ SVC, KNN, RF ]
 
