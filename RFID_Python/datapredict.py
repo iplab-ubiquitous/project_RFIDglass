@@ -27,11 +27,13 @@ print(pred)
 print(touch_true)
 c_matrix = confusion_matrix(touch_true, pred)
 print(c_matrix)
-sns.heatmap(c_matrix, annot=True, cmap="Reds")
+labels = ["eye-right", "eye-left", "cheek-right", "cheek-left", "chin"]
+cm_pd = pd.DataFrame(c_matrix, columns=labels, index=labels)
+sns.heatmap(cm_pd, annot=True, cmap="Reds")
 plt.savefig('./confusionMatrix/result/png/confusion_matrix_data_' + modelType + "_" + model_version + '.png')
 with open('./confusionMatrix/result/csv/confusion_matrix_data_' + modelType + "_" + model_version + '.csv', 'w') as file:
     writer = csv.writer(file, lineterminator='\n')
-    writer.writerows(c_matrix)
+    writer.writerows(cm_pd)
 print(classification_report(test_label, pred))
 print("正答率 = ", metrics.accuracy_score(test_label, pred))
 

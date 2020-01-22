@@ -94,8 +94,9 @@ touch_true = test_label.tolist()
 print(pred)
 print(touch_true)
 c_matrix = confusion_matrix(touch_true, pred)
-print(confusion_matrix(touch_true, pred))
-sns.heatmap(c_matrix, annot=True, cmap="Reds")
+labels = ["eye-right", "eye-left", "cheek-right", "cheek-left", "chin"]
+cm_pd = pd.DataFrame(c_matrix, columns=labels, index=labels)
+sns.heatmap(cm_pd, annot=True, cmap="Reds")
 plt.savefig('./confusionMatrix/crossValidation/confusion_matrix_cv_NN_' + dataVersion + '.png')
 with open('./confusionMatrix/crossValidation/confusion_matrix_cv_NN_' + dataVersion + '.csv', 'w') as file:
     writer = csv.writer(file, lineterminator='\n')

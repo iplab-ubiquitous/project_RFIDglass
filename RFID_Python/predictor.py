@@ -6,6 +6,7 @@ import sys
 import json
 import socketserver
 import numpy as np
+import pandas as pd
 from sklearn.externals import joblib
 from sklearn.metrics import confusion_matrix, classification_report
 
@@ -103,6 +104,14 @@ except KeyboardInterrupt:
     modellog.logput('Use model: test' + model + "_" + version + '.pkl\n')
     c_matrix = confusion_matrix(true_list, pred_list)
     print(c_matrix)
+
+    #混同行列の画像表示
+    labels = ["eye-right", "eye-left", "cheek-right", "cheek-left", "chin"]
+    cm_pd = pd.DataFrame(c_matrix, columns=labels, index=labels)
+    sns.heatmap(cm_pd, annot=True, cmap="Reds")
+    plt.savefig('./confusionMatrix/result/png/confusion_matrix_data_' + model + "_" + version + '.png')
+    modellog.logput('Save: confusion_matrix_data_' + model + "_" + version + '.png\n')
+
     np.savetxt("./testData/testData_" + testversion + ".csv", training_data, delimiter=',', fmt='%.0f')
     datalog.logput("Save testData: testData_" + testversion + ".csv\n")
     numTag = int(max(true_list)) + 1
@@ -114,10 +123,7 @@ except KeyboardInterrupt:
 
     modellog.logput('Save: confusion_matrix_data_' + model + "_" + version + '.csv\n')
 
-    #混同行列の画像表示
-    sns.heatmap(c_matrix, annot=True, cmap="Reds")
-    plt.savefig('./confusionMatrix/result/png/confusion_matrix_data_' + model + "_" + version + '.png')
-    modellog.logput('Save: confusion_matrix_data_' + model + "_" + version + '.png\n')
+
 
     print(classification_report(true_list, pred_list))
     print("\n 正答率： {}".format(float(correct_count) / float(data_count)))

@@ -1009,3 +1009,55 @@ Save: confusion_matrix_data_KNN_0120.png
 正答率： 0.7
 
 
+2020-01-23  03:45:55   
+Made KNN model
+Traindata: data_0120_p01.csv, number of data:  1000
+Made model: testKNN_0120_p01.pkl
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='manhattan',
+           metric_params=None, n_jobs=1, n_neighbors=7, p=2,
+           weights='distance')
+Save: confusion_matrix_cv_KNN_0120_p01.csv
+Save: confusion_matrix_cv_KNN_0120_p01.png
+正答率 =  0.985
+
+
+
+2020-01-23  04:10:21   
+Made KNN model
+Traindata: data_0120_p01.csv, number of data:  1000
+Made model: testKNN_0120_p01.pkl
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='euclidean',
+           metric_params=None, n_jobs=1, n_neighbors=7, p=2,
+           weights='distance')
+Save: confusion_matrix_cv_KNN_0120_p01.csv
+Save: confusion_matrix_cv_KNN_0120_p01.png
+正答率 =  0.995
+
+
+
+2020-01-23  04:11:06   
+Made KNN model
+Traindata: data_0120_p01.csv, number of data:  1000
+Made model: testKNN_0120_p01.pkl
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='manhattan',
+           metric_params=None, n_jobs=1, n_neighbors=7, p=2,
+           weights='distance')
+Save: confusion_matrix_cv_KNN_0120_p01.csv
+Save: confusion_matrix_cv_KNN_0120_p01.png
+正答率 =  0.995
+
+
+
+2020-01-23  04:16:07   
+Made KNN model
+Traindata: data_0120_p01.csv, number of data:  1000
+Made model: testKNN_0120_p01.pkl
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='manhattan',
+           metric_params=None, n_jobs=1, n_neighbors=7, p=2,
+           weights='distance')
+Save: confusion_matrix_cv_KNN_0120_p01.csv
+Save: confusion_matrix_cv_KNN_0120_p01.png
+正答率 =  0.965
+
+
+

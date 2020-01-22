@@ -19,7 +19,7 @@ dataset = np.loadtxt("./collectData/data_" + dataVersion + ".csv", delimiter=','
 modellog = Logput("KNN")
 modellog.logput("Made KNN model\n")
 modellog.logput("Traindata: data_" + dataVersion + ".csv, number of data:  {}".format(dataset.shape[0]) + "\n")
-sss = StratifiedShuffleSplit(test_size=0.2)
+# sss = StratifiedShuffleSplit(test_size=0.2)
 
 data, label = np.hsplit(dataset, [6])
 
@@ -85,11 +85,14 @@ for score in scores:
 # clf_svc = joblib.load('test1002.pkl')
 pred = clf.predict(test_data)
 touch_true = test_label.tolist()
+labels = ["eye-right", "eye-left", "cheek-right", "cheek-left", "chin"]
 print(pred)
 print(touch_true)
 c_matrix = confusion_matrix(touch_true, pred)
 print(confusion_matrix(touch_true, pred))
-sns.heatmap(c_matrix, annot=True, cmap="Reds")
+cm_pd = pd.DataFrame(c_matrix, columns=labels, index=labels)
+sum = int(test_data.shape[0]) / int(labels.__len__())
+sns.heatmap(cm_pd, annot=True, cmap="Reds", fmt='.4g')
 plt.savefig('./confusionMatrix/crossValidation/confusion_matrix_cv_KNN_' + dataVersion + '.png')
 with open('./confusionMatrix/crossValidation/confusion_matrix_cv_KNN_' + dataVersion + '.csv', 'w') as file:
     writer = csv.writer(file, lineterminator='\n')

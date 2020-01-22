@@ -5,6 +5,8 @@ from sklearn.externals import joblib
 import pandas as pd
 import numpy as np
 import csv
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 from sklearn.neighbors import KNeighborsClassifier
 
@@ -83,7 +85,13 @@ touch_true = test_label.tolist()
 print(pred)
 print(touch_true)
 c_matrix = confusion_matrix(touch_true, pred)
-print(confusion_matrix(touch_true, pred))
+print(c_matrix)
+# 混同行列の画像表示
+labels = ["eye-right", "eye-left", "cheek-right", "cheek-left", "chin"]
+cm_pd = pd.DataFrame(c_matrix, columns=labels, index=labels)
+sns.heatmap(cm_pd, annot=True, cmap="Reds")
+plt.savefig('./confusionMatrix/result/png/confusion_matrix_cv_KNN_' + Version + '.png')
+
 with open('./confusionMatrix/crossValidation/confusion_matrix_cv_KNN_' + Version + '_Union.csv', 'w') as file:
     writer = csv.writer(file, lineterminator='\n')
     writer.writerows(c_matrix)

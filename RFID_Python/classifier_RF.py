@@ -8,6 +8,7 @@ import csv
 import seaborn as sns
 import matplotlib.pyplot as plt
 from Logput import Logput
+import pandas as pd
 
 dataVersion = "0120_p01"
 dataset = np.loadtxt("./collectData/data_" + dataVersion + ".csv", delimiter=',', dtype='int64')
@@ -84,7 +85,9 @@ touch_true = test_label.tolist()
 print(pred)
 print(touch_true)
 c_matrix = confusion_matrix(touch_true, pred)
-sns.heatmap(c_matrix, annot=True, cmap="Reds")
+labels = ["eye-right", "eye-left", "cheek-right", "cheek-left", "chin"]
+cm_pd = pd.DataFrame(c_matrix, columns=labels, index=labels)
+sns.heatmap(cm_pd, annot=True, cmap="Reds")
 plt.savefig('./confusionMatrix/crossValidation/confusion_matrix_cv_RF_' + dataVersion + '.png')
 print(confusion_matrix(touch_true, pred))
 with open('./confusionMatrix/crossValidation/confusion_matrix_cv_RF_' + dataVersion + '.csv', 'w') as file:
