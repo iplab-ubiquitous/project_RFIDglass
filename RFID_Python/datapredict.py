@@ -10,9 +10,9 @@ import matplotlib.pyplot as plt
 
 from Logput import Logput
 
-data_version = "0120_p04"  # テストデータのバージョン
-model_version = "0120"  # モデルのバージョン
-modelType = "KNN"   # モデルの種類　[ SVC, KNN, RF ]
+data_version = "0120_p01"  # テストデータのバージョン
+model_version = "0120_p01"  # モデルのバージョン
+modelType = "NN"   # モデルの種類　[ SVC, KNN, RF, NN ]
 
 dataset = pd.read_csv("./testData/testData_" + data_version + ".csv", header=None)
 

@@ -5,10 +5,11 @@ from sklearn.metrics import classification_report, accuracy_score, confusion_mat
 from sklearn.externals import joblib
 import numpy as np
 import csv
-
+import seaborn as sns
+import matplotlib.pyplot as plt
 from Logput import Logput
 
-dataVersion = "0120_p02"
+dataVersion = "0120_p01"
 dataset = np.loadtxt("./collectData/data_" + dataVersion + ".csv", delimiter=',', dtype='int64')
 
 sss = StratifiedShuffleSplit(test_size=0.2)
@@ -48,6 +49,7 @@ clf = GridSearchCV(RandomForestClassifier(), rf_parameters, cv=5,
                    scoring='accuracy', n_jobs=-1)
 clf.fit(train_data, train_label)
 print(clf.best_estimator_)
+modellog.logput("{}\n".format(clf.best_estimator_))
 print(classification_report(test_label, clf.predict(test_data)))
 joblib.dump(clf, './learningModel/testRF_' + dataVersion + '.pkl')
 modellog.logput('Made model: testRF_' + dataVersion + '.pkl\n')
@@ -82,11 +84,14 @@ touch_true = test_label.tolist()
 print(pred)
 print(touch_true)
 c_matrix = confusion_matrix(touch_true, pred)
+sns.heatmap(c_matrix, annot=True, cmap="Reds")
+plt.savefig('./confusionMatrix/crossValidation/confusion_matrix_cv_RF_' + dataVersion + '.png')
 print(confusion_matrix(touch_true, pred))
 with open('./confusionMatrix/crossValidation/confusion_matrix_cv_RF_' + dataVersion + '.csv', 'w') as file:
     writer = csv.writer(file, lineterminator='\n')
     writer.writerows(c_matrix)
 modellog.logput('Save :confusion_matrix_cv_RF_' + dataVersion + '.csv\n')
+modellog.logput('Save: confusion_matrix_cv_RF_' + dataVersion + '.png\n')
 print(classification_report(test_label, pred))
 print("正答率 = ", metrics.accuracy_score(test_label, pred))
 modellog.logput("正答率 = {}".format(metrics.accuracy_score(test_label, pred)))

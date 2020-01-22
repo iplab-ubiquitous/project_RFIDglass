@@ -8,9 +8,9 @@ import java.util.Scanner;
 
 public class PostOneTouch extends HttpPostClientMagnetGlass{
     protected PostOneTouch(){
-        this.numOfData = 10;
+        this.numOfData = 200;
         this.currentFingerPos = 0;
-        this.filter = new Filter(2, numOfData);
+        this.filter = new Filter(2, 3);
     }
 
     public static void main(String[] args){

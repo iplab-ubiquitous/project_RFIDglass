@@ -1,0 +1,473 @@
+2020-01-22  11:34:26   
+Made NN model
+Traindata: data_0120_p01.csv, number of data:  1000
+
+
+2020-01-22  11:34:41   
+Made NN model
+Traindata: data_0120_p01.csv, number of data:  1000
+Made model: testNN_0120_p01.pkl
+
+
+2020-01-22  11:34:50   
+Made NN model
+Traindata: data_0120_p01.csv, number of data:  1000
+Made model: testNN_0120_p01.pkl
+Save: confusion_matrix_cv_NN_0120_p01.csv
+Save: confusion_matrix_cv_NN_0120_p01.png
+正答率 =  0.18
+
+
+
+2020-01-22  11:35:29   
+Made NN model
+Traindata: data_0120_p01.csv, number of data:  1000
+Made model: testNN_0120_p01.pkl
+Save: confusion_matrix_cv_NN_0120_p01.csv
+Save: confusion_matrix_cv_NN_0120_p01.png
+正答率 =  0.825
+
+
+
+2020-01-22  11:35:55   
+Made NN model
+Traindata: data_0120_p01.csv, number of data:  1000
+Made model: testNN_0120_p01.pkl
+Save: confusion_matrix_cv_NN_0120_p01.csv
+Save: confusion_matrix_cv_NN_0120_p01.png
+正答率 =  0.18
+
+
+
+2020-01-22  11:36:04   
+Made NN model
+Traindata: data_0120_p01.csv, number of data:  1000
+Made model: testNN_0120_p01.pkl
+Save: confusion_matrix_cv_NN_0120_p01.csv
+Save: confusion_matrix_cv_NN_0120_p01.png
+正答率 =  0.1
+
+
+
+2020-01-22  11:36:39   
+Made NN model
+Traindata: data_0120_p01.csv, number of data:  1000
+Made model: testNN_0120_p01.pkl
+Save: confusion_matrix_cv_NN_0120_p01.csv
+Save: confusion_matrix_cv_NN_0120_p01.png
+正答率 =  0.64
+
+
+
+2020-01-22  11:36:52   
+Made NN model
+Traindata: data_0120_p01.csv, number of data:  1000
+Made model: testNN_0120_p01.pkl
+Save: confusion_matrix_cv_NN_0120_p01.csv
+Save: confusion_matrix_cv_NN_0120_p01.png
+正答率 =  0.255
+
+
+
+2020-01-22  11:36:55   
+Made NN model
+Traindata: data_0120_p01.csv, number of data:  1000
+Made model: testNN_0120_p01.pkl
+Save: confusion_matrix_cv_NN_0120_p01.csv
+Save: confusion_matrix_cv_NN_0120_p01.png
+正答率 =  0.37
+
+
+
+2020-01-22  11:36:58   
+Made NN model
+Traindata: data_0120_p01.csv, number of data:  1000
+Made model: testNN_0120_p01.pkl
+Save: confusion_matrix_cv_NN_0120_p01.csv
+Save: confusion_matrix_cv_NN_0120_p01.png
+正答率 =  0.44
+
+
+
+2020-01-22  11:37:01   
+Made NN model
+Traindata: data_0120_p01.csv, number of data:  1000
+Made model: testNN_0120_p01.pkl
+Save: confusion_matrix_cv_NN_0120_p01.csv
+Save: confusion_matrix_cv_NN_0120_p01.png
+正答率 =  0.31
+
+
+
+2020-01-22  11:37:07   
+program: datapredict.py
+Use model: testNN_0120_p01.pkl
+TestData: testData_0120_p00.csv
+Save: confusion_matrix_data_NN_0120_p01.csv
+Save: confusion_matrix_data_NN_0120_p01.png
+正答率： 0.26
+
+
+2020-01-22  11:37:14   
+Made NN model
+Traindata: data_0120_p01.csv, number of data:  1000
+Made model: testNN_0120_p01.pkl
+Save: confusion_matrix_cv_NN_0120_p01.csv
+Save: confusion_matrix_cv_NN_0120_p01.png
+正答率 =  0.095
+
+
+
+2020-01-22  11:37:18   
+program: datapredict.py
+Use model: testNN_0120_p01.pkl
+TestData: testData_0120_p00.csv
+Save: confusion_matrix_data_NN_0120_p01.csv
+Save: confusion_matrix_data_NN_0120_p01.png
+正答率： 0.26
+
+
+2020-01-22  11:38:02   
+Made NN model
+Traindata: data_0120_p01.csv, number of data:  1000
+Made model: testNN_0120_p01.pkl
+Save: confusion_matrix_cv_NN_0120_p01.csv
+Save: confusion_matrix_cv_NN_0120_p01.png
+正答率 =  0.27
+
+
+
+2020-01-22  11:38:05   
+Made NN model
+Traindata: data_0120_p01.csv, number of data:  1000
+Made model: testNN_0120_p01.pkl
+Save: confusion_matrix_cv_NN_0120_p01.csv
+Save: confusion_matrix_cv_NN_0120_p01.png
+正答率 =  0.145
+
+
+
+2020-01-22  11:38:08   
+Made NN model
+Traindata: data_0120_p01.csv, number of data:  1000
+Made model: testNN_0120_p01.pkl
+Save: confusion_matrix_cv_NN_0120_p01.csv
+Save: confusion_matrix_cv_NN_0120_p01.png
+正答率 =  0.1
+
+
+
+2020-01-22  11:38:10   
+Made NN model
+Traindata: data_0120_p01.csv, number of data:  1000
+Made model: testNN_0120_p01.pkl
+Save: confusion_matrix_cv_NN_0120_p01.csv
+Save: confusion_matrix_cv_NN_0120_p01.png
+正答率 =  0.455
+
+
+
+2020-01-22  11:38:14   
+Made NN model
+Traindata: data_0120_p01.csv, number of data:  1000
+Made model: testNN_0120_p01.pkl
+Save: confusion_matrix_cv_NN_0120_p01.csv
+Save: confusion_matrix_cv_NN_0120_p01.png
+正答率 =  0.365
+
+
+
+2020-01-22  11:38:17   
+Made NN model
+Traindata: data_0120_p01.csv, number of data:  1000
+Made model: testNN_0120_p01.pkl
+Save: confusion_matrix_cv_NN_0120_p01.csv
+Save: confusion_matrix_cv_NN_0120_p01.png
+正答率 =  0.11
+
+
+
+2020-01-22  11:38:21   
+Made NN model
+Traindata: data_0120_p01.csv, number of data:  1000
+Made model: testNN_0120_p01.pkl
+Save: confusion_matrix_cv_NN_0120_p01.csv
+Save: confusion_matrix_cv_NN_0120_p01.png
+正答率 =  0.92
+
+
+
+2020-01-22  11:38:27   
+program: datapredict.py
+Use model: testNN_0120_p01.pkl
+TestData: testData_0120_p00.csv
+Save: confusion_matrix_data_NN_0120_p01.csv
+Save: confusion_matrix_data_NN_0120_p01.png
+正答率： 0.26
+
+
+2020-01-22  11:39:07   
+Made NN model
+Traindata: data_0120_p01.csv, number of data:  1000
+Made model: testNN_0120_p01.pkl
+Save: confusion_matrix_cv_NN_0120_p01.csv
+Save: confusion_matrix_cv_NN_0120_p01.png
+正答率 =  0.23
+
+
+
+2020-01-22  11:39:15   
+program: datapredict.py
+Use model: testNN_0120_p01.pkl
+TestData: testData_0120_p00.csv
+Save: confusion_matrix_data_NN_0120_p01.csv
+Save: confusion_matrix_data_NN_0120_p01.png
+正答率： 0.16
+
+
+2020-01-22  11:39:37   
+Made NN model
+Traindata: data_0120_p01.csv, number of data:  1000
+Made model: testNN_0120_p01.pkl
+Save: confusion_matrix_cv_NN_0120_p01.csv
+Save: confusion_matrix_cv_NN_0120_p01.png
+正答率 =  0.97
+
+
+
+2020-01-22  11:39:46   
+program: datapredict.py
+Use model: testNN_0120_p01.pkl
+TestData: testData_0120_p00.csv
+Save: confusion_matrix_data_NN_0120_p01.csv
+Save: confusion_matrix_data_NN_0120_p01.png
+正答率： 0.34
+
+
+2020-01-22  11:40:10   
+Made NN model
+Traindata: data_0120_p00.csv, number of data:  500
+Made model: testNN_0120_p00.pkl
+Save: confusion_matrix_cv_NN_0120_p00.csv
+Save: confusion_matrix_cv_NN_0120_p00.png
+正答率 =  0.96
+
+
+
+2020-01-22  11:40:17   
+program: datapredict.py
+Use model: testNN_0120_p01.pkl
+TestData: testData_0120_p00.csv
+Save: confusion_matrix_data_NN_0120_p01.csv
+Save: confusion_matrix_data_NN_0120_p01.png
+正答率： 0.34
+
+
+2020-01-22  11:49:51   
+Made NN model
+Traindata: data_0120_p00.csv, number of data:  500
+Made model: testNN_0120_p00.pkl
+Save: confusion_matrix_cv_NN_0120_p00.csv
+Save: confusion_matrix_cv_NN_0120_p00.png
+正答率 =  0.88
+
+
+
+2020-01-22  11:50:00   
+Made NN model
+Traindata: data_0120_p00.csv, number of data:  500
+
+
+2020-01-22  11:50:19   
+Made NN model
+Traindata: data_0120_p00.csv, number of data:  500
+
+
+2020-01-22  11:50:30   
+Made NN model
+Traindata: data_0120_p00.csv, number of data:  500
+
+
+2020-01-22  11:53:21   
+Made NN model
+Traindata: data_0120_p00.csv, number of data:  500
+
+
+2020-01-22  11:53:50   
+Made NN model
+Traindata: data_0120_p00.csv, number of data:  500
+MLPClassifier(activation='relu', alpha=0.0001, batch_size='auto', beta_1=0.9,
+       beta_2=0.999, early_stopping=True, epsilon=1e-08,
+       hidden_layer_sizes=(100,), learning_rate='constant',
+       learning_rate_init=0.001, max_iter=200, momentum=0.9,
+       nesterovs_momentum=True, power_t=0.5, random_state=None,
+       shuffle=True, solver='lbfgs', tol=0.0001, validation_fraction=0.1,
+       verbose=False, warm_start=False)
+Made model: testNN_0120_p00.pkl
+Save: confusion_matrix_cv_NN_0120_p00.csv
+Save: confusion_matrix_cv_NN_0120_p00.png
+正答率 =  0.99
+
+
+
+2020-01-22  11:54:38   
+Made NN model
+Traindata: data_0120_p00.csv, number of data:  500
+MLPClassifier(activation='relu', alpha=0.0001, batch_size='auto', beta_1=0.9,
+       beta_2=0.999, early_stopping=True, epsilon=1e-08,
+       hidden_layer_sizes=(100,), learning_rate='constant',
+       learning_rate_init=0.001, max_iter=200, momentum=0.9,
+       nesterovs_momentum=True, power_t=0.5, random_state=None,
+       shuffle=True, solver='lbfgs', tol=0.0001, validation_fraction=0.1,
+       verbose=False, warm_start=False)
+Made model: testNN_0120_p00.pkl
+
+
+2020-01-22  11:58:01   
+Made NN model
+Traindata: data_0120_p00.csv, number of data:  500
+MLPClassifier(activation='relu', alpha=0.0001, batch_size='auto', beta_1=0.9,
+       beta_2=0.999, early_stopping=True, epsilon=1e-08,
+       hidden_layer_sizes=(100,), learning_rate='constant',
+       learning_rate_init=0.001, max_iter=200, momentum=0.9,
+       nesterovs_momentum=True, power_t=0.5, random_state=None,
+       shuffle=True, solver='sgd', tol=0.0001, validation_fraction=0.1,
+       verbose=False, warm_start=False)
+Made model: testNN_0120_p00.pkl
+
+
+2020-01-22  11:59:04   
+Made NN model
+Traindata: data_0120_p00.csv, number of data:  500
+MLPClassifier(activation='relu', alpha=0.0001, batch_size='auto', beta_1=0.9,
+       beta_2=0.999, early_stopping=True, epsilon=1e-08,
+       hidden_layer_sizes=(100,), learning_rate='constant',
+       learning_rate_init=0.001, max_iter=200, momentum=0.9,
+       nesterovs_momentum=True, power_t=0.5, random_state=None,
+       shuffle=True, solver='sgd', tol=0.0001, validation_fraction=0.1,
+       verbose=False, warm_start=False)
+Made model: testNN_0120_p00.pkl
+
+
+2020-01-22  12:00:14   
+Made NN model
+Traindata: data_0120_p00.csv, number of data:  500
+MLPClassifier(activation='relu', alpha=0.0001, batch_size='auto', beta_1=0.9,
+       beta_2=0.999, early_stopping=True, epsilon=1e-08,
+       hidden_layer_sizes=(100,), learning_rate='constant',
+       learning_rate_init=0.001, max_iter=200, momentum=0.9,
+       nesterovs_momentum=True, power_t=0.5, random_state=None,
+       shuffle=True, solver='lbfgs', tol=0.0001, validation_fraction=0.1,
+       verbose=False, warm_start=False)
+Made model: testNN_0120_p00.pkl
+
+
+2020-01-22  12:00:59   
+Made NN model
+Traindata: data_0120_p00.csv, number of data:  500
+MLPClassifier(activation='relu', alpha=0.0001, batch_size='auto', beta_1=0.9,
+       beta_2=0.999, early_stopping=True, epsilon=1e-08,
+       hidden_layer_sizes=(100,), learning_rate='constant',
+       learning_rate_init=0.001, max_iter=200, momentum=0.9,
+       nesterovs_momentum=True, power_t=0.5, random_state=None,
+       shuffle=True, solver='lbfgs', tol=0.0001, validation_fraction=0.1,
+       verbose=False, warm_start=False)
+Made model: testNN_0120_p00.pkl
+
+
+2020-01-22  12:01:20   
+Made NN model
+Traindata: data_0120_p00.csv, number of data:  500
+MLPClassifier(activation='relu', alpha=0.0001, batch_size='auto', beta_1=0.9,
+       beta_2=0.999, early_stopping=True, epsilon=1e-08,
+       hidden_layer_sizes=(100,), learning_rate='constant',
+       learning_rate_init=0.001, max_iter=200, momentum=0.9,
+       nesterovs_momentum=True, power_t=0.5, random_state=None,
+       shuffle=True, solver='sgd', tol=0.0001, validation_fraction=0.1,
+       verbose=False, warm_start=False)
+Made model: testNN_0120_p00.pkl
+Save: confusion_matrix_cv_NN_0120_p00.csv
+Save: confusion_matrix_cv_NN_0120_p00.png
+正答率 =  0.93
+
+
+
+2020-01-22  12:01:58   
+Made NN model
+Traindata: data_0120_p00.csv, number of data:  500
+MLPClassifier(activation='relu', alpha=0.0001, batch_size='auto', beta_1=0.9,
+       beta_2=0.999, early_stopping=True, epsilon=1e-08,
+       hidden_layer_sizes=(100,), learning_rate='constant',
+       learning_rate_init=0.001, max_iter=200, momentum=0.9,
+       nesterovs_momentum=True, power_t=0.5, random_state=None,
+       shuffle=True, solver='lbfgs', tol=0.0001, validation_fraction=0.1,
+       verbose=False, warm_start=False)
+Made model: testNN_0120_p00.pkl
+Save: confusion_matrix_cv_NN_0120_p00.csv
+Save: confusion_matrix_cv_NN_0120_p00.png
+正答率 =  0.95
+
+
+
+2020-01-22  12:03:09   
+program: datapredict.py
+Use model: testNN_0120_p00.pkl
+TestData: testData_0120_p00.csv
+Save: confusion_matrix_data_NN_0120_p00.csv
+Save: confusion_matrix_data_NN_0120_p00.png
+正答率： 0.36
+
+
+2020-01-22  12:03:58   
+Made NN model
+Traindata: data_0120_p03.csv, number of data:  1000
+MLPClassifier(activation='relu', alpha=0.0001, batch_size='auto', beta_1=0.9,
+       beta_2=0.999, early_stopping=True, epsilon=1e-08,
+       hidden_layer_sizes=(100,), learning_rate='constant',
+       learning_rate_init=0.001, max_iter=200, momentum=0.9,
+       nesterovs_momentum=True, power_t=0.5, random_state=None,
+       shuffle=True, solver='lbfgs', tol=0.0001, validation_fraction=0.1,
+       verbose=False, warm_start=False)
+Made model: testNN_0120_p03.pkl
+Save: confusion_matrix_cv_NN_0120_p03.csv
+Save: confusion_matrix_cv_NN_0120_p03.png
+正答率 =  0.985
+
+
+
+2020-01-22  12:04:12   
+program: datapredict.py
+Use model: testNN_0120_p03.pkl
+TestData: testData_0120_p00.csv
+Save: confusion_matrix_data_NN_0120_p03.csv
+Save: confusion_matrix_data_NN_0120_p03.png
+正答率： 0.26
+
+
+2020-01-22  12:04:27   
+program: datapredict.py
+Use model: testNN_0120_p03.pkl
+TestData: testData_0120_p01.csv
+Save: confusion_matrix_data_NN_0120_p03.csv
+Save: confusion_matrix_data_NN_0120_p03.png
+正答率： 0.28
+
+
+2020-01-22  13:47:44   
+program: datapredict.py
+Use model: testNN_0120_p03.pkl
+TestData: testData_0120_p01.csv
+Save: confusion_matrix_data_NN_0120_p03.csv
+Save: confusion_matrix_data_NN_0120_p03.png
+正答率： 0.28
+
+
+2020-01-22  17:11:43   
+program: datapredict.py
+Use model: testNN_0120_p01.pkl
+TestData: testData_0120_p01.csv
+Save: confusion_matrix_data_NN_0120_p01.csv
+Save: confusion_matrix_data_NN_0120_p01.png
+正答率： 0.34
+
+

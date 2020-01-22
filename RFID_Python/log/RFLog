@@ -122,3 +122,28 @@ Save: confusion_matrix_data_RF_0120_p02.png
 正答率： 0.58
 
 
+2020-01-22  14:01:37   
+Made RF model
+Traindata: data_0120_p01.csv, number of data: 1000
+RandomForestClassifier(bootstrap=True, class_weight=None, criterion='entropy',
+            max_depth=5, max_features='auto', max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=70, n_jobs=1,
+            oob_score=False, random_state=3, verbose=0, warm_start=False)
+Made model: testRF_0120_p01.pkl
+Save :confusion_matrix_cv_RF_0120_p01.csv
+Save: confusion_matrix_cv_RF_0120_p01.png
+正答率 = 0.985
+
+
+
+2020-01-22  14:04:48   
+program: datapredict.py
+Use model: testRF_0120_p01.pkl
+TestData: testData_0120_p00.csv
+Save: confusion_matrix_data_RF_0120_p01.csv
+Save: confusion_matrix_data_RF_0120_p01.png
+正答率： 0.64
+
+
