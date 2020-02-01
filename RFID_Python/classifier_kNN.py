@@ -13,7 +13,7 @@ from sklearn.neighbors import KNeighborsClassifier
 
 from Logput import Logput
 
-dataVersion = "0120_p01"
+dataVersion = "0120_p00"
 dataset = np.loadtxt("./collectData/data_" + dataVersion + ".csv", delimiter=',', dtype='int64')
 
 modellog = Logput("KNN")
@@ -92,6 +92,7 @@ c_matrix = confusion_matrix(touch_true, pred)
 print(confusion_matrix(touch_true, pred))
 cm_pd = pd.DataFrame(c_matrix, columns=labels, index=labels)
 sum = int(test_data.shape[0]) / int(labels.__len__())
+# fig, ax = plt.subplots(figsize=(6, 6))
 sns.heatmap(cm_pd, annot=True, cmap="Reds", fmt='.4g')
 plt.savefig('./confusionMatrix/crossValidation/confusion_matrix_cv_KNN_' + dataVersion + '.png')
 with open('./confusionMatrix/crossValidation/confusion_matrix_cv_KNN_' + dataVersion + '.csv', 'w') as file:

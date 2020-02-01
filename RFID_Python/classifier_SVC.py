@@ -31,7 +31,7 @@ test_label = np.reshape(test_label, (-1))
 
 #  訓練データ確認
 # print(train_data)
-
+print("# Tuning hyper-parameters for accuracy")
 # クロスバリデーションで最適化したいパラメータをセット
 tuned_parameters = [{'kernel': ['rbf'], 'gamma': [1e-3, 1e-4],
                      'C': [0.1, 1, 10]},
@@ -39,7 +39,7 @@ tuned_parameters = [{'kernel': ['rbf'], 'gamma': [1e-3, 1e-4],
 
 scores = ['precision', 'recall', 'f1']
 
-print("# Tuning hyper-parameters for accuracy")
+
 
 #  グリッドサーチと交差検証法
 clf = GridSearchCV(svm.SVC(), tuned_parameters, cv=5,
