@@ -25,6 +25,9 @@ public class Reader implements TagOpCompleteListener {
             Settings settings = _reader.queryDefaultSettings();
             ReportConfig report = settings.getReport();
             report.setIncludeAntennaPortNumber(true);
+//            settings.setReaderMode(ReaderMode.MaxThroughput);
+//            settings.setSearchMode(SearchMode.DualTarget);
+
             _reader.applySettings(settings);
 
             _reader.setTagOpCompleteListener(this);

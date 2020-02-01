@@ -11,8 +11,8 @@ public class HttpPostClientMagnetGlass {
     static JSONObject postData = new JSONObject();
     static String prevJson;
 
-    final static int numOfPosition = 5; // NO TOUCHも含まない
-    final static int numOfTag = 2;
+    static int numOfPosition = 5; // NO TOUCHも含まない
+    static int numOfTag = 2;
 
     static int numOfData = 200;
     static int currentFingerPos;
