@@ -13,7 +13,9 @@ public class PostOneTouch extends HttpPostClientMagnetGlass{
     static long start;
     static List<Long> timeData = new LinkedList<>();
     static List<String> strData = new LinkedList<>();
-
+    static List<Double> xData = new LinkedList<>();
+    static List<Double> yData = new LinkedList<>();
+    static List<Double> zData = new LinkedList<>();
     protected PostOneTouch(){
         this.numOfData = 2000;
         this.dataCount = 0;
@@ -35,41 +37,45 @@ public class PostOneTouch extends HttpPostClientMagnetGlass{
         }
 
         else if(dataCount < numOfData) {
-
+            dataCount++;
+            xData.add((double) values[0]);
+            yData.add((double) values[1]);
+            zData.add((double) values[2]);
 
             String st_tagId = String.valueOf(-values[3]);
+
             long t = System.currentTimeMillis() - start;
             postData.put(st_tagId, t);
             timeData.add(t);
             strData.add(st_tagId);
-            System.out.println(st_tagId + "," + t);
+            System.out.println(dataCount+ "," + (double) values[0] + "," + (double) values[1] + "," + (double) values[2] + "," + t);
 
-
-            if(postData.length() == numOfTag){
-                dataCount++;
-                strData.add("POST");
-                timeData.add(t);
-                System.out.println("POST," + t);
-                postData = new JSONObject();
-            }
+//
+//            if (postData.length() == numOfTag) {
+//                dataCount++;
+//                strData.add("POST");
+//                timeData.add(t);
+//                System.out.println("POST," + t);
+//                postData = new JSONObject();
+//            }
         }
+
     }
 
     private static void outputCSV() {
         try {
-            File file = new File("res/MagnetGlass/framerate2.csv");
+            File file = new File("res/MagnetGlass/magnetdata/m1d20.csv");
             file.createNewFile();
             BufferedWriter bw = new BufferedWriter(new FileWriter(file, true));
 
             if (checkBeforeWritefile(file)) {
                 for (int i = 0; i < timeData.size(); i++) {
-                    bw.write(strData.get(i) + "," + timeData.get(i).toString() +  "\n");
+                    bw.write(xData.get(i) + "," + yData.get(i) + "," + zData.get(i) + "," + timeData.get(i).toString() +  "\n");
                 }
                 bw.close();
-            }else{
+            }else {
                 System.out.println("ファイルに書き込めません");
             }
-
             System.out.println("csv書き込み終了");
             return;
         }catch(IOException e){
@@ -100,6 +106,7 @@ public class PostOneTouch extends HttpPostClientMagnetGlass{
         sc.nextLine();
         System.out.println("終了.");
         outputCSV();
+        System.exit(0);
     }
 
 }

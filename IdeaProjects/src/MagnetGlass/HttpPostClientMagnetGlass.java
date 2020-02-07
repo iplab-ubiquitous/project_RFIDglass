@@ -103,7 +103,7 @@ public class HttpPostClientMagnetGlass {
             return;
         }
         else if(dataCount < numOfData) {
- 
+
             JSONObject collectedData = new JSONObject();
             double[] tagdata = filter.passFilter(values);
 
