@@ -147,3 +147,33 @@ Save: confusion_matrix_data_RF_0120_p01.png
 正答率： 0.64
 
 
+2020-02-14  17:44:26   
+Made RF model
+Traindata: data_0214_p02_distance.csv, number of data: 1400
+
+
+2020-02-14  17:45:14   
+Made RF model
+Traindata: data_0214_p02_distance.csv, number of data: 1400
+RandomForestClassifier(bootstrap=True, class_weight=None, criterion='entropy',
+            max_depth=5, max_features='auto', max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=12,
+            min_weight_fraction_leaf=0.0, n_estimators=70, n_jobs=1,
+            oob_score=False, random_state=3, verbose=0, warm_start=False)
+Made model: testRF_0214_p02_distance.pkl
+Save :confusion_matrix_cv_RF_0214_p02_distance.csv
+Save: confusion_matrix_cv_RF_0214_p02_distance.png
+正答率 = 0.7428571428571429
+
+
+
+2020-02-14  17:48:10   
+program: datapredict.py
+Use model: testRF_0214_p02_distance.pkl
+TestData: testData_0214_p01_distance.csv
+Save: confusion_matrix_data_RF_0214_p02_distance.csv
+Save: confusion_matrix_data_RF_0214_p02_distance.png
+正答率： 0.44285714285714284
+
+

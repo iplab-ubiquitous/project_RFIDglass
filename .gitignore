@@ -1,4 +1,7 @@
 /Octane_SDK_Java_1_32_1/
 /.idea/
 /.vscode/
-
+*.class
+*confusion_matrix_cv*
+*confusion_matrix_*.csv
+*.pkl

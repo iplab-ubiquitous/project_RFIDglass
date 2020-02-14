@@ -13,7 +13,7 @@ from sklearn.neighbors import KNeighborsClassifier
 
 from Logput import Logput
 
-dataVersion = "0120_p00"
+dataVersion = "0214_p02_distance"
 dataset = np.loadtxt("./collectData/data_" + dataVersion + ".csv", delimiter=',', dtype='int64')
 
 modellog = Logput("KNN")
@@ -21,7 +21,8 @@ modellog.logput("Made KNN model\n")
 modellog.logput("Traindata: data_" + dataVersion + ".csv, number of data:  {}".format(dataset.shape[0]) + "\n")
 # sss = StratifiedShuffleSplit(test_size=0.2)
 
-data, label = np.hsplit(dataset, [6])
+# data, label = np.hsplit(dataset, [6])  # distanceなし
+data, label = np.hsplit(dataset, [8])    # distanceあり
 
 
 # 交差検証なし
@@ -85,7 +86,7 @@ for score in scores:
 # clf_svc = joblib.load('test1002.pkl')
 pred = clf.predict(test_data)
 touch_true = test_label.tolist()
-labels = ["eye-right", "eye-left", "cheek-right", "cheek-left", "chin"]
+labels = ["No-Touch", "eye-right", "eye-center", "eye-left", "cheek-right", "nose",  "cheek-left"]
 print(pred)
 print(touch_true)
 c_matrix = confusion_matrix(touch_true, pred)

@@ -10,11 +10,11 @@ import matplotlib.pyplot as plt
 from Logput import Logput
 import pandas as pd
 
-dataVersion = "0120_p01"
+dataVersion = "0214_p02_distance"
 dataset = np.loadtxt("./collectData/data_" + dataVersion + ".csv", delimiter=',', dtype='int64')
 
 sss = StratifiedShuffleSplit(test_size=0.2)
-data, label = np.hsplit(dataset, [6])
+data, label = np.hsplit(dataset, [8])
 modellog = Logput("RF")
 modellog.logput("Made RF model\n")
 modellog.logput("Traindata: data_" + dataVersion + ".csv, number of data: {}".format(dataset.shape[0]) + "\n")
@@ -57,15 +57,15 @@ modellog.logput('Made model: testRF_' + dataVersion + '.pkl\n')
 
 
 # スコア別
-for score in scores:
-    print("# Tuning hyper-parameters for {}".format(score))
-
-    # グリッドサーチと交差検証法
-    clf_score = GridSearchCV(RandomForestClassifier(), rf_parameters, cv=5,
-                             scoring='%s_weighted' % score, n_jobs=-1)
-    clf_score.fit(train_data, train_label)
-    print(clf_score.best_estimator_)
-    print(classification_report(test_label, clf_score.predict(test_data)))
+# for score in scores:
+#     print("# Tuning hyper-parameters for {}".format(score))
+#
+#     # グリッドサーチと交差検証法
+#     clf_score = GridSearchCV(RandomForestClassifier(), rf_parameters, cv=5,
+#                              scoring='%s_weighted' % score, n_jobs=-1)
+#     clf_score.fit(train_data, train_label)
+#     print(clf_score.best_estimator_)
+#     print(classification_report(test_label, clf_score.predict(test_data)))
 
 
 
@@ -85,7 +85,7 @@ touch_true = test_label.tolist()
 print(pred)
 print(touch_true)
 c_matrix = confusion_matrix(touch_true, pred)
-labels = ["eye-right", "eye-left", "cheek-right", "cheek-left", "chin"]
+labels = ["No-Touch", "eye-right", "eye-center", "eye-left", "cheek-right", "nose",  "cheek-left"]
 cm_pd = pd.DataFrame(c_matrix, columns=labels, index=labels)
 sns.heatmap(cm_pd, annot=True, cmap="Reds")
 plt.savefig('./confusionMatrix/crossValidation/confusion_matrix_cv_RF_' + dataVersion + '.png')

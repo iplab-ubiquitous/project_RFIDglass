@@ -10,11 +10,11 @@ import matplotlib.pyplot as plt
 
 from Logput import Logput
 
-dataVersion = "0120_p01"
+dataVersion = "0214_p02_distance"
 dataset = np.loadtxt("./collectData/data_" + dataVersion + ".csv", delimiter=',', dtype='int64')
 
 sss = StratifiedShuffleSplit(test_size=0.2)
-data, label = np.hsplit(dataset, [6])
+data, label = np.hsplit(dataset, [8])
 modellog = Logput("SVC")
 modellog.logput("Made SVC model\n")
 modellog.logput("Traindata: data_" + dataVersion + ".csv, number of data: {}".format(dataset.shape[0]) + "\n")
@@ -80,7 +80,7 @@ touch_true = test_label.tolist()
 print(pred)
 print(touch_true)
 c_matrix = confusion_matrix(touch_true, pred)
-labels = ["eye-right", "eye-left", "cheek-right", "cheek-left", "chin"]
+labels = ["No-Touch", "eye-right", "eye-center", "eye-left", "cheek-right", "nose",  "cheek-left"]
 cm_pd = pd.DataFrame(c_matrix, columns=labels, index=labels)
 sns.heatmap(cm_pd, annot=True, cmap="Reds")
 plt.savefig('./confusionMatrix/crossValidation/confusion_matrix_cv_RF_' + dataVersion + '.png')

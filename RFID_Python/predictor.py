@@ -20,8 +20,8 @@ training_data = np.empty([0, 7])
 data_count = 0
 correct_count = 0
 
-testversion = "0120_p05"  # 保存テストデータのバージョン
-version = "0120_p01"  # 学習モデルのバージョン："mmdd_p(No.)"
+testversion = "0214_p01"  # 保存テストデータのバージョン
+version = "0214_p02"  # 学習モデルのバージョン："mmdd_p(No.)"
 model = "KNN"  #モデルの種類　[ SVC, KNN, RF ]
 clf = joblib.load('./learningModel/test' + model + "_" + version + '.pkl')
 pred_list = []
@@ -106,7 +106,7 @@ except KeyboardInterrupt:
     print(c_matrix)
 
     #混同行列の画像表示
-    labels = ["eye-right", "eye-left", "cheek-right", "cheek-left", "chin"]
+    labels = ["No-Touch", "eye-right", "eye-center", "eye-left", "cheek-right", "nose", "cheek-left"]
     cm_pd = pd.DataFrame(c_matrix, columns=labels, index=labels)
     sns.heatmap(cm_pd, annot=True, cmap="Reds")
     plt.savefig('./confusionMatrix/result/png/confusion_matrix_data_' + model + "_" + version + '.png')

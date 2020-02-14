@@ -10,9 +10,9 @@ import matplotlib.pyplot as plt
 
 from Logput import Logput
 
-data_version = "0120_p01"  # テストデータのバージョン
-model_version = "0120_p01"  # モデルのバージョン
-modelType = "NN"   # モデルの種類　[ SVC, KNN, RF, NN ]
+data_version = "0214_p01"  # テストデータのバージョン
+model_version = "0214_p02"  # モデルのバージョン
+modelType = "KNN"   # モデルの種類　[ SVC, KNN, RF, NN ]
 
 dataset = pd.read_csv("./testData/testData_" + data_version + ".csv", header=None)
 
@@ -27,9 +27,10 @@ print(pred)
 print(touch_true)
 c_matrix = confusion_matrix(touch_true, pred)
 print(c_matrix)
-labels = ["eye-right", "eye-left", "cheek-right", "cheek-left", "chin"]
+labels = ["No-Touch", "eye-right", "eye-center", "eye-left", "cheek-right", "nose", "cheek-left"]
 cm_pd = pd.DataFrame(c_matrix, columns=labels, index=labels)
-sns.heatmap(cm_pd, annot=True, cmap="Reds")
+fig, ax = plt.subplots(figsize=(9, 8))
+sns.heatmap(cm_pd, annot=True, cmap="Reds", ax=ax)
 plt.savefig('./confusionMatrix/result/png/confusion_matrix_data_' + modelType + "_" + model_version + '.png')
 with open('./confusionMatrix/result/csv/confusion_matrix_data_' + modelType + "_" + model_version + '.csv', 'w') as file:
     writer = csv.writer(file, lineterminator='\n')

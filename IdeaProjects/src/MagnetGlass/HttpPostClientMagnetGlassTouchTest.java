@@ -10,7 +10,7 @@ import java.util.*;
 public class HttpPostClientMagnetGlassTouchTest {
     static JSONObject postData = new JSONObject();
 
-    final static int numOfPosition = 5; // NO TOUCHは含まない
+    final static int numOfPosition = 7; // NO TOUCHは含まない
     final static int numOfData = 10;
     final static int numOfTag = 2;
 

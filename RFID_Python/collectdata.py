@@ -11,7 +11,7 @@ from Logput import Logput
 np.set_printoptions(suppress=True)
 training_data = np.empty([0, 7])
 data_count = 0
-version = "0120_p03" #収集データのバージョン
+version = "0214_p02" #収集データのバージョン
 true_list = []
 PORT = 8080
 

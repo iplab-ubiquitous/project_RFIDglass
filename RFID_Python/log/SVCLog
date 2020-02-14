@@ -79,3 +79,13 @@ Save: confusion_matrix_data_SVC_0120_p01.png
 正答率： 0.2
 
 
+2020-02-14  17:50:05   
+Made SVC model
+Traindata: data_0214_p02_distance.csv, number of data: 1400
+
+
+2020-02-14  17:50:18   
+Made SVC model
+Traindata: data_0214_p02_distance.csv, number of data: 1400
+
+
