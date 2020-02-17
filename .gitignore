@@ -5,3 +5,5 @@
 *confusion_matrix_cv*
 *confusion_matrix_*.csv
 *.pkl
+/.DS_Store
+/workspace.xml
