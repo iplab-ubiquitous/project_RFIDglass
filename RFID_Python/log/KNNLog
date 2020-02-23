@@ -1377,3 +1377,309 @@ Save: confusion_matrix_data_KNN_0214_p02.png
 正答率： 0.6571428571428571
 
 
+2020-02-23  22:45:31   
+program: datapredict.py
+Use model: testKNN_0214_p02.pkl
+TestData: testData_0214_p01.csv
+Save: confusion_matrix_data_KNN_0214_p02.csv
+Save: confusion_matrix_data_KNN_0214_p02.png
+正答率： 0.6571428571428571
+
+
+2020-02-23  22:46:09   
+program: datapredict.py
+Use model: testKNN_0214_p02.pkl
+TestData: testData_0214_p01.csv
+Save: confusion_matrix_data_KNN_0214_p02.csv
+Save: confusion_matrix_data_KNN_0214_p02.png
+正答率： 0.6571428571428571
+
+
+2020-02-23  22:46:29   
+program: datapredict.py
+Use model: testKNN_0214_p02.pkl
+TestData: testData_0214_p01.csv
+Save: confusion_matrix_data_KNN_0214_p02.csv
+Save: confusion_matrix_data_KNN_0214_p02.png
+正答率： 0.6571428571428571
+
+
+2020-02-23  22:46:53   
+program: datapredict.py
+Use model: testKNN_0214_p02.pkl
+TestData: testData_0214_p01.csv
+Save: confusion_matrix_data_KNN_0214_p02.csv
+Save: confusion_matrix_data_KNN_0214_p02.png
+正答率： 0.6571428571428571
+
+
+2020-02-23  22:53:56   
+program: datapredict.py
+Use model: testKNN_0214_p02_distance.pkl
+TestData: testData_0214_p01_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.png
+正答率： 0.6714285714285714
+
+
+2020-02-23  22:56:26   
+program: datapredict.py
+Use model: testKNN_0214_p02_distance.pkl
+TestData: testData_0214_p01_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.png
+正答率： 0.6714285714285714
+
+
+2020-02-23  23:00:00   
+program: datapredict.py
+Use model: testKNN_0214_p02_distance.pkl
+TestData: testData_0214_p01_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.png
+正答率： 0.6714285714285714
+
+
+2020-02-23  23:01:02   
+program: datapredict.py
+Use model: testKNN_0214_p02_distance.pkl
+TestData: testData_0214_p01_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.png
+正答率： 0.6714285714285714
+
+
+2020-02-23  23:01:10   
+program: datapredict.py
+Use model: testKNN_0214_p02_distance.pkl
+TestData: testData_0214_p01_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.png
+正答率： 0.6714285714285714
+
+
+2020-02-23  23:01:34   
+program: datapredict.py
+Use model: testKNN_0214_p02_distance.pkl
+TestData: testData_0214_p01_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.png
+正答率： 0.6714285714285714
+
+
+2020-02-23  23:04:58   
+program: datapredict.py
+Use model: testKNN_0214_p02_distance.pkl
+TestData: testData_0214_p01_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.png
+正答率： 0.6714285714285714
+
+
+2020-02-23  23:05:16   
+program: datapredict.py
+Use model: testKNN_0214_p02_distance.pkl
+TestData: testData_0214_p01_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.png
+正答率： 0.6714285714285714
+
+
+2020-02-23  23:05:39   
+program: datapredict.py
+Use model: testKNN_0214_p02_distance.pkl
+TestData: testData_0214_p01_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.png
+正答率： 0.6714285714285714
+
+
+2020-02-23  23:06:00   
+program: datapredict.py
+Use model: testKNN_0214_p02_distance.pkl
+TestData: testData_0214_p01_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.png
+正答率： 0.6714285714285714
+
+
+2020-02-23  23:06:15   
+program: datapredict.py
+Use model: testKNN_0214_p02_distance.pkl
+TestData: testData_0214_p01_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.png
+正答率： 0.6714285714285714
+
+
+2020-02-23  23:06:49   
+program: datapredict.py
+Use model: testKNN_0214_p02.pkl
+TestData: testData_0214_p01.csv
+Save: confusion_matrix_data_KNN_0214_p02.csv
+Save: confusion_matrix_data_KNN_0214_p02.png
+正答率： 0.6571428571428571
+
+
+2020-02-23  23:06:56   
+program: datapredict.py
+Use model: testKNN_0214_p02.pkl
+TestData: testData_0214_p01.csv
+Save: confusion_matrix_data_KNN_0214_p02.csv
+Save: confusion_matrix_data_KNN_0214_p02.png
+正答率： 0.6571428571428571
+
+
+2020-02-23  23:07:51   
+program: datapredict.py
+Use model: testKNN_0214_p02.pkl
+TestData: testData_0214_p01.csv
+Save: confusion_matrix_data_KNN_0214_p02.csv
+Save: confusion_matrix_data_KNN_0214_p02.png
+正答率： 0.6571428571428571
+
+
+2020-02-23  23:08:24   
+program: datapredict.py
+Use model: testKNN_0214_p02.pkl
+TestData: testData_0214_p01.csv
+Save: confusion_matrix_data_KNN_0214_p02.csv
+Save: confusion_matrix_data_KNN_0214_p02.png
+正答率： 0.6571428571428571
+
+
+2020-02-23  23:08:34   
+program: datapredict.py
+Use model: testKNN_0214_p02.pkl
+TestData: testData_0214_p01.csv
+Save: confusion_matrix_data_KNN_0214_p02.csv
+Save: confusion_matrix_data_KNN_0214_p02.png
+正答率： 0.6571428571428571
+
+
+2020-02-23  23:09:00   
+program: datapredict.py
+Use model: testKNN_0214_p02.pkl
+TestData: testData_0214_p01.csv
+Save: confusion_matrix_data_KNN_0214_p02.csv
+Save: confusion_matrix_data_KNN_0214_p02.png
+正答率： 0.6571428571428571
+
+
+2020-02-23  23:09:58   
+program: datapredict.py
+Use model: testKNN_0214_p02_distance.pkl
+TestData: testData_0214_p01_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.png
+正答率： 0.6714285714285714
+
+
+2020-02-23  23:10:09   
+program: datapredict.py
+Use model: testKNN_0214_p02_distance.pkl
+TestData: testData_0214_p01_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.png
+正答率： 0.6714285714285714
+
+
+2020-02-23  23:11:03   
+program: datapredict.py
+Use model: testKNN_0214_p02_distance.pkl
+TestData: testData_0214_p01_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.png
+正答率： 0.6714285714285714
+
+
+2020-02-23  23:11:44   
+program: datapredict.py
+Use model: testKNN_0214_p02_distance.pkl
+TestData: testData_0214_p01_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.png
+正答率： 0.6714285714285714
+
+
+2020-02-23  23:12:28   
+program: datapredict.py
+Use model: testKNN_0214_p02_distance.pkl
+TestData: testData_0214_p01_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.png
+正答率： 0.6714285714285714
+
+
+2020-02-23  23:12:47   
+program: datapredict.py
+Use model: testKNN_0214_p02_distance.pkl
+TestData: testData_0214_p01_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.png
+正答率： 0.6714285714285714
+
+
+2020-02-23  23:13:09   
+program: datapredict.py
+Use model: testKNN_0214_p02_distance.pkl
+TestData: testData_0214_p01_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.png
+正答率： 0.6714285714285714
+
+
+2020-02-23  23:13:31   
+program: datapredict.py
+Use model: testKNN_0214_p02_distance.pkl
+TestData: testData_0214_p01_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.png
+正答率： 0.6714285714285714
+
+
+2020-02-23  23:14:40   
+program: datapredict.py
+Use model: testKNN_0214_p02_distance.pkl
+TestData: testData_0214_p01_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.png
+正答率： 0.6714285714285714
+
+
+2020-02-23  23:14:56   
+program: datapredict.py
+Use model: testKNN_0214_p02_distance.pkl
+TestData: testData_0214_p01_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.png
+正答率： 0.6714285714285714
+
+
+2020-02-23  23:15:12   
+program: datapredict.py
+Use model: testKNN_0214_p02_distance.pkl
+TestData: testData_0214_p01_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.png
+正答率： 0.6714285714285714
+
+
+2020-02-23  23:15:57   
+program: datapredict.py
+Use model: testKNN_0214_p02_distance.pkl
+TestData: testData_0214_p01_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.csv
+Save: confusion_matrix_data_KNN_0214_p02_distance.png
+正答率： 0.6714285714285714
+
+
+2020-02-23  23:17:32   
+program: datapredict.py
+Use model: testKNN_0214_p02.pkl
+TestData: testData_0214_p01.csv
+Save: confusion_matrix_data_KNN_0214_p02.csv
+Save: confusion_matrix_data_KNN_0214_p02.png
+正答率： 0.6571428571428571
+
+
