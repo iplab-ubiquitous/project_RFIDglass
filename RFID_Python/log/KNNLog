@@ -1683,3 +1683,27 @@ Save: confusion_matrix_data_KNN_0214_p02.png
 正答率： 0.6571428571428571
 
 
+2020-06-04  13:43:48   
+program: datapredict.py
+Use model: testKNN_0214_p02.pkl
+TestData: testData_0214_p01.csv
+Save: confusion_matrix_data_KNN_0214_p02.csv
+Save: confusion_matrix_data_KNN_0214_p02.png
+正答率： 0.6571428571428571
+
+
+2020-06-04  13:44:37   
+program: predictor.py
+Use model: testKNN_0214_p02.pkl
+
+
+2020-06-04  14:02:50   
+program: predictor.py
+Use model: testKNN_0214_p02.pkl
+
+
+2020-06-04  14:03:55   
+program: predictor.py
+Use model: testKNN_0214_p02.pkl
+
+

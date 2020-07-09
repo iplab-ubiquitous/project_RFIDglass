@@ -22,7 +22,7 @@ public class HttpPostClientMagnetGlassTouchTest {
     static int currentFingerPos;
     static int dataCount;
     static ArrayList<Integer> positionList = new ArrayList<Integer>();
-    static Filter filter = new Filter(numOfTag);
+    static Filter filter = new Filter(numOfTag, 10);
 
 
 

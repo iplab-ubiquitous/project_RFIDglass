@@ -86,46 +86,48 @@ class MagnetHTTPRequestHandler(BaseHTTPRequestHandler):
         # data_count += 1
 
     def recognize_finger_pos(self, jsons):
-        return 
+        return
+
+def start():
+    Handler = MagnetHTTPRequestHandler
+    try:
+        with socketserver.TCPServer(("", PORT), Handler) as httpd:
+            print("serving at port", PORT)
+            httpd.serve_forever()
+    except KeyboardInterrupt:
+        httpd.server_close()
+        datalog = Logput("data")
+        modellog = Logput(model)
+        modellog.logput("program: predictor.py\n")
+        modellog.logput('Use model: test' + model + "_" + version + '.pkl\n')
+        c_matrix = confusion_matrix(true_list, pred_list)
+        print(c_matrix)
+
+        #混同行列の画像表示
+        labels = ["No-Touch", "eye-right", "eye-center", "eye-left", "cheek-right", "nose", "cheek-left"]
+        cm_pd = pd.DataFrame(c_matrix, columns=labels, index=labels)
+        sns.heatmap(cm_pd, annot=True, cmap="Reds")
+        plt.savefig('./confusionMatrix/result/png/confusion_matrix_data_' + model + "_" + version + '.png')
+        modellog.logput('Save: confusion_matrix_data_' + model + "_" + version + '.png\n')
+
+        np.savetxt("./testData/testData_" + testversion + ".csv", training_data, delimiter=',', fmt='%.0f')
+        datalog.logput("Save testData: testData_" + testversion + ".csv\n")
+        numTag = int(max(true_list)) + 1
+        datalog.logput("Number of Each data: {}".format(data_count / numTag) + ", Positions: {}".format(numTag) + "Total data: {}".format(data_count) + "\n")
+        with open('./confusionMatrix/result/csv/confusion_matrix_data_' + model + "_" + version + '.csv', 'w') as file:
+            writer = csv.writer(file, lineterminator='\n')
+            writer.writerows(c_matrix)
+
+
+        modellog.logput('Save: confusion_matrix_data_' + model + "_" + version + '.csv\n')
 
 
 
-
-Handler = MagnetHTTPRequestHandler
-try:
-    with socketserver.TCPServer(("", PORT), Handler) as httpd:
-        print("serving at port", PORT)
-        httpd.serve_forever()
-except KeyboardInterrupt:
-    httpd.server_close()
-    datalog = Logput("data")
-    modellog = Logput(model)
-    modellog.logput("program: predictor.py\n")
-    modellog.logput('Use model: test' + model + "_" + version + '.pkl\n')
-    c_matrix = confusion_matrix(true_list, pred_list)
-    print(c_matrix)
-
-    #混同行列の画像表示
-    labels = ["No-Touch", "eye-right", "eye-center", "eye-left", "cheek-right", "nose", "cheek-left"]
-    cm_pd = pd.DataFrame(c_matrix, columns=labels, index=labels)
-    sns.heatmap(cm_pd, annot=True, cmap="Reds")
-    plt.savefig('./confusionMatrix/result/png/confusion_matrix_data_' + model + "_" + version + '.png')
-    modellog.logput('Save: confusion_matrix_data_' + model + "_" + version + '.png\n')
-
-    np.savetxt("./testData/testData_" + testversion + ".csv", training_data, delimiter=',', fmt='%.0f')
-    datalog.logput("Save testData: testData_" + testversion + ".csv\n")
-    numTag = int(max(true_list)) + 1
-    datalog.logput("Number of Each data: {}".format(data_count / numTag) + ", Positions: {}".format(numTag) + "Total data: {}".format(data_count) + "\n")
-    with open('./confusionMatrix/result/csv/confusion_matrix_data_' + model + "_" + version + '.csv', 'w') as file:
-        writer = csv.writer(file, lineterminator='\n')
-        writer.writerows(c_matrix)
+        print(classification_report(true_list, pred_list))
+        print("\n 正答率： {}".format(float(correct_count) / float(data_count)))
+        modellog.logput("正答率： {}".format(float(correct_count) / float(data_count)))
+        modellog.logput("\n")
 
 
-    modellog.logput('Save: confusion_matrix_data_' + model + "_" + version + '.csv\n')
-
-
-
-    print(classification_report(true_list, pred_list))
-    print("\n 正答率： {}".format(float(correct_count) / float(data_count)))
-    modellog.logput("正答率： {}".format(float(correct_count) / float(data_count)))
-    modellog.logput("\n")
+if __name__ == "__main__":
+    start()
