@@ -194,12 +194,23 @@ public class FaceGUI {
                 collectedData47.put("x", (data47[0][dataCount/2] + data47[0][1+dataCount/2]) / 2);
                 collectedData47.put("y", (data47[1][dataCount/2] + data47[1][1+dataCount/2]) / 2);
                 collectedData47.put("z", (data47[2][dataCount/2] + data47[2][1+dataCount/2]) / 2);
+                collectedData47.put("distance", 
+                        (int)Math.sqrt(
+                                collectedData47.getInt("x")*collectedData47.getInt("x")+ 
+                                        collectedData47.getInt("y")*collectedData47.getInt("y")+
+                                        collectedData47.getInt("z")*collectedData47.getInt("x")));
+
                 postData.put("47", collectedData47);
 
                 JSONObject collectedData49 = new JSONObject();
                 collectedData49.put("x", (data49[0][dataCount/2] + data49[0][1+dataCount/2]) / 2);
                 collectedData49.put("y", (data49[1][dataCount/2] + data49[1][1+dataCount/2]) / 2);
                 collectedData49.put("z", (data49[2][dataCount/2] + data49[2][1+dataCount/2]) / 2);
+                collectedData49.put("distance",
+                        (int)Math.sqrt(
+                                collectedData49.getInt("x")*collectedData49.getInt("x")+
+                                        collectedData49.getInt("y")*collectedData49.getInt("y")+
+                                        collectedData49.getInt("z")*collectedData49.getInt("x")));
                 postData.put("49", collectedData49);
 
 
